@@ -1,7 +1,8 @@
 {
-    "masterVersionFile":"https://bitbucket.org/vayraa/vayras-sector/downloads/hyperionsystems.version",
+    "masterVersionFile":"https://github.com/NinjaSiren/HyperionSystems/blob/master/hyperionsystems.version",
     "modName":"Hyperion Systems",
     "modThreadId":16059,
+	"modNexusId":1,
     "modVersion":
     {
         "major":0,
