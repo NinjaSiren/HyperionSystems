@@ -1,0 +1,69 @@
+{
+  "variantId": "HS_Alycone_Sniper",
+  "hullId": "HS_Alycone",
+  "displayName": "Sniper",
+  "goalVariant": false,
+  "fluxCapacitors": 7,
+  "fluxVents": 14,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "insulatedengine",
+    "reinforcedhull",
+    "stabilizedshieldemitter",
+    "advancedshieldemitter",
+    "auxiliary_fuel_tanks",
+    "auxiliarythrusters",
+    "extendedshieldemitter",
+    "fluxcoil",
+    "fluxdistributor",
+    "fluxshunt",
+    "fourteenth",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymg",
+        "WS0002": "heavymg",
+        "WS0004": "hil",
+        "WS0005": "lrpdlaser",
+        "WS0007": "dualflak",
+        "WS0008": "dualflak",
+        "WS0009": "hveldriver",
+        "WS0010": "guardian"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "hil"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "lrpdlaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "thunder_wing"
+  ]
+}

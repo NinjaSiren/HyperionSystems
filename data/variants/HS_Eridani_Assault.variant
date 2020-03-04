@@ -1,0 +1,46 @@
+{
+  "variantId": "HS_Eridani_Assault",
+  "hullId": "HS_Eridani",
+  "displayName": "Assault",
+  "goalVariant": false,
+  "fluxCapacitors": 1,
+  "fluxVents": 2,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "auxiliarythrusters",
+    "missile_reload",
+    "missleracks",
+    "heavyarmor",
+    "unstable_coils",
+    "turretgyros",
+    "reinforcedhull",
+    "fluxcoil",
+    "fluxdistributor",
+    "fluxshunt",
+    "eccm",
+    "ecm",
+    "advancedoptics",
+    "blast_doors",
+    "dedicated_targeting_core",
+    "fluxbreakers",
+    "magazines",
+    "safetyoverrides"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sabot_single",
+        "WS0002": "sabot_single",
+        "WS0003": "lightdualac",
+        "WS0004": "hephag",
+        "WS0005": "tpc"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

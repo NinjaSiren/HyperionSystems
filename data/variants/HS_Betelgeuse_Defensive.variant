@@ -1,0 +1,62 @@
+{
+  "variantId": "HS_Betelgeuse_Defensive",
+  "hullId": "HS_Betelgeuse",
+  "displayName": "Defense",
+  "goalVariant": false,
+  "fluxCapacitors": 4,
+  "fluxVents": 9,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "advancedoptics",
+    "autorepair",
+    "auxiliarythrusters",
+    "blast_doors",
+    "dedicated_targeting_core",
+    "expanded_cargo_holds",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heatseeker",
+        "WS0002": "heatseeker",
+        "WS0003": "tpc",
+        "WS0004": "lrpdlaser",
+        "WS0005": "lrpdlaser",
+        "WS0006": "lrpdlaser",
+        "WS0007": "devastator",
+        "WS0008": "swarmer",
+        "WS0009": "swarmer",
+        "WS0010": "pilum",
+        "WS0011": "pilum",
+        "WS0012": "harpoon",
+        "WS0013": "harpoon",
+        "WS0014": "lrpdlaser",
+        "WS0015": "lrpdlaser",
+        "WS0016": "heavymg",
+        "WS0017": "heavymg",
+        "WS0018": "heavymg",
+        "WS0019": "heavymg",
+        "WS0020": "lrpdlaser",
+        "WS0021": "lrpdlaser",
+        "WS0022": "harpoon",
+        "WS0023": "harpoon",
+        "WS0024": "lrpdlaser",
+        "WS0025": "lrpdlaser",
+        "WS0026": "devastator",
+        "WS0027": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "hoplon_wing",
+    "hoplon_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "variantId": "HS_Arcturus_Offense",
+  "hullId": "HS_Arcturus",
+  "displayName": "Offense",
+  "goalVariant": false,
+  "fluxCapacitors": 8,
+  "fluxVents": 18,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "armoredweapons",
+    "auxiliary_fuel_tanks",
+    "auxiliarythrusters",
+    "blast_doors",
+    "eccm",
+    "drive_field_stabilizer",
+    "ecm",
+    "expanded_deck_crew",
+    "fluxbreakers",
+    "hardened_subsystems",
+    "missleracks",
+    "missile_reload"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymauler",
+        "WS0002": "lightdualmg",
+        "WS0003": "lightdualmg",
+        "WS0004": "amblaster",
+        "WS0005": "harpoon",
+        "WS0006": "harpoon",
+        "WS0007": "heavymg",
+        "WS0008": "heavymg",
+        "WS0009": "hil",
+        "WS0010": "hil",
+        "WS0011": "lrpdlaser",
+        "WS0012": "ioncannon",
+        "WS0013": "lightdualmg",
+        "WS0014": "lrpdlaser",
+        "WS0015": "lightdualmg",
+        "WS0016": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "hoplon_wing",
+    "thunder_wing"
+  ]
+}

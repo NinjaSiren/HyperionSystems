@@ -1,0 +1,48 @@
+{
+  "variantId": "HS_Cassiopeia_Support",
+  "hullId": "HS_Cassiopeia",
+  "displayName": "Support",
+  "goalVariant": false,
+  "fluxCapacitors": 7,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "armoredweapons",
+    "auxiliarythrusters",
+    "missile_reload",
+    "missleracks",
+    "heavyarmor",
+    "unstable_coils",
+    "turretgyros",
+    "reinforcedhull",
+    "fluxcoil",
+    "fluxdistributor",
+    "fluxshunt",
+    "eccm",
+    "ecm",
+    "advancedoptics",
+    "blast_doors",
+    "dedicated_targeting_core",
+    "fluxbreakers",
+    "magazines",
+    "safetyoverrides"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "tpc",
+        "WS0002": "pilum",
+        "WS0003": "pilum",
+        "WS0004": "pilum",
+        "WS0005": "pilum",
+        "WS0006": "lrpdlaser",
+        "WS0007": "lrpdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

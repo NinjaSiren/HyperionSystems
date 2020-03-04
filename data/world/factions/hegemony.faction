@@ -1,0 +1,68 @@
+{
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		"tags":{
+			"heg_aux_bp":2,
+			"XIV_bp":0.25,
+			"hightech_bp":0.1,
+		},
+		"hulls":{
+			"buffalo2":0, # just say no
+			"HS_Alycone":10,
+			"HS_Arcturus":5,
+			"HS_Bellatrix":10,
+			"HS_Betelgeuse":5,
+			"HS_Carinae":10,
+			"HS_Cassiopeia":10,
+			"HS_Eridani":10,
+			"HS_Icarus":5,
+			"HS_Naos":10,
+			"HS_Orionis":10,
+			"HS_Sirius":10,
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		"tags":["base_bp", "heg_aux_bp", "lowtech_bp"],
+		"hulls":[
+		],
+	},
+	"knownShips":{
+		"tags":["base_bp", "heg_aux_bp", "lowtech_bp", "midline_bp", "XIV_bp", "hegemony", "hightech_bp"],
+		"hulls":[
+			"atlas",
+			"monitor",
+			"prometheus",
+			"legion",
+			"onslaught",
+			"gryphon",
+			"eagle",
+			"valkyrie",
+			"HS_Alycone",
+			"HS_Arcturus",
+			"HS_Bellatrix",
+			"HS_Betelgeuse",
+			"HS_Carinae",
+			"HS_Cassiopeia",
+			"HS_Eridani",
+			"HS_Icarus",
+			"HS_Naos",
+			"HS_Orionis",
+			"HS_Sirius",
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[],
+		"hulls":[
+			"condor",
+			"mora",
+			"legion",
+			"onslaught",
+			"onslaught_xiv",
+			"HS_Betelgeuse",
+			"HS_Icarus",
+			"HS_Arcturus",			
+		],
+	},
+},

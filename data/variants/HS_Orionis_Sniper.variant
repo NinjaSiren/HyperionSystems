@@ -1,0 +1,61 @@
+{
+  "variantId": "HS_Orionis_Sniper",
+  "hullId": "HS_Orionis",
+  "displayName": "Sniper",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "armoredweapons",
+    "auxiliarythrusters",
+    "autorepair",
+    "blast_doors",
+    "chassis_storage",
+    "dedicated_targeting_core",
+    "eccm",
+    "ecm",
+    "fluxbreakers",
+    "fluxcoil",
+    "fluxdistributor",
+    "heavyarmor",
+    "turretgyros",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "harpoon",
+        "WS0002": "harpoon",
+        "WS0003": "railgun",
+        "WS0004": "hil",
+        "WS0005": "hil",
+        "WS0006": "hil",
+        "WS0007": "lrpdlaser",
+        "WS0008": "lrpdlaser",
+        "WS0009": "phasebeam",
+        "WS0010": "phasebeam",
+        "WS0011": "lrpdlaser",
+        "WS0012": "lrpdlaser",
+        "WS0013": "phasebeam",
+        "WS0014": "phasebeam",
+        "WS0015": "lrpdlaser",
+        "WS0016": "lrpdlaser",
+        "WS0017": "minelayer2",
+        "WS0028": "hil",
+        "WS0029": "hil"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "hoplon_wing",
+    "hoplon_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
+}
