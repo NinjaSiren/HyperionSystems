@@ -22,8 +22,8 @@
   ],
   "builtInWeapons": {
     "WS0017": "minelayer2",
-    "WS0028": "hil",
-    "WS0029": "hil"
+    "WS0028": "tpc",
+    "WS0029": "tpc"
   },
   "weaponSlots": [
     {
