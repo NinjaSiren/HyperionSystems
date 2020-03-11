@@ -15,10 +15,7 @@
     "advancedcore",
     "hardened_subsystems",
     "militarized_subsystems",
-    "phasefield",
-    "stealth_minefield",
-    "supercomputer",
-    "unstable_coils"
+    "supercomputer"
   ],
   "builtInWeapons": {
     "WS0012": "tpc"

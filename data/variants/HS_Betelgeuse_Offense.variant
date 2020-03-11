@@ -2,10 +2,10 @@
   "variantId": "HS_Betelgeuse_Offense",
   "hullId": "HS_Betelgeuse",
   "displayName": "Offense",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 3,
   "fluxVents": 7,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

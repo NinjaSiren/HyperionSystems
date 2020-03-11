@@ -2,10 +2,10 @@
   "variantId": "HS_Naos_Support",
   "hullId": "HS_Naos",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 16,
   "fluxVents": 33,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

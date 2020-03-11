@@ -14,13 +14,9 @@
   "builtInMods": [
     "advancedcore",
     "hardened_subsystems",
-    "hiressensors",
     "militarized_subsystems",
-    "stealth_minefield",
     "supercomputer",
-    "unstable_coils",
     "drive_field_stabilizer",
-    "phasefield",
     "repair_gantry",
     "surveying_equipment"
   ],

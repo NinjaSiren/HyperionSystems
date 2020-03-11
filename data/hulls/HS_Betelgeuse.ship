@@ -13,15 +13,12 @@
   "viewOffset": 0,
   "builtInMods": [
     "advancedcore",
-    "hiressensors",
     "supercomputer",
     "surveying_equipment",
     "repair_gantry",
-    "unstable_coils",
-    "phasefield",
-    "stealth_minefield",
     "militarized_subsystems",
-    "hardened_subsystems"
+    "hardened_subsystems",
+    "shielded_holds"
   ],
   "builtInWeapons": {
     "WS0003": "tpc"

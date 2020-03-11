@@ -2,10 +2,10 @@
   "variantId": "HS_Alycone_Assault",
   "hullId": "HS_Alycone",
   "displayName": "Assault",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 9,
   "fluxVents": 18,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",
@@ -35,7 +35,8 @@
         "WS0007": "heavymg",
         "WS0008": "heavymg",
         "WS0009": "heavyburst",
-        "WS0010": "devastator"
+        "WS0010": "devastator",
+        "WS0011": "tpc"
       }
     }
   ],

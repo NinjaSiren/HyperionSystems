@@ -2,10 +2,10 @@
   "variantId": "HS_Naos_Sniper",
   "hullId": "HS_Naos",
   "displayName": "Sniper",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 15,
   "fluxVents": 31,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

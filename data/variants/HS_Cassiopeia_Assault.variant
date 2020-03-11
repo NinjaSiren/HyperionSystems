@@ -2,10 +2,10 @@
   "variantId": "HS_Cassiopeia_Assault",
   "hullId": "HS_Cassiopeia",
   "displayName": "Assault",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 10,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",

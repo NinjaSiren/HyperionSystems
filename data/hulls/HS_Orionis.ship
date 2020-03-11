@@ -12,9 +12,6 @@
   "shieldRadius": 217.5,
   "viewOffset": 0,
   "builtInMods": [
-    "stealth_minefield",
-    "unstable_coils",
-    "phasefield",
     "supercomputer",
     "advancedcore",
     "hardened_subsystems",

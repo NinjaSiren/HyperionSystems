@@ -2,10 +2,10 @@
   "variantId": "HS_Arcturus_Defensive",
   "hullId": "HS_Arcturus",
   "displayName": "Defensive",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 6,
   "fluxVents": 12,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "auxiliary_fuel_tanks",

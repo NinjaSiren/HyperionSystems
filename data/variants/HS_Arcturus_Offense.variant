@@ -2,10 +2,10 @@
   "variantId": "HS_Arcturus_Offense",
   "hullId": "HS_Arcturus",
   "displayName": "Offense",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 18,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

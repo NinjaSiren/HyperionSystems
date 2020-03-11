@@ -2,10 +2,10 @@
   "variantId": "HS_Sirius_Support",
   "hullId": "HS_Sirius",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 17,
   "fluxVents": 20,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

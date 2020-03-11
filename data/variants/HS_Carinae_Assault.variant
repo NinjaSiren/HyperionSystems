@@ -2,10 +2,10 @@
   "variantId": "HS_Carinae_Assault",
   "hullId": "HS_Carinae",
   "displayName": "Assault",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 18,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedshieldemitter",

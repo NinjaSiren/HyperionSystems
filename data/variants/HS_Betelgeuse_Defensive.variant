@@ -2,10 +2,10 @@
   "variantId": "HS_Betelgeuse_Defensive",
   "hullId": "HS_Betelgeuse",
   "displayName": "Defense",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 4,
   "fluxVents": 9,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",

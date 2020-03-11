@@ -2,10 +2,10 @@
   "variantId": "HS_Orionis_Sniper",
   "hullId": "HS_Orionis",
   "displayName": "Sniper",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 10,
   "fluxVents": 20,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

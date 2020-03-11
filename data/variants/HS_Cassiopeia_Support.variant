@@ -2,10 +2,10 @@
   "variantId": "HS_Cassiopeia_Support",
   "hullId": "HS_Cassiopeia",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 7,
   "fluxVents": 10,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",

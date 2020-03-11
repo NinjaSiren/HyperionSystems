@@ -2,10 +2,10 @@
   "variantId": "HS_Alycone_Support",
   "hullId": "HS_Alycone",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 5,
   "fluxVents": 10,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedshieldemitter",
@@ -36,7 +36,8 @@
         "WS0007": "heavymg",
         "WS0008": "heavymg",
         "WS0009": "pilum",
-        "WS0010": "guardian"
+        "WS0010": "guardian",
+        "WS0011": "tpc"
       }
     }
   ],

@@ -15,13 +15,7 @@
     "advancedcore",
     "ground_support",
     "hardened_subsystems",
-    "hiressensors",
-    "phasefield",
-    "repair_gantry",
-    "stealth_minefield",
-    "supercomputer",
-    "surveying_equipment",
-    "unstable_coils"
+    "supercomputer"
   ],
   "weaponSlots": [
     {

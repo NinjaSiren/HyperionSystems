@@ -13,10 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "advancedcore",
-    "unstable_coils",
     "supercomputer",
     "stealth_minefield",
-    "phasefield",
     "militarized_subsystems",
     "hardened_subsystems"
   ],

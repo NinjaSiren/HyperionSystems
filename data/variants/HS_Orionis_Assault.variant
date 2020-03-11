@@ -2,10 +2,10 @@
   "variantId": "HS_Orionis_Assault",
   "hullId": "HS_Orionis",
   "displayName": "Assault",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 8,
   "fluxVents": 16,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",

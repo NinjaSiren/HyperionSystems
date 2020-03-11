@@ -2,10 +2,10 @@
   "variantId": "HS_Alycone_Sniper",
   "hullId": "HS_Alycone",
   "displayName": "Sniper",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 7,
   "fluxVents": 14,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",
@@ -34,7 +34,8 @@
         "WS0007": "dualflak",
         "WS0008": "dualflak",
         "WS0009": "hveldriver",
-        "WS0010": "guardian"
+        "WS0010": "guardian",
+        "WS0011": "tpc"
       }
     },
     {

@@ -2,10 +2,10 @@
   "variantId": "HS_Icarus_Support",
   "hullId": "HS_Icarus",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 18,
   "fluxVents": 30,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "armoredweapons",

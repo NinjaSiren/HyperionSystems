@@ -2,10 +2,10 @@
   "variantId": "HS_Carinae_Support",
   "hullId": "HS_Carinae",
   "displayName": "Support",
-  "goalVariant": false,
+  "goalVariant": true,
   "fluxCapacitors": 7,
   "fluxVents": 13,
-  "quality": 1,
+  "quality": 3,
   "permaMods": [],
   "hullMods": [
     "advancedoptics",
