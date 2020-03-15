@@ -1,0 +1,51 @@
+{
+  "variantId": "HS_Bellatrix_C_Support",
+  "hullId": "HS_Bellatrix_Confederacy",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 13,
+  "fluxVents": 28,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "armoredweapons",
+    "autorepair",
+    "auxiliarythrusters",
+    "auxiliary_fuel_tanks",
+    "blast_doors",
+    "chassis_storage",
+    "dedicated_targeting_core",
+    "eccm",
+    "ecm",
+    "fluxcoil",
+    "fluxdistributor",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "salamanderpod",
+        "WS0002": "heavyburst",
+        "WS0003": "heavyburst",
+        "WS0004": "guardian",
+        "WS0005": "guardian",
+        "WS0006": "heavyburst",
+        "WS0007": "heavyburst",
+        "WS0008": "pilum",
+        "WS0009": "pilum",
+        "WS0010": "lrpdlaser",
+        "WS0011": "lrpdlaser",
+        "WS0012": "tpc",
+        "WS0013": "swarmer",
+        "WS0014": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "thunder_wing"
+  ]
+}

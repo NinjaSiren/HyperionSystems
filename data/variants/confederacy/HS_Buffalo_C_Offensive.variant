@@ -1,0 +1,26 @@
+{
+  "variantId": "HS_Buffalo_C_Offensive",
+  "hullId": "HS_Buffalo_Confederacy",
+  "displayName": "Offensive",
+  "goalVariant": true,
+  "fluxCapacitors": 6,
+  "fluxVents": 10,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "lrpdlaser",
+        "WS0002": "lrpdlaser",
+        "WS0003": "atropos",
+        "WS0004": "lightdualmg",
+        "WS0005": "heavymauler"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

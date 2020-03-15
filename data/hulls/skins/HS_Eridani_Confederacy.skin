@@ -1,0 +1,17 @@
+{
+  "baseHullId": "HS_Eridani",
+  "descriptionId": "HS_Eridani",
+  "hullName": "Eridani-class Frigate (Confederacy)",
+  "tags":["rare_bp"],
+  "tech":"Hyperion Confederacy",
+  "baseValueMult":2.0,
+  "removeBuiltInMods": [
+    "hardened_subsystems",
+    "militarized_subsystems",
+    "advancedcore",
+    "supercomputer"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Eridani_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Eridani_confederacy.png"
+}

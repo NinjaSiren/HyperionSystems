@@ -1,0 +1,31 @@
+{
+  "variantId": "HS_Perseus_Assault",
+  "hullId": "HS_Perseus",
+  "displayName": "Assault",
+  "goalVariant": true,
+  "fluxCapacitors": 12,
+  "fluxVents": 6,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "heavymauler",
+        "WS0002": "heavymauler",
+        "WS0003": "heavyac",
+        "WS0004": "heavyac",
+        "WS0005": "lrpdlaser",
+        "WS0006": "lrpdlaser",
+        "WS0007": "lrpdlaser",
+        "WS0008": "lrpdlaser",
+        "WS0009": "tpc",
+        "WS0010": "tpc"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

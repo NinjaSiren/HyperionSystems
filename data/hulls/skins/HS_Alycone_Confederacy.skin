@@ -1,0 +1,17 @@
+{
+  "baseHullId": "HS_Alycone",
+  "descriptionId": "HS_Alycone",
+  "hullName": "Alycone-class Cruiser (Confederacy)",
+  "tags":["rare_bp"],
+  "tech":"Hyperion Confederacy",
+  "baseValueMult":2.0,
+  "removeBuiltInMods": [
+    "supercomputer",
+    "advancedcore",
+    "militarized_subsystems",
+    "hardened_subsystems"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Alycone_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Alcyone_confederacy.png"
+}

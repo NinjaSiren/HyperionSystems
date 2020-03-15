@@ -1,0 +1,17 @@
+{
+  "baseHullId": "HS_Sirius",
+  "descriptionId": "HS_Sirius",
+  "hullName": "Sirius-class Phased Destroyer (Confederacy)",
+  "tags":["rare_bp"],
+  "tech":"Hyperion Confederacy",
+  "baseValueMult":2.0,
+  "removeBuiltInMods": [
+    "hardened_subsystems",
+    "militarized_subsystems",
+    "advancedcore",
+    "supercomputer"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Sirius_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Sirius_confederacy.png"
+}
