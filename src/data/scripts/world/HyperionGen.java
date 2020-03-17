@@ -7,25 +7,19 @@ import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
+import data.scripts.world.systems.Base_Penelope;
 
 import data.scripts.world.systems.DME_Kostroma;
-import data.scripts.world.systems.HS_neuejangala;
+import data.scripts.world.systems.HS_Neue_Jangala;
+import data.scripts.world.systems.HyperionRandomizer;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HyperionGen implements SectorGeneratorPlugin {
-
-    /*
-    public static void blotOut(boolean[][] cells, int x, int y, int c) {
-        for (int i = Math.max(0, x - c / 2); (i <= x + c / 2) && (i < cells.length); i++) {
-            for (int j = Math.max(0, y - c / 2); (j <= y + c / 2) && (j < cells[0].length); j++) {
-                cells[i][j] = true; //'true' was 1, which doesn't compile. Pretty sure this breaks it.
-            }
-        }
-    }
-    */
     
     public static void initFactionRelationships(SectorAPI sector) {
         
@@ -87,11 +81,15 @@ public class HyperionGen implements SectorGeneratorPlugin {
     public void generate(SectorAPI sector) {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         initFactionRelationships(sector);
+        new HS_Neue_Jangala().generate(sector);
         
-        new HS_neuejangala().generate(sector);
-        //boolean hasDME = Global.getSettings().getModManager().isModEnabled("Dassault-Mikoyan Engineering");
-        //if(hasDME) {
-        //    new DME_Kostroma().generate(sector);
-        //}
+        // Adds Penelope Star System under the Hyperion Confederacy
+        new Base_Penelope().generate(sector);
+        
+        // Adds Marie-Galante planet under the Hyperion Confederacy
+        boolean hasDME = Global.getSettings().getModManager().isModEnabled("Dassault-Mikoyan Engineering");
+        if(hasDME) {
+            new DME_Kostroma().generate(sector);
+        }
     }
 }
