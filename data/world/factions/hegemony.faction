@@ -2,9 +2,6 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"heg_aux_bp":2,
-			"XIV_bp":0.25,
-			"hightech_bp":0.1,
 		},
 		"hulls":{
 			"buffalo2":0, # just say no
@@ -31,14 +28,6 @@
 	"knownShips":{
 		"tags":["base_bp", "heg_aux_bp", "lowtech_bp", "midline_bp", "XIV_bp", "hegemony", "hightech_bp"],
 		"hulls":[
-			"atlas",
-			"monitor",
-			"prometheus",
-			"legion",
-			"onslaught",
-			"gryphon",
-			"eagle",
-			"valkyrie",
 			"HS_Alycone",
 			"HS_Arcturus",
 			"HS_Bellatrix",
@@ -57,11 +46,6 @@
 	"priorityShips":{
 		"tags":[],
 		"hulls":[
-			"condor",
-			"mora",
-			"legion",
-			"onslaught",
-			"onslaught_xiv",
 			"HS_Betelgeuse",
 			"HS_Icarus",
 			"HS_Arcturus",			
@@ -70,12 +54,162 @@
 	"knownFighters":{
 		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "hegemony", "pirates"],
 		"fighters":[	
-			"broadsword_wing",
-			"talon_wing",
-			"piranha_wing",
-			"hoplon_wing",
 			"HS_Lynx_Wing",
 			"HS_Achernar_Wing",
 		],
 	},
-},
+	
+	# Ship roles
+	"shipRoles":{
+		"combatSmall":{
+			"HS_Carinae_Assault":0.5,
+			"HS_Carinae_Support":0.5,
+			"HS_Eridani_Assault":0.7,
+			"HS_Eridani_Support":0.7,
+			"HS_Sirius_Assault":0.5,
+			"HS_Sirius_Support":0.5,
+			"HS_Cassiopeia_Assault":0.7,
+			"HS_Cassiopeia_Support":0.7, 
+		},
+		"combatMedium":{
+			"HS_Alycone_Assault":0.5,
+			"HS_Alycone_Sniper":0.5,
+			"HS_Alycone_Support":0.5,
+			"HS_Carinae_Assault":0.7,
+			"HS_Carinae_Support":0.7,
+			"HS_Eridani_Assault":0.9,
+			"HS_Eridani_Support":0.9,
+			"HS_Bellatrix_Assault":0.5,
+			"HS_Bellatrix_Sniper":0.5,
+			"HS_Bellatrix_Support":0.5,
+			"HS_Sirius_Assault":0.7,
+			"HS_Sirius_Support":0.7,
+			"HS_Cassiopeia_Assault":0.9,
+			"HS_Cassiopeia_Support":0.9,
+		},
+		"combatLarge":{
+			"HS_Naos_Assault":0.5,
+			"HS_Naos_Sniper":0.5,
+			"HS_Naos_Support":0.5,
+			"HS_Orionis_Assault":0.5,
+			"HS_Orionis_Sniper":0.5,
+			"HS_Orionis_Support":0.5,		
+			"HS_Perseus_Assault":0.3,
+			"HS_Perseus_Sniper":0.3,
+			"HS_Perseus_Support":0.3,				
+			"HS_Alycone_Assault":0.7,
+			"HS_Alycone_Sniper":0.7,
+			"HS_Alycone_Support":0.7,
+			"HS_Carinae_Assault":0.9,
+			"HS_Carinae_Support":0.9,
+			"HS_Eridani_Assault":1,
+			"HS_Eridani_Support":1,
+			"HS_Bellatrix_Assault":0.7,
+			"HS_Bellatrix_Sniper":0.7,
+			"HS_Bellatrix_Support":0.7,
+			"HS_Sirius_Assault":0.9,
+			"HS_Sirius_Support":0.9,
+			"HS_Cassiopeia_Assault":1,
+			"HS_Cassiopeia_Support":1,
+		},
+		"combatCapital":{
+			"HS_Naos_Assault":0.7,
+			"HS_Naos_Sniper":0.7,
+			"HS_Naos_Support":0.7,
+			"HS_Perseus_Assault":0.7,
+			"HS_Perseus_Sniper":0.7,
+			"HS_Perseus_Support":0.7,			
+			"HS_Alycone_Assault":0.9,
+			"HS_Alycone_Sniper":0.9,
+			"HS_Alycone_Support":0.9,
+			"HS_Carinae_Assault":1,
+			"HS_Carinae_Support":1,
+			"HS_Eridani_Assault":0.3,
+			"HS_Eridani_Support":0.3,
+			"HS_Bellatrix_Assault":0.9,
+			"HS_Bellatrix_Sniper":0.9,
+			"HS_Bellatrix_Support":0.9,
+			"HS_Sirius_Assault":1,
+			"HS_Sirius_Support":1,
+			"HS_Cassiopeia_Assault":0.3,
+			"HS_Cassiopeia_Support":0.3,	
+		},
+		
+		
+		# hybrid ships with good combat and cargo capacity
+		"combatFreighterMedium":{
+			"HS_Betelgeuse_Offense":0.3,
+			"HS_Betelgeuse_Defensive":0.3,	
+		},
+		"combatFreighterLarge":{
+			"HS_Betelgeuse_Offense":0.5,
+			"HS_Betelgeuse_Defensive":0.5,	
+		},
+
+		# carriers
+		"carrierMedium":{
+			"HS_Naos_Assault":0.3,
+			"HS_Naos_Sniper":0.3,
+			"HS_Naos_Support":0.3,
+			"HS_Orionis_Assault":0.3,
+			"HS_Orionis_Sniper":0.3,
+			"HS_Orionis_Support":0.3,
+		},
+		"carrierLarge":{
+			"HS_Naos_Assault":0.5,
+			"HS_Naos_Sniper":0.5,
+			"HS_Naos_Support":0.5,
+			"HS_Orionis_Assault":0.5,
+			"HS_Orionis_Sniper":0.5,
+			"HS_Orionis_Support":0.5,	
+			"HS_Perseus_Assault":0.3,
+			"HS_Perseus_Sniper":0.3,
+			"HS_Perseus_Support":0.3,	
+		},
+
+		# phase ships
+		"phaseSmall":{
+			"HS_Cassiopeia_Assault":0.9,
+			"HS_Cassiopeia_Support":0.9,
+		},
+		"phaseMedium":{
+			"HS_Bellatrix_Assault":0.7,
+			"HS_Bellatrix_Sniper":0.7,
+			"HS_Bellatrix_Support":0.7,
+		},
+		"phaseLarge":{
+			"HS_Orionis_Assault":0.5,
+			"HS_Orionis_Sniper":0.5,
+			"HS_Orionis_Support":0.5,
+		},
+		"phaseCapital":{
+			"HS_Orionis_Assault":0.7,
+			"HS_Orionis_Sniper":0.7,
+			"HS_Orionis_Support":0.7,
+		},
+
+		# combat tankers, good fuel carriers good combat ships
+		"tankerLarge":{
+			"HS_Arcturus_Offense":0.5,
+			"HS_Arcturus_Defensive":0.5,
+		},
+		
+		# combat troop carrier and liners, good crew carriers and combat ships
+		"personnelMedium":{
+			"HS_Icarus_Assault":0.3,
+			"HS_Icarus_Support":0.3,
+		},
+		"personnelLarge":{
+			"HS_Icarus_Assault":0.5,
+			"HS_Icarus_Support":0.5,                
+		},
+		"linerMedium":{
+			"HS_Icarus_Assault":0.5,
+			"HS_Icarus_Support":0.5,
+		},
+		"linerLarge":{
+			"HS_Icarus_Assault":0.7,
+			"HS_Icarus_Support":0.7,
+		},
+	},
+}
