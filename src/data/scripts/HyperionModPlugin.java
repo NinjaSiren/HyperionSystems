@@ -10,8 +10,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.thoughtworks.xstream.XStream;
 import exerelin.campaign.SectorManager;
-
 import data.scripts.world.HyperionGen;
+import data.scripts.world.systems.Base_Penelope;
 import data.scripts.world.systems.DME_Kostroma;
 import data.scripts.world.systems.HS_Neue_Jangala;
 
@@ -24,6 +24,7 @@ public class HyperionModPlugin extends BaseModPlugin {
     
     @Override
     public void configureXStream(XStream x) {
+        x.alias("Base_Penelope", Base_Penelope.class);
         x.alias("DME_Kostroma", DME_Kostroma.class);
         x.alias("HS_Neue_Jangala", HS_Neue_Jangala.class);
     }

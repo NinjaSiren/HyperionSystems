@@ -8,11 +8,9 @@ import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.world.systems.Base_Penelope;
-
 import data.scripts.world.systems.DME_Kostroma;
+import data.scripts.world.systems.DME_Nikolaev;
 import data.scripts.world.systems.HS_Neue_Jangala;
-import data.scripts.world.systems.HyperionRandomizer;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -81,15 +79,36 @@ public class HyperionGen implements SectorGeneratorPlugin {
     public void generate(SectorAPI sector) {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         initFactionRelationships(sector);
-        new HS_Neue_Jangala().generate(sector);
+        new HS_Neue_Jangala().generate(sector); // Neue Jangala
         
-        // Adds Penelope Star System under the Hyperion Confederacy
-        new Base_Penelope().generate(sector);
-        
-        // Adds Marie-Galante planet under the Hyperion Confederacy
-        boolean hasDME = Global.getSettings().getModManager().isModEnabled("Dassault-Mikoyan Engineering");
-        if(hasDME) {
-            new DME_Kostroma().generate(sector);
+        // Adds Penelope Star System under the Hyperion Confederacy (Probability of 75%)
+        if(rand() <= 0.75) {
+            new Base_Penelope().generate(sector); // Penelope's Star
         }
+        
+        // Adds (Dassault-Mikoyan star systems) Marie-Galante and/or Odessa under the Hyperion Confederacy
+        // Probability of 25%
+        boolean hasDME = Global.getSettings().getModManager().isModEnabled("istl_dam");
+        double rand = rand();
+        if(hasDME) {
+            if(rand <= 0.25) {
+                new DME_Kostroma().generate(sector); // Marie-Galante
+                new DME_Nikolaev().generate(sector); // Odessa
+            } else if(rand > 0.25 && rand <= 0.5) {
+                new DME_Kostroma().generate(sector); // Marie-Galante
+            } else if(rand > 0.5 && rand <= 0.75) {
+                new DME_Nikolaev().generate(sector); // Odessa
+            } else {
+                
+            }
+        }
+    }
+    
+    // Roll the dice
+    private double rand() {
+        Random rand = new Random();
+        final double max = 1.0;
+        final double min = 0.0;
+        return ((min + (max - min)) * rand.nextDouble());
     }
 }

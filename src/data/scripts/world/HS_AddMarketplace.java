@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author NinjaSiren
+ * @author Azmonds
  */
 public class HS_AddMarketplace{
 

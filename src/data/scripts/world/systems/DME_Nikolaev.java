@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package data.scripts.world.systems;
 
 import com.fs.starfarer.api.Global;
@@ -21,11 +26,8 @@ import java.util.Random;
 /**
  *
  * @author NinjaSiren
- * 
- * Makes the DME planet Marie Galante a Hyperion planet.
- * 
  */
-public class DME_Kostroma {
+public class DME_Nikolaev {
     
     // Roll the dice
     private float tariff() {
@@ -34,39 +36,42 @@ public class DME_Kostroma {
         final float min = 0.0f;
         return ((min + (max - min)) * rand.nextFloat());
     }
-
+    
     public void generate(SectorAPI sector) {
-        StarSystemAPI system = Global.getSector().getStarSystem("Kostroma");
-         
-        // Marie-Galante
-        PlanetAPI mariegalante = system.getPlanets().get(3);
-        mariegalante.setCustomDescriptionId("hs_planet_mariegalante");
-        mariegalante.setInteractionImage("illustrations", "urban02");
+        StarSystemAPI system = Global.getSector().getStarSystem("Nikolaev");
+        
+        // Odessa
+        PlanetAPI odessa = system.getPlanets().get(2);
+        odessa.setCustomDescriptionId("hs_planet_odessa");
+        odessa.setInteractionImage("illustrations", "urban02");
         
         // Replaces decivilized condition to subpop only
-        if(mariegalante.getMarket().hasCondition(Conditions.DECIVILIZED)) {
-            mariegalante.getMarket().removeCondition(Conditions.DECIVILIZED);
-            mariegalante.getMarket().addCondition(Conditions.DECIVILIZED_SUBPOP);
+        if(odessa.getMarket().hasCondition(Conditions.DECIVILIZED)) {
+            odessa.getMarket().removeCondition(Conditions.DECIVILIZED);
+            odessa.getMarket().addCondition(Conditions.DECIVILIZED_SUBPOP);
         }
         
         // Gets current conditions
-        List<MarketConditionAPI> mariegalanteBaseConditions = mariegalante.getMarket().getConditions();
+        List<MarketConditionAPI> odessaBaseConditions = odessa.getMarket().getConditions();
         
-        // "Abandoned" orbital terminal
-        SectorEntityToken station_mariegalante = system.getEntityById("mariegalante_station");
-        station_mariegalante.setInteractionImage("illustrations", "hound_hangar");
-        station_mariegalante.setCustomDescriptionId("hs_mariegalante_station");
+        // Odessa Station
+        SectorEntityToken station_odessa = system.addCustomEntity("hs_odessa_station", 
+                "Hyperion Odessa Station", 
+                "orbital_habitat",
+                "HS_Corporation_Separatist");
+        station_odessa.setCircularOrbitPointingDown(station_odessa, 285, 180, 36);
+        station_odessa.setInteractionImage("illustrations", "hound_hangar");
+        station_odessa.setCustomDescriptionId("hs_odessa_station");
         
-        MarketAPI mariegalanteMarket = HS_AddMarketplace.addMarketplace(
-                "HS_Corporation_Separatist", 
-                mariegalante, 
-                new ArrayList<>(Arrays.asList(station_mariegalante)),
-                "Marie-Galante", // name of the market
-                7, // size of the market (from the JSON)
+        MarketAPI odessaMarket = HS_AddMarketplace.addMarketplace("HS_Corporation_Separatist", 
+                odessa, 
+                new ArrayList<>(Arrays.asList(station_odessa)),
+                "Odessa", // name of the market
+                6, // size of the market (from the JSON)
                 new ArrayList<>(
-                        Arrays.asList( // list of market conditions from mariegalante.json
+                        Arrays.asList( // list of market conditions from odessa.json
                                 Conditions.URBANIZED_POLITY,
-                                Conditions.POPULATION_7)),
+                                Conditions.POPULATION_6)),
                 new ArrayList<>
                         (Arrays.asList( // list of industries
                                 Industries.STARFORTRESS_HIGH,
@@ -81,18 +86,18 @@ public class DME_Kostroma {
                                 Submarkets.SUBMARKET_BLACK,
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.SUBMARKET_STORAGE)),
-                tariff()); // tariff amount
+                tariff()); // tariff amount  
         
                 String cryos = cryoIndustries();
                 if(cryos != null) {
-                    mariegalanteMarket.addIndustry(cryos);
+                    odessaMarket.addIndustry(cryos);
                 }   
         
                 // Adds current conditions
-                new HS_ReAddConditions(mariegalanteBaseConditions, mariegalanteMarket);
+                new HS_ReAddConditions(odessaBaseConditions, odessaMarket);
                 
                 // Adds industries depending on conditions
-                new HS_AddIndustry(mariegalante, mariegalanteMarket);
+                new HS_AddIndustry(odessa, odessaMarket);
     }
     
     // Roll the dice
@@ -115,4 +120,4 @@ public class DME_Kostroma {
             return "cryorevival";
         }
     }
-}   
+}
