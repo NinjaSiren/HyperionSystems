@@ -1,0 +1,152 @@
+{
+	"playableFaction":true,
+	"corvusCompatible":true,
+
+	"crewExpereinceLevelIncreaseChance":0.7,
+	"baseFleetCostMultiplier":0.6,
+
+	"rebelFleetSuffix":"Hyperion Fleet",
+	"asteroidMiningFleetName":"Miners Fleet",
+	"gasMiningFleetName":"Siphon Fleet",
+	"logisticsFleetName":"Logistic Force",
+	"invasionFleetName":"Invade Fleet",
+	"suppressionFleetName":"Suppressor Force",
+	"stationName":"Space Station",
+	"vengeanceFleetNames":["Primera", "Secondaria", "Terciaria"],
+	"vengeanceFleetNamesSingle":["a Primera fleet", "a Secondaria fleet", "an Terciaria fleet"],
+	"invasionSupportFleetName":"Revolutionary Fleet",
+	"responseFleetName":"Tactical Force",
+	"defenceFleetName":"Confederacy Guard",
+
+	"allowAgentActions":true,
+	"allowPrisonerActions":true,
+	"morality":"good",
+
+	"marketSpawnWeight":0.85,
+
+	"factionsLiked":["persean", "sindrian_diktat", "independent", "lions_guard"],
+	"factionsDisliked":["hegemony", "interstellarimperium", "pirates", "new_galactic_order", "mayorate"],
+		
+	"startRelationships":{
+		"hegemony": -0.9, 
+		"interstellarimperium": -0.7, 
+		"new_galactic_order": -0.8, 
+		"mayorate": -0.6, 
+	},
+	"maxRelationships":{
+		"hegemony": 0, 
+		"interstellarimperium": 0, 
+		"new_galactic_order": 0, 
+		"mayorate": 0, 
+	},
+			
+	"diplomacyPositiveChance":{
+		"hegemony": 0.7, 
+		"interstellarimperium": 0.4,
+		"new_galactic_order": 0.2,
+		"mayorate": 0.5,
+	},
+	"diplomacyNegativeChance":{
+		"hegemony": 0.9, 
+		"interstellarimperium": 0.6,
+		"new_galactic_order": 0.4,
+		"mayorate": 0.7,
+	},
+
+	"alignments":{
+		"corporate":4, 
+		"technocratic":2, 
+		"diplomatic":0.5, 
+		"militarist":1, 
+		"ideological":0.5, 
+	},
+	
+	"diplomacyTraits":["helps_allies", "irredentist", "stalwart", "likes_ai", "monopolist", "neutralist"],
+
+	"colonyExpeditionChance":0.75,
+	"colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
+
+	"startShipsSolo":[
+		["HS_Alycone_C_Assault"],
+		["HS_Sirius_C_Assault"],
+		["HS_Naos_C_Assault"],
+		["HS_Orionis_C_Assault"],
+	],
+	"startShipsCombatSmall":[
+		["HS_Sirius_C_Assault", "HS_Eridani_C_Support", "HS_Carinae_C_Assault"],
+		["HS_Sirius_C_Support", "HS_Eridani_C_Assault", "HS_Carinae_C_Support"],
+		["HS_Sirius_C_Assault", "HS_Cassiopeia_C_Support", "HS_Carinae_C_Assault"],
+		["HS_Sirius_C_Support", "HS_Cassiopeia_C_Assault", "HS_Carinae_C_Support"],
+	],
+	"startShipsCarrierSmall":[
+		["HS_Alycone_C_Assault", "HS_Bellatrix_C_Support"],
+		["HS_Alycone_C_Support", "HS_Bellatrix_C_Assault"],
+		["HS_Alycone_C_Sniper", "HS_Bellatrix_C_Support"],
+		["HS_Alycone_C_Support", "HS_Bellatrix_C_Sniper"],
+	],
+	"startShipsTradeSmall":[
+		["HS_Buffalo_C_Offensive", "HS_Gemini_C_Defensive", "HS_Valkyrie_C_Offensive"],
+		["HS_Buffalo_C_Defensive", "HS_Gemini_C_Offensive", "HS_Valkyrie_C_Defensive"],
+	],
+	"startShipsCombatLarge":[
+		["HS_Naos_C_Assault", "HS_Alycone_C_Support", "HS_Sirius_C_Assault"],
+		["HS_Naos_C_Support", "HS_Alycone_C_Sniper", "HS_Sirius_C_Assault"],
+		["HS_Naos_C_Sniper", "HS_Alycone_C_Assault", "HS_Sirius_C_Assault"],
+		["HS_Naos_C_Assault", "HS_Alycone_C_Support", "HS_Sirius_C_Support"],
+		["HS_Naos_C_Support", "HS_Alycone_C_Sniper", "HS_Sirius_C_Support"],
+		["HS_Naos_C_Sniper", "HS_Alycone_C_Assault", "HS_Sirius_C_Support"],
+		
+		["HS_Orionis_C_Assault", "HS_Bellatrix_C_Support", "HS_Carinae_C_Assault"],
+		["HS_Orionis_C_Support", "HS_Bellatrix_C_Sniper", "HS_Carinae_C_Assault"],
+		["HS_Orionis_C_Sniper", "HS_Bellatrix_C_Assault", "HS_Carinae_C_Assault"],
+		["HS_Orionis_C_Assault", "HS_Bellatrix_C_Support", "HS_Carinae_C_Support"],
+		["HS_Orionis_C_Support", "HS_Bellatrix_C_Sniper", "HS_Carinae_C_Support"],
+		["HS_Orionis_C_Sniper", "HS_Bellatrix_C_Assault", "HS_Carinae_C_Support"],
+	],
+	"startShipsCarrierLarge":[
+		["HS_Naos_C_Sniper", "HS_Orionis_C_Support", "HS_Alycone_C_Assault"],
+		["HS_Naos_C_Support", "HS_Orionis_C_Assault", "HS_Alycone_C_Sniper"],
+		["HS_Naos_C_Assault", "HS_Orionis_C_Sniper", "HS_Alycone_C_Assault"],
+		["HS_Naos_C_Sniper", "HS_Orionis_C_Support", "HS_Bellatrix_C_Assault"],
+		["HS_Naos_C_Support", "HS_Orionis_C_Assault", "HS_Bellatrix_C_Sniper"],
+		["HS_Naos_C_Assault", "HS_Orionis_C_Sniper", "HS_Bellatrix_C_Assault"],
+	],
+	"startShipsTradeLarge":[
+		["HS_Atlas_C_Defensive", "HS_Gemini_C_Offensive", "HS_Valkyrie_C_Defensive"],
+		["HS_Atlas_C_Offensive", "HS_Gemini_C_Defensive", "HS_Valkyrie_C_Offensive"],
+	],
+	"startShipsSuper":[
+		["HS_Naos_C_Assault"], 
+		["HS_Naos_C_Sniper"], 
+		["HS_Naos_C_Support"],
+		["HS_Orionis_C_Assault"], 
+		["HS_Orionis_C_Sniper"], 
+		["HS_Orionis_C_Support"],
+		["HS_Atlas_C_Defensive"], 
+		["HS_Atlas_C_Offensive"],
+	],
+
+	"startSpecialItems":[
+		[["HCO_package", ""]],
+	],
+
+	"defenceStations":[
+		{"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"], "weight":0.75},
+		{"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"], "weight":1.5},
+	],
+
+	"industrySeeds":[
+		{"id":"orbitalworks", "mult":0.1},
+		{"id":"fuelprod", "mult":0.1},
+		{"id":"lightindustry", "mult":0.1},
+	],
+
+	"bonusSeeds":[
+		{"id":"nanoforge_pristine", "count":1},
+		{"id":"aiCore_station", "count":2, "mult":0.2},
+		{"id":"aiCore_military", "mult":0.5},
+		{"id":"aiCore_heavyindustry", "count":1},
+		{"id":"aiCore_any", "mult":2},
+		{"id":"population_upsize", "count":1},
+	],
+}

@@ -1,0 +1,17 @@
+{
+  "baseHullId": "HS_Carinae",
+  "descriptionId": "HS_Carinae_HCO",
+  "hullName": "Carinae (Confederacy)",
+  "tags":["HCO_bp", "rare_bp"],
+  "tech":"Hyperion Confederacy",
+  "baseValueMult":2.0,
+  "removeBuiltInMods": [
+    "hardened_subsystems",
+    "militarized_subsystems",
+    "advancedcore",
+    "supercomputer"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Carinae_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Carinae_confederacy.png"
+}

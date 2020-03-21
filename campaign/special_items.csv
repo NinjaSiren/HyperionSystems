@@ -1,0 +1,2 @@
+name,id,tags,rarity,base price,stack size,cargo space,icon,sound id,sound id drop,plugin,plugin params,desc,order
+Hyperion Confederate Blueprint Package,HCO_package,"package_bp, no_drop",,2500000,1000,1,graphics/icons/cargo/hs_blueprint.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,HCO_bp,A set of blueprints for the Hyperion Confederate's high tech and sophisticated  combat and cargo ships.,270
