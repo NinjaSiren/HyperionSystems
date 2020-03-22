@@ -1,0 +1,22 @@
+{
+	"music":{
+		"hs_faction_encounter_friendly":[
+			{"file":"hs_faction_encounter_friendly.ogg","source":"sounds/music","volume":0.55,"randomStart":true},
+		],
+		"hs_faction_encounter_neutral":[
+			{"file":"hs_faction_encounter_neutral.ogg","source":"sounds/music","volume":0.55,"randomStart":true},
+		],
+		"hs_faction_encounter_hostile":[
+			{"file":"hs_faction_encounter_hostile.ogg","source":"sounds/music","volume":0.55,"randomStart":true},
+		],
+		"hs_faction_market_friendly":[
+			{"file":"hs_faction_market_friendly.ogg","source":"sounds/music","volume":0.5,"randomStart":true},
+		],
+		"hs_faction_market_neutral":[
+			{"file":"hs_faction_market_neutral.ogg","source":"sounds/music","volume":0.5,"randomStart":true},
+		],
+		"hs_faction_market_hostile":[
+			{"file":"hs_faction_market_hostile.ogg","source":"sounds/music","volume":0.5,"randomStart":true},
+		],
+	},
+}

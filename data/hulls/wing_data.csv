@@ -1,3 +1,0 @@
-id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,number,,,,,,,,,,,,number
-HS_Achernar_Wing,HS_Achernar_Wing_Standard,"rare_bp, hightech_bp, hegemony",3,0.3,5,12,CLAW,4000,2000,100,4,BOMBER,Bomber,18,10000,12100,,,,,,,,,,,,
-HS_Lynx_Wing,HS_Lynx_Wing_Standard,"rare_bp, hightech_bp, hegemony",3,0.2,4,8,V,4000,200,750,6,INTERCEPTOR,Interceptor,10,8000,12101,,,,,,,,,,,,
