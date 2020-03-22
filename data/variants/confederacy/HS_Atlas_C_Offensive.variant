@@ -1,0 +1,34 @@
+{
+  "variantId": "HS_Atlas_C_Offensive",
+  "hullId": "HS_Atlas_Confederacy",
+  "displayName": "Offensive",
+  "goalVariant": true,
+  "fluxCapacitors": 7,
+  "fluxVents": 14,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "hellbore",
+        "WS0002": "hellbore",
+        "WS0003": "mark9",
+        "WS0004": "harpoonpod",
+        "WS0005": "harpoonpod",
+        "WS0006": "lrpdlaser",
+        "WS0007": "lrpdlaser",
+        "WS0008": "swarmer",
+        "WS0009": "lightdualmg",
+        "WS0010": "mark9",
+        "WS0011": "squall",
+        "WS0012": "lightdualmg",
+        "WS0013": "lightdualmg"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

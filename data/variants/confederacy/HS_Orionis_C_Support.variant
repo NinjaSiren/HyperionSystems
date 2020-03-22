@@ -1,0 +1,61 @@
+{
+  "variantId": "HS_Orionis_C_Support",
+  "hullId": "HS_Orionis_Confederacy",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 16,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "armoredweapons",
+    "auxiliarythrusters",
+    "autorepair",
+    "blast_doors",
+    "chassis_storage",
+    "dedicated_targeting_core",
+    "eccm",
+    "ecm",
+    "fluxbreakers",
+    "fluxcoil",
+    "fluxdistributor",
+    "heavyarmor",
+    "turretgyros",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heatseeker",
+        "WS0002": "heatseeker",
+        "WS0003": "heatseeker",
+        "WS0004": "devastator",
+        "WS0005": "guardian",
+        "WS0006": "guardian",
+        "WS0007": "lrpdlaser",
+        "WS0008": "lrpdlaser",
+        "WS0009": "pilum",
+        "WS0010": "pilum",
+        "WS0011": "lrpdlaser",
+        "WS0012": "lrpdlaser",
+        "WS0013": "pilum",
+        "WS0014": "pilum",
+        "WS0015": "lrpdlaser",
+        "WS0016": "lrpdlaser",
+        "WS0017": "minelayer2",
+        "WS0028": "tpc",
+        "WS0029": "tpc"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "hoplon_wing",
+    "hoplon_wing",
+    "thunder_wing",
+    "thunder_wing"
+  ]
+}

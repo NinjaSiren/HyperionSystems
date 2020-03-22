@@ -1,0 +1,50 @@
+{
+  "variantId": "HS_Bellatrix_Support",
+  "hullId": "HS_Bellatrix",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 13,
+  "fluxVents": 28,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [
+    "advancedoptics",
+    "armoredweapons",
+    "autorepair",
+    "auxiliarythrusters",
+    "auxiliary_fuel_tanks",
+    "blast_doors",
+    "chassis_storage",
+    "dedicated_targeting_core",
+    "eccm",
+    "ecm",
+    "fluxcoil",
+    "fluxdistributor",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavyburst",
+        "WS0002": "dualflak",
+        "WS0003": "dualflak",
+        "WS0004": "devastator",
+        "WS0005": "devastator",
+        "WS0006": "heavyburst",
+        "WS0007": "heavyburst",
+        "WS0008": "pilum",
+        "WS0009": "pilum",
+        "WS0010": "lrpdlaser",
+        "WS0011": "lrpdlaser",
+        "WS0013": "swarmer",
+        "WS0014": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "thunder_wing"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+	"id":"player",
+
+	"flags":[
+		{
+			"logo":"graphics/factions/hsflag.png",
+			"crest":"graphics/factions/hsicon.png"
+		},
+	],
+}

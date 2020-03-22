@@ -1,0 +1,20 @@
+{
+  "baseHullId": "HS_Bellatrix",
+  "builtInMods": [
+    "stealth_minefield"
+  ],
+  "descriptionId": "HS_Bellatrix_HCO",
+  "hullName": "Bellatrix (Confederacy)",
+  "tags":["HCO_bp", "rare_bp"],
+  "tech":"Hyperion Confederacy",
+  "baseValueMult":2.0,
+  "removeBuiltInMods": [
+    "hardened_subsystems",
+    "militarized_subsystems",
+    "advancedcore",
+    "supercomputer"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Bellatrix_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Bellatrix_confederacy.png"
+}
