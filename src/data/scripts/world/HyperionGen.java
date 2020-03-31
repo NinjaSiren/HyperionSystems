@@ -8,9 +8,8 @@ import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.world.systems.Base_Penelope;
-import data.scripts.world.systems.DME_Kostroma;
-import data.scripts.world.systems.DME_Nikolaev;
 import data.scripts.world.systems.HS_Neue_Jangala;
+import data.scripts.world.systems.HS_Phia;
 import java.util.Random;
 
 /**
@@ -19,9 +18,18 @@ import java.util.Random;
  */
 public class HyperionGen implements SectorGeneratorPlugin {
     
+    // Roll the dice
+    private double rand() {
+        Random rand = new Random();
+        final double max = 1.0;
+        final double min = 0.0;
+        return min + rand.nextDouble() * (max - min);
+    }
+    
     public static void initFactionRelationships(SectorAPI sector) {
+        boolean hasDME = Global.getSettings().getModManager().isModEnabled("istl_dam");
         
-        FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist");
+        FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist"); 
         FactionAPI hegemony = sector.getFaction(Factions.HEGEMONY);
         FactionAPI tritachyon = sector.getFaction(Factions.TRITACHYON);
         FactionAPI pirates = sector.getFaction(Factions.PIRATES);
@@ -48,10 +56,10 @@ public class HyperionGen implements SectorGeneratorPlugin {
         hyperion.setRelationship(neutral.getId(), RepLevel.NEUTRAL);
         
         //Custom factions
-        hyperion.setRelationship("dassault_mikoyan", RepLevel.FAVORABLE);
-        hyperion.setRelationship("6eme_bureau", RepLevel.NEUTRAL);
+        hyperion.setRelationship("dassault_mikoyan", RepLevel.INHOSPITABLE);
+        hyperion.setRelationship("6eme_bureau", RepLevel.HOSTILE);
         hyperion.setRelationship("the_deserter", RepLevel.HOSTILE);
-        hyperion.setRelationship("blade_breakers", RepLevel.HOSTILE);
+        hyperion.setRelationship("blade_breakers", RepLevel.FRIENDLY);
         hyperion.setRelationship("shadow_industry", RepLevel.HOSTILE);
         hyperion.setRelationship("blackrock_driveyards", RepLevel.INHOSPITABLE);
         hyperion.setRelationship("exigency", RepLevel.HOSTILE);
@@ -80,35 +88,11 @@ public class HyperionGen implements SectorGeneratorPlugin {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         initFactionRelationships(sector);
         new HS_Neue_Jangala().generate(sector); // Neue Jangala
+        new HS_Phia().generate(sector); // Phia-Kria, test
         
         // Adds Penelope Star System under the Hyperion Confederacy (Probability of 75%)
-        if(rand() <= 0.75) {
+        if(rand() <= 0.6) {
             new Base_Penelope().generate(sector); // Penelope's Star
         }
-        
-        // Adds (Dassault-Mikoyan star systems) Marie-Galante and/or Odessa under the Hyperion Confederacy
-        // Probability of 25%
-        boolean hasDME = Global.getSettings().getModManager().isModEnabled("istl_dam");
-        double rand = rand();
-        if(hasDME) {
-            if(rand <= 0.25) {
-                new DME_Kostroma().generate(sector); // Marie-Galante
-                new DME_Nikolaev().generate(sector); // Odessa
-            } else if(rand > 0.25 && rand <= 0.5) {
-                new DME_Kostroma().generate(sector); // Marie-Galante
-            } else if(rand > 0.5 && rand <= 0.75) {
-                new DME_Nikolaev().generate(sector); // Odessa
-            } else {
-                
-            }
-        }
-    }
-    
-    // Roll the dice
-    private double rand() {
-        Random rand = new Random();
-        final double max = 1.0;
-        final double min = 0.0;
-        return ((min + (max - min)) * rand.nextDouble());
     }
 }

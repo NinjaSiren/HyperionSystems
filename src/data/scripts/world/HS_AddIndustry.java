@@ -20,7 +20,7 @@ public class HS_AddIndustry {
         Random rand = new Random();
         final double max = 1.0;
         final double min = 0.0;
-        return ((min + (max - min)) * rand.nextDouble());
+        return min + rand.nextDouble() * (max - min);
     }
     
     public HS_AddIndustry(PlanetAPI planet, MarketAPI market) {
