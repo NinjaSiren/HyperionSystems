@@ -11,7 +11,7 @@ import java.util.Random;
  * @author NinjaSiren
  */
 public class HS_PlanetCondition {
-
+  
     // Roll the dice
     private double rand2() {
         Random rand = new Random();
@@ -2830,7 +2830,7 @@ public class HS_PlanetCondition {
                 }
             }    
         }     
-        
+
         // Temperature
         for(int counter_2 = 0; counter_2 < star_count; counter_2++) {
             if(!planet[counter_2].getMarket().hasCondition(Conditions.VERY_HOT) ||

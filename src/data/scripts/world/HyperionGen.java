@@ -1,6 +1,5 @@
 package data.scripts.world;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.RepLevel;
 import com.fs.starfarer.api.campaign.SectorAPI;
@@ -81,6 +80,7 @@ public class HyperionGen implements SectorGeneratorPlugin {
         hyperion.setRelationship("crystanite", RepLevel.HOSTILE);
         hyperion.setRelationship("sad", RepLevel.HOSTILE);
         hyperion.setRelationship("new_galactic_order", RepLevel.VENGEFUL);
+        dme_pirates.setRelationship(hyperion.getId(), RepLevel.FRIENDLY);
     }
     
     @Override

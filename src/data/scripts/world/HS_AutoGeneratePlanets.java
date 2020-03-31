@@ -5,7 +5,6 @@
  */
 package data.scripts.world;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -35,6 +34,7 @@ public class HS_AutoGeneratePlanets {
         int minOA = 0;
         int maxOA = 360;
         return minOA + rand.nextInt(maxOA - minOA + 1);
+
     }
     
     // Autogenerates random planets

@@ -100,7 +100,7 @@ public class HS_PlanetType {
         
         // Checks if Unknown Skies is enabled
         boolean isUS = Global.getSettings().getModManager().isModEnabled("US");
-        
+
         float[] habitableZoneMin = new float[star_count];
         float[] habitableZoneMax = new float[star_count];
         float[] habitableZoneMiddleMin = new float[star_count];
@@ -472,6 +472,7 @@ public class HS_PlanetType {
                     }
                     // Unknown Skies planet types
                     else {             
+
                         if(rand() <= 0.1) return new Planet().US_AZURE;
                         else if(rand() > 0.1 && rand() <= 0.2) return new Planet().US_ARTIFICIAL;
                         else if(rand() > 0.2 && rand() <= 0.3) return new Planet().US_BURNT;
