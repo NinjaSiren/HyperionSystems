@@ -5,7 +5,6 @@
  */
 package data.scripts.world;
 
-import com.fs.starfarer.api.campaign.PlanetAPI;
 import java.util.Random;
 
 /**
@@ -20,36 +19,10 @@ public class HS_PlanetSize {
         return min + rand.nextInt(max - min + 1);
     }
     
-        // Roll the dice
-    private double rand2() {
-        Random rand = new Random();
-        final double max = 1.0;
-        final double min = 0.0;
-        return min + rand.nextDouble() * (max - min);
-    }
-    
     // Sets the planet type depending on the distance of the planet from its parent star
     // And to what type of star it is
     public int planetSize(String planetType, PlanetAPI[] star, int star_count, float orbit_radius,
             PlanetAPI[] planet, int planetNumber) {
-
-        float[] habitableZoneMin = new float[star_count];
-        float[] habitableZoneMax = new float[star_count];
-        float[] habitableZoneMiddleMin = new float[star_count];
-        float[] habitableZoneMiddleMax = new float[star_count];
-        int counter = 0;
-        do {
-            if(counter < 0 || counter >= star_count) break;
-            else {
-                habitableZoneMin[counter] = starHabitableMin(star[counter]);
-                habitableZoneMax[counter] = starHabitableMin(star[counter]) * 1.25f;
-                habitableZoneMiddleMin[counter] = ((starHabitableMin(star[counter]) - 
-                        starHabitableMin(star[counter])) / 4) + habitableZoneMin[counter]; 
-                habitableZoneMiddleMax[counter] =  starHabitableMin(star[counter]) - 
-                        ((starHabitableMin(star[counter]) - starHabitableMin(star[counter])) / 4);
-                counter++;
-            }
-        } while(counter < star_count + 1);
         
         // Gas Giants
         if(planetType.equals(new Planet().GAS_GIANT) || 
@@ -145,78 +118,4 @@ public class HS_PlanetSize {
             return rand(70, 225);
         }
     }
-    
-    // Gets what star type and returns habitable zone min orbit
-    private float starHabitableMin(PlanetAPI star) {
-        float starRadius = star.getRadius();
-        float starCoronaRadius = star.getSpec().getCoronaSize();
-        
-        // Yellow Main Sequence
-        if(star.getTypeId().equals(new Star().YELLOW) ||
-                star.getTypeId().equals(new Star().YELLOW_US)) {
-            return ((starRadius * 1.725f) + (starCoronaRadius / 2));
-            
-        // Red Giant
-        } else if(star.getTypeId().equals(new Star().RED_GIANT)) {
-                return ((starRadius * 2.3f) + (starCoronaRadius / 2));
-            
-        // Red Supergiant
-        } else if(star.getTypeId().equals(new Star().RED_SUPERGIANT)) {
-                return ((starRadius * 4.6f) + (starCoronaRadius / 2));
-                
-        // Red Dwarf
-        } else if(star.getTypeId().equals(new Star().RED_DWARF) ||
-                star.getTypeId().equals(new Star().RED_DWARF_US)) {
-            return ((starRadius * 1.05f) + (starCoronaRadius / 2));
-        
-        // Orange Main Sequence
-        } else if(star.getTypeId().equals(new Star().ORANGE)) {
-            return ((starRadius * 1.575f) + (starCoronaRadius / 2));
-            
-        // Orange Giant
-        } else if(star.getTypeId().equals(new Star().ORANGE_GIANT) ||
-                star.getTypeId().equals(new Star().ORANGE_GIANT_US)) {
-            return ((starRadius * 3.15f) + (starCoronaRadius / 2));
-
-        // Blue Giant
-        } else if(star.getTypeId().equals(new Star().BLUE_GIANT) ||
-                star.getTypeId().equals(new Star().BLUE_GIANT_US)) {
-            return ((starRadius * 5.175f) + (starCoronaRadius / 2));
-            
-        // Blue Supergiant
-        } else if(star.getTypeId().equals(new Star().BLUE_SUPERGIANT)) {
-            return ((starRadius * 10.35f) + (starCoronaRadius / 2));
-        
-        // White Dwarf
-        } else if(star.getTypeId().equals(new Star().WHITE_DWARF) ||
-                star.getTypeId().equals(new Star().WHITE_DWARF_US)) {
-            return ((starRadius * 1.725f) + (starCoronaRadius / 2));
-        
-        // Brown Dwarf
-        } else if(star.getTypeId().equals(new Star().BROWN_DWARF) ||
-                star.getTypeId().equals(new Star().BROWN_DWARF_US)) {
-            return ((starRadius * 1.015f) + (starCoronaRadius / 2));
-        
-        // Neutron Star
-        } else if(star.getTypeId().equals(new Star().NEUTRON_STAR)) {
-            return starRadius * 10;
-        
-        // Black Hole
-        } else if(star.getTypeId().equals(new Star().BLACK_HOLE)) {
-            return 0;
-            
-        // Nebula Young
-        } else if(star.getTypeId().equals(new Star().NEBULA_YOUNG)) {
-                return 0;
-                
-        // Nebula Average
-        } else if(star.getTypeId().equals(new Star().NEBULA_AVERAGE)) {
-            return 0;
-
-        // Nebula Old
-        } else if(star.getTypeId().equals(new Star().NEBULA_OLD)) {
-            return 0;
-        }
-        return 0;
-    } 
 }

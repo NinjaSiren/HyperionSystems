@@ -26,9 +26,9 @@ public class HyperionGen implements SectorGeneratorPlugin {
     }
     
     public static void initFactionRelationships(SectorAPI sector) {
+        boolean hasDME = Global.getSettings().getModManager().isModEnabled("istl_dam");
         
-        FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist");
-        FactionAPI dme_pirates = sector.getFaction("blade_breakers");
+        FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist"); 
         FactionAPI hegemony = sector.getFaction(Factions.HEGEMONY);
         FactionAPI tritachyon = sector.getFaction(Factions.TRITACHYON);
         FactionAPI pirates = sector.getFaction(Factions.PIRATES);

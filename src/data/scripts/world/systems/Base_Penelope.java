@@ -5,7 +5,6 @@
  */
 package data.scripts.world.systems;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
@@ -28,7 +27,7 @@ import java.util.Random;
  *
  * @author NinjaSiren
  */
-public class Base_Penelope extends Penelope {
+public class Base_Penelope {
     
     // Roll the dice for planet tariff
     private float tariff() {
@@ -38,9 +37,8 @@ public class Base_Penelope extends Penelope {
         return min + rand.nextFloat() * (max - min);
     }
     
-    @Override
     public void generate(SectorAPI sector) {
-        StarSystemAPI system = Global.getSector().getStarSystem("Penelope's Star");
+        StarSystemAPI system = sector.getStarSystem("Penelope's Star");
         
         //Ithaca
         PlanetAPI ithaca = system.getPlanets().get(2);

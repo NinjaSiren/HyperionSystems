@@ -10,9 +10,6 @@ import java.util.Random;
  */
 public class HS_PlanetType {
     
-    // Checks if Unknown Skies is enabled
-    private boolean isUS = Global.getSettings().getModManager().isModEnabled("US");
-    
     // Roll the dice
     private double rand() {
         Random rand = new Random();
@@ -101,6 +98,9 @@ public class HS_PlanetType {
             float orbit_radius) {
         int counter = 0;
         
+        // Checks if Unknown Skies is enabled
+        boolean isUS = Global.getSettings().getModManager().isModEnabled("US");
+
         float[] habitableZoneMin = new float[star_count];
         float[] habitableZoneMax = new float[star_count];
         float[] habitableZoneMiddleMin = new float[star_count];
@@ -472,16 +472,17 @@ public class HS_PlanetType {
                     }
                     // Unknown Skies planet types
                     else {             
-                            if(rand() <= 0.1) return new Planet().US_AZURE;
-                            else if(rand() > 0.1 && rand() <= 0.2) return new Planet().US_ARTIFICIAL;
-                            else if(rand() > 0.2 && rand() <= 0.3) return new Planet().US_BURNT;
-                            else if(rand() > 0.3 && rand() <= 0.4) return new Planet().US_DUST;
-                            else if(rand() > 0.4 && rand() <= 0.5) return new Planet().US_BARREN_A;
-                            else if(rand() > 0.5 && rand() <= 0.6) return new Planet().US_BARREN_B;
-                            else if(rand() > 0.6 && rand() <= 0.7) return new Planet().US_BARREN_C;
-                            else if(rand() > 0.7 && rand() <= 0.8) return new Planet().US_BARREN_D;
-                            else if(rand() > 0.8 && rand() <= 0.9) return new Planet().US_BARREN_E;
-                            else return new Planet().US_BARREN_F;
+
+                        if(rand() <= 0.1) return new Planet().US_AZURE;
+                        else if(rand() > 0.1 && rand() <= 0.2) return new Planet().US_ARTIFICIAL;
+                        else if(rand() > 0.2 && rand() <= 0.3) return new Planet().US_BURNT;
+                        else if(rand() > 0.3 && rand() <= 0.4) return new Planet().US_DUST;
+                        else if(rand() > 0.4 && rand() <= 0.5) return new Planet().US_BARREN_A;
+                        else if(rand() > 0.5 && rand() <= 0.6) return new Planet().US_BARREN_B;
+                        else if(rand() > 0.6 && rand() <= 0.7) return new Planet().US_BARREN_C;
+                        else if(rand() > 0.7 && rand() <= 0.8) return new Planet().US_BARREN_D;
+                        else if(rand() > 0.8 && rand() <= 0.9) return new Planet().US_BARREN_E;
+                        else return new Planet().US_BARREN_F;
                     }
                 }
 
