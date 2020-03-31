@@ -1,0 +1,20 @@
+{
+    "hs_barycenter": {
+        "defaultName":"Barycenter",
+        "defaultRadius":0,
+        "icon":"",
+        "iconWidth":0, 
+        "iconHeight":0,
+        "sprite":"",
+        "spriteWidth":0,
+        "spriteHeight":0,
+        "renderShadow":false,
+        "useLightColor":false,
+        "showInCampaign":false,
+        "showIconOnMap":false,
+        "showNameOnMap":false,
+        "interactable":false,
+        "tags":["orbital_junk"],
+        "layers":[JUMP_POINTS],
+    },
+}

@@ -30,12 +30,12 @@ import java.util.Random;
  */
 public class Base_Penelope extends Penelope {
     
-    // Roll the dice
+    // Roll the dice for planet tariff
     private float tariff() {
         Random rand = new Random();
         final float max = 0.12f;
         final float min = 0.0f;
-        return ((min + (max - min)) * rand.nextFloat());
+        return min + rand.nextFloat() * (max - min);
     }
     
     @Override

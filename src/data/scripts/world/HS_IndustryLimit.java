@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONArray;
@@ -18,14 +19,14 @@ import org.json.JSONException;
  */
 public final class HS_IndustryLimit {
     private JSONArray settings;
-    private boolean hasBC =  Global.getSettings().getModManager().isModEnabled("timid_admins");
     
     public HS_IndustryLimit() {
         try {
             // Gets the data from the settings.json
-            settings =  Global.getSettings().getJSONArray("maxIndustries");
-        } catch (JSONException ex) {
-            Logger.getLogger(HS_IndustryLimit.class.getName()).log(Level.SEVERE, null, ex);
+            settings =  Global.getSettings().loadJSON("data/config/settings.json")
+                    .getJSONArray("maxIndustries");
+        } catch (IOException | JSONException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -33,10 +34,10 @@ public final class HS_IndustryLimit {
     public int industryLimit(MarketAPI market, PlanetAPI planet) {
         int iLimit;
         int marketSize = market.getSize();
+        boolean isBC = Global.getSettings().getModManager().isModEnabled("timid_admins");
         
         try {
-            // Vanilla settings.json
-            if(!hasBC) {
+            if(!isBC) {
                 switch (marketSize) {
                     case 1:
                         iLimit = settings.getInt(0) - mHasIndustry(market, planet);
@@ -69,43 +70,41 @@ public final class HS_IndustryLimit {
                         iLimit = settings.getInt(9) - mHasIndustry(market, planet);
                         return iLimit;
                 }
-
-            // Better Colonies
             } else {
                 switch (marketSize) {
                     case 1:
-                        iLimit = 1 - mHasIndustry(market, planet);   
+                        iLimit = 1 - mHasIndustry(market, planet);
                         return iLimit;
                     case 2:
-                        iLimit = 1 - mHasIndustry(market, planet); 
+                        iLimit = 1 - mHasIndustry(market, planet);
                         return iLimit;
                     case 3:
                         iLimit = 1 - mHasIndustry(market, planet);
                         return iLimit;
                     case 4:
-                        iLimit = 2 - mHasIndustry(market, planet);  
+                        iLimit = 2 - mHasIndustry(market, planet);
                         return iLimit;
                     case 5:
-                        iLimit = 3 - mHasIndustry(market, planet); 
+                        iLimit = 3 - mHasIndustry(market, planet);
                         return iLimit;
                     case 6:
-                        iLimit = 3 - mHasIndustry(market, planet); 
+                        iLimit = 3 - mHasIndustry(market, planet);
                         return iLimit;
                     case 7:
-                        iLimit = 4 - mHasIndustry(market, planet); 
-                        return iLimit;
-                    case 8:
                         iLimit = 4 - mHasIndustry(market, planet);
                         return iLimit;
+                    case 8:
+                        iLimit = 4 - mHasIndustry(market, planet); 
+                        return iLimit;
                     case 9:
-                        iLimit = 5 - mHasIndustry(market, planet);
+                        iLimit = 5 - mHasIndustry(market, planet); 
                         return iLimit;
                     case 10:
                         iLimit = 5 - mHasIndustry(market, planet);
                         return iLimit;
                 }
             }
-        } catch (JSONException ex) {
+        } catch (NullPointerException | JSONException ex) {
             Logger.getLogger(HS_IndustryLimit.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
