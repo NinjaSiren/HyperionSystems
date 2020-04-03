@@ -7,7 +7,10 @@ import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
+import com.fs.starfarer.api.util.Misc;
 import data.scripts.world.systems.Base_Penelope;
+import data.scripts.world.systems.HS_Diamant;
+import data.scripts.world.systems.HS_Klat;
 import data.scripts.world.systems.HS_Neue_Jangala;
 import data.scripts.world.systems.HS_Phia;
 import java.util.Random;
@@ -89,10 +92,20 @@ public class HyperionGen implements SectorGeneratorPlugin {
         initFactionRelationships(sector);
         new HS_Neue_Jangala().generate(sector); // Neue Jangala
         new HS_Phia().generate(sector); // Phia-Kria, test
+        new HS_Diamant().generate(sector); // Diamant, test
+        new HS_Klat().generate(sector); // Klat-Perseus, test
         
         // Adds Penelope Star System under the Hyperion Confederacy (Probability of 75%)
         if(rand() <= 0.6) {
             new Base_Penelope().generate(sector); // Penelope's Star
         }
+        
+        // All planets of ths mod's star systems are known
+        Misc.setAllPlanetsKnown("Phia-Kria");
+        Misc.setAllPlanetsKnown("Diamant");
+        Misc.setAllPlanetsKnown("Klat-Perseus");
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Phia-Kria"));
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Diamant"));
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Klat-Perseus"));
     }
 }

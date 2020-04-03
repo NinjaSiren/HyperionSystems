@@ -12,8 +12,9 @@ import java.util.ArrayList;
  */
 public class HS_AddMarketplace{
 
-    public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, ArrayList<SectorEntityToken> connectedEntities, String name, 
-                                    int size, ArrayList<String> marketConditions, ArrayList<String> Industries, ArrayList<String> submarkets, float tariff) {  
+    public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, 
+            ArrayList<SectorEntityToken> connectedEntities, String name, int size, ArrayList<String> marketConditions,
+            ArrayList<String> Industries, ArrayList<String> submarkets, float tariff) {  
         EconomyAPI globalEconomy = Global.getSector().getEconomy();  
         String planetID = primaryEntity.getId();  
         String marketID = planetID;

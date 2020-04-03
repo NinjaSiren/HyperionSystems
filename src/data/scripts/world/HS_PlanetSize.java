@@ -114,7 +114,7 @@ public class HS_PlanetSize {
             
         // All Habitables
         } else {
-            return rand(70, 225);
+            return rand(75, 135);
         }
     }
 }

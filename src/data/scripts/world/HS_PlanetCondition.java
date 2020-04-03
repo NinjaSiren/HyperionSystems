@@ -20,6 +20,154 @@ public class HS_PlanetCondition {
         return min + rand.nextDouble() * (max - min);
     }
     
+    // Gets what star type and returns habitable zone min orbit
+    private float starHabitableMin(PlanetAPI star) {
+        float starRadius = star.getRadius();
+        float starCoronaRadius = star.getSpec().getCoronaSize();
+        
+        // Yellow Main Sequence
+        if(star.getTypeId().equals(new Star().YELLOW) ||
+                star.getTypeId().equals(new Star().YELLOW_US)) {
+            return ((starRadius * 4.5f) + (starCoronaRadius / 3.5f));
+            
+        // Red Giant
+        } else if(star.getTypeId().equals(new Star().RED_GIANT)) {
+                return ((starRadius * 5.25f) + (starCoronaRadius / 4.25f));
+            
+        // Red Supergiant
+        } else if(star.getTypeId().equals(new Star().RED_SUPERGIANT)) {
+                return ((starRadius * 5.75f) + (starCoronaRadius / 4.75f));
+                
+        // Red Dwarf
+        } else if(star.getTypeId().equals(new Star().RED_DWARF) ||
+                star.getTypeId().equals(new Star().RED_DWARF_US)) {
+            return ((starRadius * 4.25f) + (starCoronaRadius / 3.25f));
+        
+        // Orange Main Sequence
+        } else if(star.getTypeId().equals(new Star().ORANGE)) {
+            return ((starRadius * 4.75f) + (starCoronaRadius / 3.75f));
+            
+        // Orange Giant
+        } else if(star.getTypeId().equals(new Star().ORANGE_GIANT) ||
+                star.getTypeId().equals(new Star().ORANGE_GIANT_US)) {
+            return ((starRadius * 5f) + (starCoronaRadius / 4));
+
+        // Blue Giant
+        } else if(star.getTypeId().equals(new Star().BLUE_GIANT) ||
+                star.getTypeId().equals(new Star().BLUE_GIANT_US)) {
+            return ((starRadius * 5.5f) + (starCoronaRadius / 4.5f));
+            
+        // Blue Supergiant
+        } else if(star.getTypeId().equals(new Star().BLUE_SUPERGIANT)) {
+            return ((starRadius * 5) + (starCoronaRadius / 5));
+        
+        // White Dwarf
+        } else if(star.getTypeId().equals(new Star().WHITE_DWARF) ||
+                star.getTypeId().equals(new Star().WHITE_DWARF_US)) {
+            return ((starRadius * 4.15f) + (starCoronaRadius / 3.15f));
+        
+        // Brown Dwarf
+        } else if(star.getTypeId().equals(new Star().BROWN_DWARF) ||
+                star.getTypeId().equals(new Star().BROWN_DWARF_US)) {
+            return ((starRadius * 2.15f) + (starCoronaRadius / 2));
+        
+        // Neutron Star
+        } else if(star.getTypeId().equals(new Star().NEUTRON_STAR)) {
+            return starRadius * 10;
+        
+        // Black Hole
+        } else if(star.getTypeId().equals(new Star().BLACK_HOLE)) {
+            return 0;
+            
+        // Nebula Young
+        } else if(star.getTypeId().equals(new Star().NEBULA_YOUNG)) {
+                return 0;
+                
+        // Nebula Average
+        } else if(star.getTypeId().equals(new Star().NEBULA_AVERAGE)) {
+            return 0;
+
+        // Nebula Old
+        } else if(star.getTypeId().equals(new Star().NEBULA_OLD)) {
+            return 0;
+        }
+        return 0;
+    } 
+    
+    // Gets what star type and returns habitable zone min orbit
+    private float starHabitableMax(PlanetAPI star) {
+        float starRadius = star.getRadius();
+        float starCoronaRadius = star.getSpec().getCoronaSize();
+        
+        // Yellow Main Sequence
+        if(star.getTypeId().equals(new Star().YELLOW) ||
+                star.getTypeId().equals(new Star().YELLOW_US)) {
+            return ((starRadius * 3.5f) + (starCoronaRadius / 3.25f)) * 1.715f;
+            
+        // Red Giant
+        } else if(star.getTypeId().equals(new Star().RED_GIANT)) {
+                return ((starRadius * 4.25f) + (starCoronaRadius / 4.25f)) * 1.925f;
+            
+        // Red Supergiant
+        } else if(star.getTypeId().equals(new Star().RED_SUPERGIANT)) {
+                return ((starRadius * 4.75f) + (starCoronaRadius / 4.75f)) * 2.25f;
+                
+        // Red Dwarf
+        } else if(star.getTypeId().equals(new Star().RED_DWARF) ||
+                star.getTypeId().equals(new Star().RED_DWARF_US)) {
+            return ((starRadius * 3.25f) + (starCoronaRadius / 3.5f)) * 1.65f;
+        
+        // Orange Main Sequence
+        } else if(star.getTypeId().equals(new Star().ORANGE)) {
+            return ((starRadius * 3.75f) + (starCoronaRadius / 3.5f)) * 1.775f;
+            
+        // Orange Giant
+        } else if(star.getTypeId().equals(new Star().ORANGE_GIANT) ||
+                star.getTypeId().equals(new Star().ORANGE_GIANT_US)) {
+            return ((starRadius * 4) + (starCoronaRadius / 3.75f)) * 1.805f;
+
+        // Blue Giant
+        } else if(star.getTypeId().equals(new Star().BLUE_GIANT) ||
+                star.getTypeId().equals(new Star().BLUE_GIANT_US)) {
+            return ((starRadius * 4.5f) + (starCoronaRadius / 4.5f)) * 2.15f;
+            
+        // Blue Supergiant
+        } else if(star.getTypeId().equals(new Star().BLUE_SUPERGIANT)) {
+            return ((starRadius * 5f) + (starCoronaRadius / 5)) * 2.5f;
+        
+        // White Dwarf
+        } else if(star.getTypeId().equals(new Star().WHITE_DWARF) ||
+                star.getTypeId().equals(new Star().WHITE_DWARF_US)) {
+            return ((starRadius * 3.15f) + (starCoronaRadius / 3.15f)) * 1.55f;
+        
+        // Brown Dwarf
+        } else if(star.getTypeId().equals(new Star().BROWN_DWARF) ||
+                star.getTypeId().equals(new Star().BROWN_DWARF_US)) {
+            return ((starRadius * 2.15f) + (starCoronaRadius / 2)) * 1.35f;
+        
+        // Neutron Star
+        } else if(star.getTypeId().equals(new Star().NEUTRON_STAR)) {
+            return starRadius * 20;
+        
+        // Black Hole
+        } else if(star.getTypeId().equals(new Star().BLACK_HOLE)) {
+            return 0;
+            
+        // Nebula Young
+        } else if(star.getTypeId().equals(new Star().NEBULA_YOUNG)) {
+                return 0;   
+                
+        // Nebula Average
+        } else if(star.getTypeId().equals(new Star().NEBULA_AVERAGE)) {
+            return 0;
+
+        // Nebula Old
+        } else if(star.getTypeId().equals(new Star().NEBULA_OLD)) {
+            return 0;
+        }
+        return 0;
+    } 
+    
     // Sets the planet conditions, Unknown Skies Updated
     public HS_PlanetCondition(String planetType, PlanetAPI star, PlanetAPI[] stars, int star_count, 
             float orbit_radius, PlanetAPI[] planet, int planetNumber, int planetSize) {
@@ -35,11 +183,13 @@ public class HS_PlanetCondition {
             if(counter < 0 || counter >= star_count) break;
             else {
                 habitableZoneMin[counter] = starHabitableMin(stars[counter]);
-                habitableZoneMax[counter] = starHabitableMin(stars[counter]) * 1.25f;
-                habitableZoneMiddleMin[counter] = ((starHabitableMin(stars[counter]) - 
-                        starHabitableMin(stars[counter])) / 4) + habitableZoneMin[counter]; 
-                habitableZoneMiddleMax[counter] =  starHabitableMin(stars[counter]) - 
-                        ((starHabitableMin(stars[counter]) - starHabitableMin(stars[counter])) / 4);
+                habitableZoneMax[counter] = starHabitableMax(stars[counter]);
+                habitableZoneMiddleMin[counter] = 
+                        starHabitableMax(stars[counter]) - 
+                        ((starHabitableMax(stars[counter]) + starHabitableMin(stars[counter])) / 4);
+                habitableZoneMiddleMax[counter] = 
+                        ((starHabitableMax(stars[counter]) + starHabitableMin(stars[counter])) / 4) + 
+                        starHabitableMin(stars[counter]);
                 counter++;
             }
         } while(counter < star_count + 1);
@@ -58,8 +208,25 @@ public class HS_PlanetCondition {
                 planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
             }
         } else {
-            if(orbit_radius > habitableZoneMax[0] * 1.25) {
-                planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
+            for(counter = 0; counter < star_count; counter++) {
+                if(counter < 0 || counter >= star_count) break;
+                else if(orbit_radius > habitableZoneMax[counter] * 1.5) {
+                    if(rand2() <= 0.1) {
+                        planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
+                    }
+                } else if(orbit_radius > habitableZoneMax[counter] * 2) {
+                    if(rand2() <= 0.2) {
+                        planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
+                    }
+                } else if(orbit_radius > habitableZoneMax[counter] * 2.5) {
+                    if(rand2() <= 0.4) {
+                        planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
+                    }
+                } else if(orbit_radius > habitableZoneMax[counter] * 3) {
+                    if(rand2() <= 0.6) {
+                        planet[planetNumber].getMarket().addCondition(Conditions.POOR_LIGHT);
+                    }
+                }
             }
         }
         
@@ -2351,6 +2518,19 @@ public class HS_PlanetCondition {
                 planetType.equals(new Planet().US_STORM) ||
                 planetType.equals(new Planet().US_TERRAN)) {
             
+            // Habitable
+            planet[planetNumber].getMarket().addCondition(Conditions.HABITABLE);
+            
+            // Gravity
+            if(!planet[planetNumber].getMarket().hasCondition(Conditions.HIGH_GRAVITY) ||
+                    !planet[planetNumber].getMarket().hasCondition(Conditions.LOW_GRAVITY)) {
+                if(planetSize > 130) {
+                    planet[planetNumber].getMarket().addCondition(Conditions.HIGH_GRAVITY);
+                } else if (planetSize < 80) {
+                    planet[planetNumber].getMarket().addCondition(Conditions.LOW_GRAVITY);
+                }
+            }
+            
             // Ruins
             if(rand2() <= 0.125 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.RUINS_EXTENSIVE) ||
@@ -2384,7 +2564,7 @@ public class HS_PlanetCondition {
                                 new Unknown_Conditions().OLD_MILITARY_BASE);
                     }
                     
-                    if(rand2() <= 0.075 &&
+                    if(rand2() <= 0.095 &&
                             !planet[planetNumber].getMarket().hasCondition(
                                     new Unknown_Conditions().RELIGIOUS_LANDMARK))  {
                         planet[planetNumber].getMarket().addCondition(
@@ -2404,16 +2584,6 @@ public class HS_PlanetCondition {
                         planet[planetNumber].getMarket().addCondition(
                                 new Unknown_Conditions().UNDERGROUND_NETWORK);
                     }
-                }
-            }
-            
-            // Gravity
-            if(!planet[planetNumber].getMarket().hasCondition(Conditions.HIGH_GRAVITY) ||
-                    !planet[planetNumber].getMarket().hasCondition(Conditions.LOW_GRAVITY)) {
-                if(planetSize > 130) {
-                    planet[planetNumber].getMarket().addCondition(Conditions.HIGH_GRAVITY);
-                } else if (planetSize < 80) {
-                    planet[planetNumber].getMarket().addCondition(Conditions.LOW_GRAVITY);
                 }
             }
             
@@ -2494,16 +2664,16 @@ public class HS_PlanetCondition {
             }
             
             // Tectonic Activity
-            if(rand2() <= 0.1 &&
+            if(rand2() <= 0.05 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.TECTONIC_ACTIVITY)) {
                 planet[planetNumber].getMarket().addCondition(Conditions.TECTONIC_ACTIVITY);
-            } else if(rand2() > 0.9 &&
+            } else if(rand2() > 0.95 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY)) {
                 planet[planetNumber].getMarket().addCondition(Conditions.EXTREME_TECTONIC_ACTIVITY);
             }      
             
             // Weather
-            if(rand2() <= 0.75 &&
+            if(rand2() <= 0.14 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.EXTREME_WEATHER) &&
                     planetType.equals(new Planet().US_STORM) ||
                     planetType.equals(new Planet().US_MAGNETIC)) {
@@ -2520,11 +2690,11 @@ public class HS_PlanetCondition {
                     }
                 }
                 planet[planetNumber].getMarket().addCondition(Conditions.EXTREME_WEATHER);
-            } else if(rand2() <= 0.3 &&
+            } else if(rand2() <= 0.13 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.EXTREME_WEATHER) &&
                     planetType.equals(new Planet().US_AURIC_CLOUDY)) {
                 planet[planetNumber].getMarket().addCondition(Conditions.EXTREME_WEATHER);
-            } else if(rand2() <= 0.2 &&
+            } else if(rand2() <= 0.12 &&
                     !planet[planetNumber].getMarket().hasCondition(Conditions.EXTREME_WEATHER) &&
                     planetType.equals(new Planet().US_AURIC) ||
                     planetType.equals(new Planet().US_ALKALI) ||
@@ -2833,22 +3003,42 @@ public class HS_PlanetCondition {
         
         // Temperature
         for(int counter_2 = 0; counter_2 < star_count; counter_2++) {
-            if(!planet[counter_2].getMarket().hasCondition(Conditions.VERY_HOT) ||
-                    !planet[counter_2].getMarket().hasCondition(Conditions.HOT) ||
-                    !planet[counter_2].getMarket().hasCondition(Conditions.COLD) ||
-                    !planet[counter_2].getMarket().hasCondition(Conditions.VERY_COLD) ||
-                    !planet[counter_2].getMarket().hasCondition(Conditions.MILD_CLIMATE)) {
+            if(!planet[planetNumber].getMarket().hasCondition(Conditions.VERY_HOT) ||
+                    !planet[planetNumber].getMarket().hasCondition(Conditions.HOT) ||
+                    !planet[planetNumber].getMarket().hasCondition(Conditions.COLD) ||
+                    !planet[planetNumber].getMarket().hasCondition(Conditions.VERY_COLD) ||
+                    !planet[planetNumber].getMarket().hasCondition(Conditions.MILD_CLIMATE)) {
                     if(counter_2 < 0 || counter_2 >= star_count) break;
-                    else if(planet[counter_2].getCircularOrbitRadius() >= habitableZoneMin[counter_2] &&
-                            planet[counter_2].getCircularOrbitRadius() < habitableZoneMiddleMin[counter_2]) {
+                    else if(planet[planetNumber].getCircularOrbitRadius() >= habitableZoneMin[counter_2] &&
+                            planet[planetNumber].getCircularOrbitRadius() < habitableZoneMiddleMin[counter_2]) {
 
                         // Hot or Cold
-                        if(rand2() <= 0.4 &&
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            planet[counter_2].getMarket().addCondition(Conditions.HOT);
+                        if(!planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(planet[planetNumber].getMarket().hasCondition(Conditions.NO_ATMOSPHERE)) { 
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.THIN_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.DENSE_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                            } else if(planetType.equals(new Planet().GAS_GIANT) ||
+                                    planetType.equals(new Planet().ICE_GIANT) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_A) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_B)) {
+                                if(rand2() <= 0.95) {
+                                    planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                                }
+                            } else {
+                                if(rand2() <= 0.2) {
+                                    planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                                } else {
+                                    planet[planetNumber]. getMarket().addCondition(Conditions.HOT);
+                                }
+                            }
                         } else if(planetType.equals(new Planet().ARID) ||
                                 planetType.equals(new Planet().DESERT_A) ||
                                 planetType.equals(new Planet().DESERT_B) ||
@@ -2876,153 +3066,205 @@ public class HS_PlanetCondition {
                                 planetType.equals(new Planet().US_RED_WIND) ||
                                 planetType.equals(new Planet().US_STORM) ||
                                 planetType.equals(new Planet().US_TERRAN)) {
-                            planet[counter_2].getMarket().addCondition(Conditions.MILD_CLIMATE);
-                        } else if(planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            if(rand2() <= 0.5) {
-                                planet[counter_2].getMarket().addCondition(Conditions.VERY_HOT);
+                            if(rand2() <= 0.35) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.MILD_CLIMATE);
+                            }
+                        } else if(planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(rand2() <= 0.85) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
                             } else {
-                                planet[counter_2]. getMarket().addCondition(Conditions.HOT);
+                                planet[planetNumber]. getMarket().addCondition(Conditions.HOT);
                             }
                         }
-                    } else if(planet[counter_2].getCircularOrbitRadius() >= habitableZoneMiddleMin[counter_2] &&
-                            planet[counter_2].getCircularOrbitRadius() <= habitableZoneMiddleMax[counter_2]) {
+                    } else if(planet[planetNumber].getCircularOrbitRadius() >= habitableZoneMiddleMin[counter_2] &&
+                            planet[planetNumber].getCircularOrbitRadius() <= habitableZoneMiddleMax[counter_2]) {
 
                         // Hot or Cold
-                        if(!planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            planet[counter_2].getMarket().addCondition(Conditions.MILD_CLIMATE);
-                        } else if(planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            if(rand2() <= 0.5) {
-                                planet[counter_2].getMarket().addCondition(Conditions.VERY_HOT);
-                            } else {
-                                planet[counter_2]. getMarket().addCondition(Conditions.HOT);
+                        if(planetType.equals(new Planet().ARID) ||
+                                planetType.equals(new Planet().DESERT_A) ||
+                                planetType.equals(new Planet().DESERT_B) ||
+                                planetType.equals(new Planet().JUNGLE) ||
+                                planetType.equals(new Planet().OCEAN) ||
+                                planetType.equals(new Planet().TERRAN) ||
+                                planetType.equals(new Planet().TERRAN_ECCENTRIC) ||
+                                planetType.equals(new Planet().TUNDRA) ||
+                                planetType.equals(new Planet().US_ALKALI) ||
+                                planetType.equals(new Planet().US_ARID) ||
+                                planetType.equals(new Planet().US_ARID_LIFELESS) ||
+                                planetType.equals(new Planet().US_AURIC) ||
+                                planetType.equals(new Planet().US_AURIC_CLOUDY) ||
+                                planetType.equals(new Planet().US_CRIMSON) ||
+                                planetType.equals(new Planet().US_DESERT_A) ||
+                                planetType.equals(new Planet().US_DESERT_B) ||
+                                planetType.equals(new Planet().US_DESERT_C) ||
+                                planetType.equals(new Planet().US_JUNGLE) ||
+                                planetType.equals(new Planet().US_LIFELESS) ||
+                                planetType.equals(new Planet().US_MAGNETIC) ||
+                                planetType.equals(new Planet().US_METHANE) ||
+                                planetType.equals(new Planet().US_OCEAN_A) ||
+                                planetType.equals(new Planet().US_OCEAN_B) ||
+                                planetType.equals(new Planet().US_RED) ||
+                                planetType.equals(new Planet().US_RED_WIND) ||
+                                planetType.equals(new Planet().US_STORM) ||
+                                planetType.equals(new Planet().US_TERRAN)) {
+                            if(rand2() <= 0.7) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.MILD_CLIMATE);
                             }
-                        }
+                        } else if(planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(rand2() <= 0.85) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                            } else {
+                                planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                            }
+                        } else if(!planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(planet[planetNumber].getMarket().hasCondition(Conditions.NO_ATMOSPHERE)) { 
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.THIN_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.DENSE_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                            } else if(planetType.equals(new Planet().GAS_GIANT) ||
+                                    planetType.equals(new Planet().ICE_GIANT) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_A) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_B)) {
+                                if(rand2() <= 0.75) {
+                                    planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                                }
+                            } else {
+                                if(rand2() <= 0.2) {
+                                    planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                                } else {
+                                    planet[planetNumber]. getMarket().addCondition(Conditions.HOT);
+                                }
+                            }
                         
-                    } else if(planet[counter_2].getCircularOrbitRadius() > habitableZoneMiddleMax[counter_2] &&
-                            planet[counter_2].getCircularOrbitRadius() <= habitableZoneMax[counter_2]) {
+                    } else if(planet[planetNumber].getCircularOrbitRadius() > habitableZoneMiddleMax[counter_2] &&
+                            planet[planetNumber].getCircularOrbitRadius() <= habitableZoneMax[counter_2]) {
 
                         // Hot or Cold
-                        if(rand2() <= 0.33 &&
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            planet[counter_2].getMarket().addCondition(Conditions.COLD);
-                        } else if(rand2() > 0.33 && rand2() <= 0.66 &&
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                !planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            planet[counter_2].getMarket().addCondition(Conditions.MILD_CLIMATE);
-                        } else if(planet[counter_2].getTypeId().equals(new Planet().LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().LAVA_MINOR) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_LAVA) ||
-                                planet[counter_2].getTypeId().equals(new Planet().US_VOLCANIC)) {
-                            if(rand2() <= 0.5) {
-                                planet[counter_2].getMarket().addCondition(Conditions.VERY_HOT);
+                        if(!planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                !planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(planet[planetNumber].getMarket().hasCondition(Conditions.NO_ATMOSPHERE)) { 
+                                planet[planetNumber].getMarket().addCondition(Conditions.COLD);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.THIN_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.COLD);
+                            } else if(rand2() <= 0.4 && 
+                                    planet[planetNumber].getMarket().hasCondition(Conditions.DENSE_ATMOSPHERE)) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                            } else if(planetType.equals(new Planet().GAS_GIANT) ||
+                                    planetType.equals(new Planet().ICE_GIANT) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_A) ||
+                                    planetType.equals(new Planet().US_GAS_GIANT_B)) {
+                                if(rand2() <= 0.45) {
+                                    planet[planetNumber].getMarket().addCondition(Conditions.HOT);
+                                }
+                            }
+                        } else if(planetType.equals(new Planet().ARID) ||
+                                planetType.equals(new Planet().DESERT_A) ||
+                                planetType.equals(new Planet().DESERT_B) ||
+                                planetType.equals(new Planet().JUNGLE) ||
+                                planetType.equals(new Planet().OCEAN) ||
+                                planetType.equals(new Planet().TERRAN) ||
+                                planetType.equals(new Planet().TERRAN_ECCENTRIC) ||
+                                planetType.equals(new Planet().TUNDRA) ||
+                                planetType.equals(new Planet().US_ALKALI) ||
+                                planetType.equals(new Planet().US_ARID) ||
+                                planetType.equals(new Planet().US_ARID_LIFELESS) ||
+                                planetType.equals(new Planet().US_AURIC) ||
+                                planetType.equals(new Planet().US_AURIC_CLOUDY) ||
+                                planetType.equals(new Planet().US_CRIMSON) ||
+                                planetType.equals(new Planet().US_DESERT_A) ||
+                                planetType.equals(new Planet().US_DESERT_B) ||
+                                planetType.equals(new Planet().US_DESERT_C) ||
+                                planetType.equals(new Planet().US_JUNGLE) ||
+                                planetType.equals(new Planet().US_LIFELESS) ||
+                                planetType.equals(new Planet().US_MAGNETIC) ||
+                                planetType.equals(new Planet().US_METHANE) ||
+                                planetType.equals(new Planet().US_OCEAN_A) ||
+                                planetType.equals(new Planet().US_OCEAN_B) ||
+                                planetType.equals(new Planet().US_RED) ||
+                                planetType.equals(new Planet().US_RED_WIND) ||
+                                planetType.equals(new Planet().US_STORM) ||
+                                planetType.equals(new Planet().US_TERRAN)) {
+                            if(rand2() <= 0.35) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.MILD_CLIMATE);
+                            }
+                        } else if(planet[planetNumber].getTypeId().equals(new Planet().LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().LAVA_MINOR) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_LAVA) ||
+                                planet[planetNumber].getTypeId().equals(new Planet().US_VOLCANIC)) {
+                            if(rand2() <= 0.85) {
+                                planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
                             } else {
-                                planet[counter_2]. getMarket().addCondition(Conditions.HOT);
+                                planet[planetNumber]. getMarket().addCondition(Conditions.HOT);
                             }
                         }
                         
                     // Planets too close to its stars
-                    } else if(planet[counter_2].getCircularOrbitRadius() < habitableZoneMin[counter_2]) {
-                        planet[counter_2].getMarket().addCondition(Conditions.VERY_HOT);
+                    } else if(planet[planetNumber].getCircularOrbitRadius() < habitableZoneMin[counter_2]) {
+                        if(rand2() <= 0.975) {
+                            planet[planetNumber].getMarket().addCondition(Conditions.VERY_HOT);
+                        } else {
+                            planet[planetNumber]. getMarket().addCondition(Conditions.HOT);
+                        }
                         
                     // Planets too far from its stars
-                    } else if(planet[counter_2].getCircularOrbitRadius() > habitableZoneMax[counter_2]) {
-
+                    } else if(planet[planetNumber].getCircularOrbitRadius() > habitableZoneMax[counter_2] &&
+                            planet[planetNumber].getCircularOrbitRadius() <= habitableZoneMax[counter_2] * 1.25) {
+                        
                         // Hot or Cold
-                        if(rand2() <= 0.5) {
-                            planet[counter_2].getMarket().addCondition(Conditions.COLD);
+                        if(rand2() <= 0.9) {
+                            planet[planetNumber].getMarket().addCondition(Conditions.COLD);
                         } else {
-                            planet[counter_2].getMarket().addCondition(Conditions.VERY_COLD);
+                            planet[planetNumber].getMarket().addCondition(Conditions.VERY_COLD);
                         }
+                        
+                    } else if(planet[planetNumber].getCircularOrbitRadius() > habitableZoneMax[counter_2] * 1.25 &&
+                            planet[planetNumber].getCircularOrbitRadius() <= habitableZoneMax[counter_2] * 1.5) {
+                        
+                        // Hot or Cold
+                        if(rand2() <= 0.6) {
+                            planet[planetNumber].getMarket().addCondition(Conditions.COLD);
+                        } else {
+                            planet[planetNumber].getMarket().addCondition(Conditions.VERY_COLD);
+                        }
+                        
+                    } else if(planet[planetNumber].getCircularOrbitRadius() > habitableZoneMax[counter_2] * 1.5 &&
+                            planet[planetNumber].getCircularOrbitRadius() <= habitableZoneMax[counter_2] * 1.75) {
+                        
+                        // Hot or Cold
+                        if(rand2() <= 0.3) {
+                            planet[planetNumber].getMarket().addCondition(Conditions.COLD);
+                        } else {
+                            planet[planetNumber].getMarket().addCondition(Conditions.VERY_COLD);
+                        }
+                        
+                    } else {
+                        
+                        // Hot or Cold
+                        if(rand2() <= 0.1) {
+                            planet[planetNumber].getMarket().addCondition(Conditions.COLD);
+                        } else {
+                            planet[planetNumber].getMarket().addCondition(Conditions.VERY_COLD);
+                        }
+                        
                     }
                 }
+            }
         }
     }
-    
-    // Gets what star type and returns habitable zone min orbit
-    private float starHabitableMin(PlanetAPI star) {
-        float starRadius = star.getRadius();
-        float starCoronaRadius = star.getSpec().getCoronaSize();
-        
-        // Yellow Main Sequence
-        if(star.getTypeId().equals(new Star().YELLOW) ||
-                star.getTypeId().equals(new Star().YELLOW_US)) {
-            return ((starRadius * 1.725f) + (starCoronaRadius / 2));
-            
-        // Red Giant
-        } else if(star.getTypeId().equals(new Star().RED_GIANT)) {
-                return ((starRadius * 2.3f) + (starCoronaRadius / 2));
-            
-        // Red Supergiant
-        } else if(star.getTypeId().equals(new Star().RED_SUPERGIANT)) {
-                return ((starRadius * 4.6f) + (starCoronaRadius / 2));
-                
-        // Red Dwarf
-        } else if(star.getTypeId().equals(new Star().RED_DWARF) ||
-                star.getTypeId().equals(new Star().RED_DWARF_US)) {
-            return ((starRadius * 1.05f) + (starCoronaRadius / 2));
-        
-        // Orange Main Sequence
-        } else if(star.getTypeId().equals(new Star().ORANGE)) {
-            return ((starRadius * 1.575f) + (starCoronaRadius / 2));
-            
-        // Orange Giant
-        } else if(star.getTypeId().equals(new Star().ORANGE_GIANT) ||
-                star.getTypeId().equals(new Star().ORANGE_GIANT_US)) {
-            return ((starRadius * 3.15f) + (starCoronaRadius / 2));
-
-        // Blue Giant
-        } else if(star.getTypeId().equals(new Star().BLUE_GIANT) ||
-                star.getTypeId().equals(new Star().BLUE_GIANT_US)) {
-            return ((starRadius * 5.175f) + (starCoronaRadius / 2));
-            
-        // Blue Supergiant
-        } else if(star.getTypeId().equals(new Star().BLUE_SUPERGIANT)) {
-            return ((starRadius * 10.35f) + (starCoronaRadius / 2));
-        
-        // White Dwarf
-        } else if(star.getTypeId().equals(new Star().WHITE_DWARF) ||
-                star.getTypeId().equals(new Star().WHITE_DWARF_US)) {
-            return ((starRadius * 1.725f) + (starCoronaRadius / 2));
-        
-        // Brown Dwarf
-        } else if(star.getTypeId().equals(new Star().BROWN_DWARF) ||
-                star.getTypeId().equals(new Star().BROWN_DWARF_US)) {
-            return ((starRadius * 1.015f) + (starCoronaRadius / 2));
-        
-        // Neutron Star
-        } else if(star.getTypeId().equals(new Star().NEUTRON_STAR)) {
-            return starRadius * 10;
-        
-        // Black Hole
-        } else if(star.getTypeId().equals(new Star().BLACK_HOLE)) {
-            return 0;
-            
-        // Nebula Young
-        } else if(star.getTypeId().equals(new Star().NEBULA_YOUNG)) {
-                return 0;
-                
-        // Nebula Average
-        } else if(star.getTypeId().equals(new Star().NEBULA_AVERAGE)) {
-            return 0;
-
-        // Nebula Old
-        } else if(star.getTypeId().equals(new Star().NEBULA_OLD)) {
-            return 0;
-        }
-        return 0;
-    } 
 }
