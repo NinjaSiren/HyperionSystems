@@ -17,9 +17,6 @@
     "militarized_subsystems",
     "hardened_subsystems"
   ],
-  "builtInWeapons": {
-    "WS0011": "tpc"
-  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -110,15 +107,6 @@
       "arc": 240,
       "angle": 180,
       "locations": [-69, -0]
-    },
-    {
-      "id": "WS0011",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 20,
-      "angle": 0,
-      "locations": [83, -0]
     },
     {
       "id": "LB 1",

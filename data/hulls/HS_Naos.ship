@@ -17,10 +17,6 @@
     "militarized_subsystems",
     "hardened_subsystems"
   ],
-  "builtInWeapons": {
-    "WS0029": "tpc",
-    "WS0030": "tpc"
-  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -183,24 +179,6 @@
       "arc": 245,
       "angle": -90,
       "locations": [-147.5, 24.5]
-    },
-    {
-      "id": "WS0029",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 20,
-      "angle": 0,
-      "locations": [109, -0]
-    },
-    {
-      "id": "WS0030",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 20,
-      "angle": 0,
-      "locations": [-20, -0]
     },
     {
       "id": "LB 1",

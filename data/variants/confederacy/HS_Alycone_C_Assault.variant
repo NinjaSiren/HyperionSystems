@@ -3,24 +3,11 @@
   "hullId": "HS_Alycone_Confederacy",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 9,
+  "fluxCapacitors": 11,
   "fluxVents": 18,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "armoredweapons",
-    "auxiliarythrusters",
-    "extendedshieldemitter",
-    "fluxshunt",
-    "fluxbreakers",
-    "hardenedshieldemitter",
-    "heavyarmor",
-    "magazines",
-    "turretgyros",
-    "blast_doors",
-    "auxiliary_fuel_tanks",
-    "advancedshieldemitter"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -35,8 +22,7 @@
         "WS0007": "heavymg",
         "WS0008": "heavymg",
         "WS0009": "dualflak",
-        "WS0010": "devastator",
-        "WS0011": "tpc"
+        "WS0010": "devastator"
       }
     }
   ],

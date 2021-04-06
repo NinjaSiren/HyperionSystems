@@ -14,7 +14,6 @@
   "builtInMods": [
     "advancedcore",
     "supercomputer",
-    "stealth_minefield",
     "militarized_subsystems",
     "hardened_subsystems"
   ],

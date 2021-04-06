@@ -21,81 +21,45 @@
     "militarized_subsystems"
   ],
   "builtInWeapons": {
-    "WS0009": "tpc",
-    "WS0010": "tpc"
+    "WS0001": "gauss",
+    "WS0002": "gauss"
   },
   "weaponSlots": [
     {
       "id": "WS0005",
-      "size": "MEDIUM",
-      "type": "ENERGY",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 190,
+      "arc": 180,
       "angle": -135,
       "locations": [-27, -50.5]
     },
     {
       "id": "WS0006",
-      "size": "MEDIUM",
-      "type": "ENERGY",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
-      "arc": 190,
+      "arc": 180,
       "angle": 135,
       "locations": [-27, 50.5]
     },
     {
-      "id": "WS0007",
-      "size": "MEDIUM",
-      "type": "ENERGY",
-      "mount": "TURRET",
-      "arc": 219,
-      "angle": -45,
-      "locations": [54, -39.5]
-    },
-    {
-      "id": "WS0008",
-      "size": "MEDIUM",
-      "type": "ENERGY",
-      "mount": "TURRET",
-      "arc": 219,
-      "angle": 45,
-      "locations": [54, 39.5]
-    },
-    {
-      "id": "WS0009",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 30,
-      "angle": 0,
-      "locations": [222.5, -15]
-    },
-    {
-      "id": "WS0010",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 30,
-      "angle": -0,
-      "locations": [222.5, 15]
-    },
-    {
       "id": "WS0001",
-      "size": "MEDIUM",
-      "type": "UNIVERSAL",
-      "mount": "TURRET",
-      "arc": 127,
-      "angle": -45,
-      "locations": [-0.5, -47]
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 20,
+      "angle": -0,
+      "locations": [217.5, -14]
     },
     {
       "id": "WS0002",
-      "size": "MEDIUM",
-      "type": "UNIVERSAL",
-      "mount": "TURRET",
-      "arc": 127,
-      "angle": 45,
-      "locations": [-0.5, 47]
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 20,
+      "angle": 0,
+      "locations": [217.5, 14]
     },
     {
       "id": "WS0003",
@@ -270,6 +234,42 @@
         121, -14.5,
         117, -21.5
       ]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": -45,
+      "locations": [-0.5, -47]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 45,
+      "locations": [-0.5, 47]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -45,
+      "locations": [54, -39.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 45,
+      "locations": [54, 39.5]
     }
   ],
   "engineSlots": [

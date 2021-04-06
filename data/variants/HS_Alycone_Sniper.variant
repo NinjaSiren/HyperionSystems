@@ -3,54 +3,37 @@
   "hullId": "HS_Alycone",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 7,
-  "fluxVents": 14,
+  "fluxCapacitors": 15,
+  "fluxVents": 19,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "insulatedengine",
-    "reinforcedhull",
-    "stabilizedshieldemitter",
-    "advancedshieldemitter",
-    "auxiliary_fuel_tanks",
-    "auxiliarythrusters",
-    "extendedshieldemitter",
-    "fluxcoil",
-    "fluxdistributor",
-    "fluxshunt",
-    "fourteenth",
-    "hardenedshieldemitter"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "heavymg",
-        "WS0002": "heavymg",
-        "WS0004": "hil",
+        "WS0001": "pilum",
+        "WS0002": "pilum",
+        "WS0003": "gauss",
+        "WS0004": "gauss",
         "WS0005": "lrpdlaser",
-        "WS0007": "dualflak",
-        "WS0008": "dualflak",
+        "WS0006": "lrpdlaser",
+        "WS0007": "pilum",
+        "WS0008": "pilum",
         "WS0009": "hveldriver",
-        "WS0010": "guardian",
-        "WS0011": "tpc"
+        "WS0010": "devastator"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "WS0003": "hil"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {
-        "WS0006": "lrpdlaser"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,

@@ -3,24 +3,11 @@
   "hullId": "HS_Naos_Confederacy",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 16,
-  "fluxVents": 33,
+  "fluxCapacitors": 20,
+  "fluxVents": 37,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "advancedshieldemitter",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "heavyarmor",
-    "missile_reload",
-    "turretgyros"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -43,9 +30,7 @@
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
         "WS0017": "swarmer",
-        "WS0018": "swarmer",
-        "WS0029": "tpc",
-        "WS0030": "tpc"
+        "WS0018": "swarmer"
       }
     }
   ],

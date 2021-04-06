@@ -3,27 +3,11 @@
   "hullId": "HS_Orionis",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 10,
-  "fluxVents": 20,
+  "fluxCapacitors": 30,
+  "fluxVents": 40,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "autorepair",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "heavyarmor",
-    "turretgyros",
-    "reinforcedhull"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -45,9 +29,8 @@
         "WS0014": "phasebeam",
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
-        "WS0017": "minelayer2",
-        "WS0028": "hil",
-        "WS0029": "hil"
+        "WS0018": "autopulse",
+        "WS0019": "autopulse"
       }
     }
   ],

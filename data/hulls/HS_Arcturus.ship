@@ -16,13 +16,8 @@
     "hardened_subsystems",
     "militarized_subsystems",
     "supercomputer",
-    "drive_field_stabilizer",
-    "repair_gantry",
-    "surveying_equipment"
+    "auxiliary_fuel_tanks"
   ],
-  "builtInWeapons": {
-    "WS0017": "tpc"
-  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -167,15 +162,6 @@
       "arc": 20,
       "angle": 180,
       "locations": [-126.5, -7]
-    },
-    {
-      "id": "WS0017",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 20,
-      "angle": 0,
-      "locations": [40.5, -7]
     },
     {
       "id": "LB 1",

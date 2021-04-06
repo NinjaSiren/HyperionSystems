@@ -3,20 +3,11 @@
   "hullId": "HS_Betelgeuse",
   "displayName": "Defense",
   "goalVariant": true,
-  "fluxCapacitors": 4,
-  "fluxVents": 9,
+  "fluxCapacitors": 0,
+  "fluxVents": 2,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "armoredweapons",
-    "advancedoptics",
-    "autorepair",
-    "auxiliarythrusters",
-    "blast_doors",
-    "dedicated_targeting_core",
-    "expanded_cargo_holds",
-    "heavyarmor"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -24,7 +15,6 @@
       "weapons": {
         "WS0001": "heatseeker",
         "WS0002": "heatseeker",
-        "WS0003": "tpc",
         "WS0004": "lrpdlaser",
         "WS0005": "lrpdlaser",
         "WS0006": "lrpdlaser",

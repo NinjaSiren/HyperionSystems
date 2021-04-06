@@ -17,9 +17,6 @@
     "militarized_subsystems",
     "hardened_subsystems"
   ],
-  "builtInWeapons": {
-    "WS0005": "tpc"
-  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -50,21 +47,12 @@
     },
     {
       "id": "WS0004",
-      "size": "LARGE",
+      "size": "MEDIUM",
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 360,
       "angle": 180,
       "locations": [-5, -0]
-    },
-    {
-      "id": "WS0005",
-      "size": "LARGE",
-      "type": "BUILT_IN",
-      "mount": "HIDDEN",
-      "arc": 20,
-      "angle": 0,
-      "locations": [36, -0]
     }
   ],
   "engineSlots": [

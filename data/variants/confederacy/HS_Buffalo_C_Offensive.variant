@@ -3,7 +3,7 @@
   "hullId": "HS_Buffalo_Confederacy",
   "displayName": "Offensive",
   "goalVariant": true,
-  "fluxCapacitors": 6,
+  "fluxCapacitors": 9,
   "fluxVents": 10,
   "quality": 3,
   "permaMods": [],

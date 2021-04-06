@@ -3,20 +3,11 @@
   "hullId": "HS_Betelgeuse",
   "displayName": "Offense",
   "goalVariant": true,
-  "fluxCapacitors": 3,
-  "fluxVents": 7,
+  "fluxCapacitors": 0,
+  "fluxVents": 2,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "blast_doors",
-    "eccm",
-    "ecm",
-    "expanded_cargo_holds",
-    "heavyarmor"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,

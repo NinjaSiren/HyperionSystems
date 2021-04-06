@@ -3,27 +3,11 @@
   "hullId": "HS_Orionis_Confederacy",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 8,
-  "fluxVents": 16,
+  "fluxCapacitors": 39,
+  "fluxVents": 48,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "autorepair",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "heavyarmor",
-    "turretgyros",
-    "reinforcedhull"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -45,9 +29,8 @@
         "WS0014": "pilum",
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
-        "WS0017": "minelayer2",
-        "WS0028": "tpc",
-        "WS0029": "tpc"
+        "WS0018": "autopulse",
+        "WS0019": "autopulse"
       }
     }
   ],

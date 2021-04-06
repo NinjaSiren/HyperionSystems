@@ -3,22 +3,12 @@
   "hullId": "HS_Arcturus",
   "displayName": "Defensive",
   "goalVariant": true,
-  "fluxCapacitors": 6,
-  "fluxVents": 12,
+  "fluxCapacitors": 18,
+  "fluxVents": 24,
   "quality": 3,
   "permaMods": [],
   "hullMods": [
-    "auxiliary_fuel_tanks",
-    "auxiliarythrusters",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "fluxshunt",
-    "heavyarmor",
-    "missile_reload",
-    "missleracks",
-    "magazines",
-    "pointdefenseai"
+    "auxiliary_fuel_tanks"
   ],
   "weaponGroups": [
     {
@@ -40,8 +30,7 @@
         "WS0013": "lightdualmg",
         "WS0014": "lrpdlaser",
         "WS0015": "lightdualmg",
-        "WS0016": "swarmer",
-        "WS0017": "tpc"
+        "WS0016": "swarmer"
       }
     }
   ],
