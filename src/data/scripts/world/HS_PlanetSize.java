@@ -21,8 +21,7 @@ public class HS_PlanetSize {
     
     // Sets the planet type depending on the distance of the planet from its parent star
     // And to what type of star it is
-    public int planetSize(String planetType, PlanetAPI[] star, int star_count, float orbit_radius,
-            PlanetAPI[] planet, int planetNumber) {
+    public int planetSize(String planetType) {
         
         // Gas Giants
         if(planetType.equals(new Planet().GAS_GIANT) || 
@@ -115,7 +114,7 @@ public class HS_PlanetSize {
             
         // All Habitables
         } else {
-            return rand(70, 225);
+            return rand(75, 135);
         }
     }
 }

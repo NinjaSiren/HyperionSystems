@@ -6,8 +6,12 @@ import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
+import com.fs.starfarer.api.util.Misc;
 import data.scripts.world.systems.Base_Penelope;
+import data.scripts.world.systems.HS_Diamant;
+import data.scripts.world.systems.HS_Klat;
 import data.scripts.world.systems.HS_Neue_Jangala;
+import data.scripts.world.systems.HS_Nirraok;
 import data.scripts.world.systems.HS_Phia;
 import java.util.Random;
 
@@ -26,8 +30,6 @@ public class HyperionGen implements SectorGeneratorPlugin {
     }
     
     public static void initFactionRelationships(SectorAPI sector) {
-        boolean hasDME = Global.getSettings().getModManager().isModEnabled("istl_dam");
-        
         FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist"); 
         FactionAPI hegemony = sector.getFaction(Factions.HEGEMONY);
         FactionAPI tritachyon = sector.getFaction(Factions.TRITACHYON);
@@ -42,8 +44,8 @@ public class HyperionGen implements SectorGeneratorPlugin {
         FactionAPI neutral = sector.getFaction(Factions.NEUTRAL);
         
         //Vanilla factions
-        hyperion.setRelationship(hegemony.getId(), RepLevel.HOSTILE);
-        hyperion.setRelationship(tritachyon.getId(), RepLevel.FAVORABLE);
+        hyperion.setRelationship(hegemony.getId(), RepLevel.INHOSPITABLE);
+        hyperion.setRelationship(tritachyon.getId(), RepLevel.SUSPICIOUS);
         hyperion.setRelationship(pirates.getId(), RepLevel.VENGEFUL);
         hyperion.setRelationship(independent.getId(), RepLevel.FRIENDLY);
         hyperion.setRelationship(kol.getId(), RepLevel.SUSPICIOUS);
@@ -80,7 +82,6 @@ public class HyperionGen implements SectorGeneratorPlugin {
         hyperion.setRelationship("crystanite", RepLevel.HOSTILE);
         hyperion.setRelationship("sad", RepLevel.HOSTILE);
         hyperion.setRelationship("new_galactic_order", RepLevel.VENGEFUL);
-        dme_pirates.setRelationship(hyperion.getId(), RepLevel.FRIENDLY);
     }
     
     @Override
@@ -88,11 +89,23 @@ public class HyperionGen implements SectorGeneratorPlugin {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         initFactionRelationships(sector);
         new HS_Neue_Jangala().generate(sector); // Neue Jangala
-        new HS_Phia().generate(sector); // Phia-Kria, test
+        new HS_Phia().generate(sector); // Phia, test
+        new HS_Diamant().generate(sector); // Diamant, test
+        new HS_Klat().generate(sector); // Klat, test
+        new HS_Nirraok().generate(sector); // Nirraok, test
         
-        // Adds Penelope Star System under the Hyperion Confederacy (Probability of 75%)
-        if(rand() <= 0.6) {
-            new Base_Penelope().generate(sector); // Penelope's Star
+        if(rand() > 0.5) {
+            new Base_Penelope().generate(sector); // Penelope's star
         }
+        
+        // All planets of ths mod's star systems are known
+        Misc.setAllPlanetsKnown("Phia");
+        Misc.setAllPlanetsKnown("Diamant");
+        Misc.setAllPlanetsKnown("Klat");
+        Misc.setAllPlanetsKnown("Nirraok");
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Phia"), true);
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Diamant"), true);
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Klat"), true);
+        Misc.setAllPlanetsSurveyed(sector.getStarSystem("Nirraok"), true);
     }
 }

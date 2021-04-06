@@ -9,11 +9,13 @@ import java.util.ArrayList;
 /**
  *
  * @author Azmonds
+ * @modified NinjaSiren
+ * 
  */
-public class HS_AddMarketplace{
+public class HS_AddMarketplaceAuto{
 
     public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, 
-            ArrayList<SectorEntityToken> connectedEntities, String name, int size, ArrayList<String> marketConditions,
+            ArrayList<SectorEntityToken> connectedEntities, String name, int size, ArrayList<String> marketConditions, 
             ArrayList<String> Industries, ArrayList<String> submarkets, float tariff) {  
         EconomyAPI globalEconomy = Global.getSector().getEconomy();  
         String planetID = primaryEntity.getId();  
@@ -29,9 +31,11 @@ public class HS_AddMarketplace{
                 newMarket.addSubmarket(market);  
             }  
         }  
-              
-        for (String condition : marketConditions) {  
-            newMarket.addCondition(condition);  
+             
+        if (null != marketConditions) {
+            for (String condition : marketConditions) {  
+                newMarket.addCondition(condition);  
+            }
         }
         
         for (String industry : Industries) {

@@ -8,21 +8,22 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
-import exerelin.campaign.SectorManager;
 import data.scripts.world.HyperionGen;
+//import exerelin.campaign.SectorManager; 
 /**
  *
  * @author NinjaSiren
  */
 public class HyperionModPlugin extends BaseModPlugin {
-    public static boolean isExerelin = false;
+    //public static boolean isExerelin = false;
     
     @Override
     public void onNewGame() { 
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
-        if(!isExerelin || SectorManager.getCorvusMode()) {
+        new HyperionGen().generate(Global.getSector());
+        /*if(!isExerelin || SectorManager.getCorvusMode()) {
             new HyperionGen().generate(Global.getSector());
-        }
+        }*/
     }
     
     @Override
@@ -36,7 +37,7 @@ public class HyperionModPlugin extends BaseModPlugin {
             person.setRankId(Ranks.FACTION_LEADER);
             person.setPostId(Ranks.POST_FACTION_LEADER);
             person.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
-            person.getStats().setSkillLevel(Skills.FLEET_LOGISTICS, 3);
+            person.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, 3);
             person.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, 3);
 
             market.setAdmin(person);
@@ -50,21 +51,19 @@ public class HyperionModPlugin extends BaseModPlugin {
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
         boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
         boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
-        isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        //isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         
-        if (!hasLazyLib) {
+        if(!hasLazyLib) {
             throw new RuntimeException("Hyperion Systems requires LazyLib!" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
         }
         
-        if (hasGraphicsLib) {
-            // Do something
-        } else {
+        if(!hasGraphicsLib) {
             throw new RuntimeException("Hyperion Systems requires GraphicsLib!" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=10982");
         }
         
-        if (!hasMagicLib) {
+        if(!hasMagicLib) {
             throw new RuntimeException("Hyperion Systems requires MagicLib! Where is the magic?" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718.0");
         }

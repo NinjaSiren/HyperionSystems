@@ -23,7 +23,7 @@ public class HS_AddIndustry {
         return min + rand.nextDouble() * (max - min);
     }
     
-    public HS_AddIndustry(PlanetAPI planet, MarketAPI market) {
+    public HS_AddIndustry(PlanetAPI planet, MarketAPI market) { 
         
         // Industry size depending on market size and current industries added
         int iSize = new HS_IndustryLimit().industryLimit(market, planet);
@@ -409,18 +409,54 @@ public class HS_AddIndustry {
                     }
                 }
             }
+            
+            // Cryosanctum
+            if(!market.hasIndustry(Industries.CRYOSANCTUM) ||
+                    !planet.getMarket().hasIndustry(Industries.CRYOSANCTUM)) {
+                if(market.hasCondition(Conditions.POPULATION_5) || 
+                        planet.hasCondition(Conditions.POPULATION_5)) {
+                    if(rand() <= 0.01) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                } else if (market.hasCondition(Conditions.POPULATION_6) || 
+                        planet.hasCondition(Conditions.POPULATION_6)) {
+                    if(rand() <= 0.025) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                } else if (market.hasCondition(Conditions.POPULATION_7) || 
+                        planet.hasCondition(Conditions.POPULATION_7)) {
+                    if(rand() <= 0.05) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                } else if (market.hasCondition(Conditions.POPULATION_8) || 
+                        planet.hasCondition(Conditions.POPULATION_8)) {
+                    if(rand() <= 0.075) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                } else if (market.hasCondition(Conditions.POPULATION_9) || 
+                        planet.hasCondition(Conditions.POPULATION_9)) {
+                    if(rand() <= 0.1) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                } else if (market.hasCondition(Conditions.POPULATION_10) || 
+                        planet.hasCondition(Conditions.POPULATION_10)) {
+                    if(rand() <= 0.125) {
+                        market.addIndustry(Industries.CRYOSANCTUM);
+                    }
+                }
+            }
         } while (iSize > 0);
     }
     
     private String randNanoforge() {
         if(rand() <= 0.33) return Items.PRISTINE_NANOFORGE;
-        else if(rand() > 0.33 && rand() <= 0.66) return Items.DECAYED_NANOFORGE;
+        else if(rand() > 0.33 && rand() <= 0.66) return Items.CORRUPTED_NANOFORGE;
         else if(rand() > 0.66) return Items.CORRUPTED_NANOFORGE;
-        return "";
+        return null;
     }
     
     private String randSynchotron() {
         if(rand() <= 0.5) return Items.SYNCHROTRON;
-        else return "";
+        else return null;
     }
 }

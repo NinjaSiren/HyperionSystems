@@ -240,7 +240,7 @@ public class Base_Penelope {
     
     private String randNanoforge() {
         if(rand() <= 0.33) return Items.PRISTINE_NANOFORGE;
-        else if(rand() > 0.33 && rand() <= 0.66) return Items.DECAYED_NANOFORGE;
+        else if(rand() > 0.33 && rand() <= 0.66) return Items.CORRUPTED_NANOFORGE;
         else if(rand() > 0.66) return Items.CORRUPTED_NANOFORGE;
         return "";
     }
