@@ -3,24 +3,11 @@
   "hullId": "HS_Naos_Confederacy",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 15,
-  "fluxVents": 31,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "advancedshieldemitter",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "heavyarmor",
-    "missile_reload",
-    "turretgyros"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -30,10 +17,10 @@
         "WS0002": "phasebeam",
         "WS0003": "railgun",
         "WS0004": "railgun",
-        "WS0005": "phasebeam",
-        "WS0006": "phasebeam",
-        "WS0007": "gauss",
-        "WS0008": "gauss",
+        "WS0005": "ionbeam",
+        "WS0006": "ionbeam",
+        "WS0007": "hs_minotaur_cannon",
+        "WS0008": "hs_minotaur_cannon",
         "WS0009": "lrpdlaser",
         "WS0010": "lrpdlaser",
         "WS0011": "lrpdlaser",
@@ -43,17 +30,15 @@
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
         "WS0017": "swarmer",
-        "WS0018": "swarmer",
-        "WS0029": "tpc",
-        "WS0030": "tpc"
+        "WS0018": "swarmer"
       }
     }
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing",
-    "hoplon_wing",
-    "thunder_wing",
-    "thunder_wing"
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing"
   ]
 }

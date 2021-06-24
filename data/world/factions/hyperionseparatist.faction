@@ -137,6 +137,7 @@
     "knownWeapons":{
         "tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "hegemony", "tritachyon", "pirates", "HCO_bp"],
         "weapons":[
+	    "hs_minotaur_cannon",
             "railgun",
             "dualflak",
             "heavymauler",
@@ -225,12 +226,13 @@
         "autofitRandomizeProbability":0.1,
 
         "commanderSkillsShuffleProbability":0.7,
-        "commanderSkills":[    
-            "ship_design",
-            "electronic_warfare",
-            "fighter_doctrine",
-            "officer_management",
-            "coordinated_maneuvers",
+        "commanderSkills":[  
+		"crew_training",
+		"officer_training",  
+		"electronic_warfare",
+		"fighter_uplink",
+		"carrier_group",
+		"flux_regulation",
         ],
     },
     "illegalCommodities":[

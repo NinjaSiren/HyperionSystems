@@ -3,30 +3,11 @@
   "hullId": "HS_Eridani",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 3,
-  "fluxVents": 7,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "armoredweapons",
-    "auxiliarythrusters",
-    "missile_reload",
-    "missleracks",
-    "heavyarmor",
-    "unstable_coils",
-    "turretgyros",
-    "reinforcedhull",
-    "fluxcoil",
-    "fluxdistributor",
-    "fluxshunt",
-    "eccm",
-    "ecm",
-    "advancedoptics",
-    "blast_doors",
-    "dedicated_targeting_core",
-    "fluxbreakers",
-    "magazines"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -34,9 +15,8 @@
       "weapons": {
         "WS0001": "heatseeker",
         "WS0002": "heatseeker",
-        "WS0003": "lrpdlaser",
-        "WS0004": "devastator",
-        "WS0005": "tpc"
+        "WS0003": "hs_cygnus_pd",
+        "WS0004": "dualflak"
       }
     }
   ],

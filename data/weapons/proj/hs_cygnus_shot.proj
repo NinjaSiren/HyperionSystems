@@ -1,0 +1,16 @@
+{
+	"id":"hs_cygnus_proj",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":35.0,
+	"hitGlowRadius":48,
+	"width":8.0,
+	"fadeTime":0.175,
+	"fringeColor":[99,178,242,155],
+	"coreColor":[43,150,238,180],
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/weapons/projectile/hs_minotaur_shell.png"
+}

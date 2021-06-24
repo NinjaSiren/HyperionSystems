@@ -3,28 +3,11 @@
   "hullId": "HS_Carinae_Confederacy",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 8,
-  "fluxVents": 18,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedshieldemitter",
-    "armoredweapons",
-    "autorepair",
-    "auxiliarythrusters",
-    "blast_doors",
-    "eccm",
-    "ecm",
-    "fluxdistributor",
-    "fluxcoil",
-    "fluxshunt",
-    "heavyarmor",
-    "magazines",
-    "missile_reload",
-    "missleracks",
-    "turretgyros",
-    "stabilizedshieldemitter"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -36,8 +19,7 @@
         "WS0004": "lrpdlaser",
         "WS0005": "lrpdlaser",
         "WS0006": "dualflak",
-        "WS0007": "sabot",
-        "WS0008": "tpc"
+        "WS0007": "sabot"
       }
     }
   ],

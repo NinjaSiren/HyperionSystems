@@ -15,9 +15,10 @@ import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
-import data.scripts.world.HS_AddIndustry;
-import data.scripts.world.HS_AddMarketplace;
-import data.scripts.world.HS_ReAddConditions;
+import data.scripts.world.procgen.HS_AddIndustry;
+import data.scripts.world.procgen.HS_AddMarketplace;
+import data.scripts.world.procgen.HS_AddRandomAdmins;
+import data.scripts.world.procgen.HS_ReAddConditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -80,7 +81,10 @@ public class Base_Penelope {
                 new HS_ReAddConditions(ithacaBaseConditions, ithacaMarket);
                 
                 // Adds industries depending on conditions
-                new HS_AddIndustry(ithaca, ithacaMarket);
+                new HS_AddIndustry(ithaca, ithacaMarket, ithacaMarket.getFaction(), system);
+                
+                // Adds admin for the market
+                new HS_AddRandomAdmins().generateAdmins(ithacaMarket);
                 
         //Xuthus
         PlanetAPI xuthus = system.getPlanets().get(7);
@@ -122,8 +126,8 @@ public class Base_Penelope {
                 new HS_ReAddConditions(xuthusBaseConditions, xuthusMarket);
                 
                 // Adds industries depending on conditions
-                new HS_AddIndustry(xuthus, xuthusMarket);
-               
+                new HS_AddIndustry(xuthus, xuthusMarket, xuthusMarket.getFaction(), system);
+                
         //Ismara
         PlanetAPI ismara = system.getPlanets().get(9);
         ismara.setCustomDescriptionId("hs_planet_ismara");
@@ -164,7 +168,7 @@ public class Base_Penelope {
                 new HS_ReAddConditions(ismaraBaseConditions, ismaraMarket);
                 
                 // Adds industries depending on conditions
-                new HS_AddIndustry(ismara, ismaraMarket);
+                new HS_AddIndustry(ismara, ismaraMarket, ismaraMarket.getFaction(), system);
                 
         //Telepylus Station
         SectorEntityToken telepylus_station = system.getEntityById("telepylus_station");
@@ -240,7 +244,7 @@ public class Base_Penelope {
     
     private String randNanoforge() {
         if(rand() <= 0.33) return Items.PRISTINE_NANOFORGE;
-        else if(rand() > 0.33 && rand() <= 0.66) return Items.DECAYED_NANOFORGE;
+        else if(rand() > 0.33 && rand() <= 0.66) return Items.CORRUPTED_NANOFORGE;
         else if(rand() > 0.66) return Items.CORRUPTED_NANOFORGE;
         return "";
     }

@@ -3,24 +3,13 @@
   "hullId": "HS_Arcturus",
   "displayName": "Offense",
   "goalVariant": true,
-  "fluxCapacitors": 8,
-  "fluxVents": 18,
+  "fluxCapacitors": 0,
+  "fluxVents": 13,
   "quality": 3,
   "permaMods": [],
   "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
     "auxiliary_fuel_tanks",
-    "auxiliarythrusters",
-    "blast_doors",
-    "eccm",
-    "drive_field_stabilizer",
-    "ecm",
-    "expanded_deck_crew",
-    "fluxbreakers",
-    "hardened_subsystems",
-    "missleracks",
-    "missile_reload"
+    "surveying_equipment"
   ],
   "weaponGroups": [
     {
@@ -28,27 +17,27 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "heavymauler",
-        "WS0002": "lightdualmg",
-        "WS0003": "lightdualmg",
-        "WS0004": "amblaster",
-        "WS0005": "harpoon",
-        "WS0006": "harpoon",
-        "WS0007": "heavymg",
-        "WS0008": "heavymg",
-        "WS0009": "hil",
-        "WS0010": "hil",
-        "WS0011": "lrpdlaser",
-        "WS0012": "ioncannon",
-        "WS0013": "lightdualmg",
-        "WS0014": "lrpdlaser",
-        "WS0015": "lightdualmg",
+        "WS0002": "hs_cygnus_pd",
+        "WS0003": "hs_cygnus_pd",
+        "WS0004": "pdburst",
+        "WS0005": "hs_sagittarius_mrm",
+        "WS0006": "hs_sagittarius_mrm",
+        "WS0007": "heavyblaster",
+        "WS0008": "heavyblaster",
+        "WS0009": "hs_minotaur_cannon",
+        "WS0010": "hs_minotaur_cannon",
+        "WS0011": "pdburst",
+        "WS0012": "riftlance",
+        "WS0013": "hs_cygnus_pd",
+        "WS0014": "pdburst",
+        "WS0015": "hs_cygnus_pd",
         "WS0016": "swarmer"
       }
     }
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing",
-    "thunder_wing"
+    "HS_Achernar_Wing",
+    "HS_Lynx_Wing"
   ]
 }

@@ -3,45 +3,27 @@
   "hullId": "HS_Bellatrix",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 7,
-  "fluxVents": 16,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "hbi",
-    "heavyarmor",
-    "magazines",
-    "missile_reload",
-    "missleracks",
-    "targetingunit",
-    "turretgyros",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "hveldriver",
-        "WS0002": "heavymg",
-        "WS0003": "heavymg",
-        "WS0004": "hil",
-        "WS0005": "hil",
-        "WS0006": "phasebeam",
-        "WS0007": "phasebeam",
-        "WS0008": "pilum",
-        "WS0009": "pilum",
-        "WS0010": "lrpdlaser",
-        "WS0011": "lrpdlaser",
-        "WS0012": "tpc",
+        "WS0001": "heavymauler",
+        "WS0002": "ionbeam",
+        "WS0003": "ionbeam",
+        "WS0004": "hs_minotaur_cannon",
+        "WS0005": "hs_minotaur_cannon",
+        "WS0006": "harpoon_single",
+        "WS0007": "harpoon_single",
+        "WS0008": "heatseeker",
+        "WS0009": "heatseeker",
+        "WS0010": "pdburst",
+        "WS0011": "pdburst",
         "WS0013": "swarmer",
         "WS0014": "swarmer"
       }
@@ -49,6 +31,6 @@
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing"
+    "HS_Lynx_Wing"
   ]
 }

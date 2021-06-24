@@ -3,45 +3,31 @@
   "hullId": "HS_Alycone",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 9,
-  "fluxVents": 18,
+  "fluxCapacitors": 22,
+  "fluxVents": 30,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "armoredweapons",
-    "auxiliarythrusters",
-    "extendedshieldemitter",
-    "fluxshunt",
-    "fluxbreakers",
-    "hardenedshieldemitter",
-    "heavyarmor",
-    "magazines",
-    "turretgyros",
-    "blast_doors",
-    "auxiliary_fuel_tanks",
-    "advancedshieldemitter"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "heavymauler",
-        "WS0002": "heavymauler",
+        "WS0001": "hs_sagittarius_mrm",
+        "WS0002": "hs_sagittarius_mrm",
         "WS0003": "mark9",
         "WS0004": "mark9",
         "WS0005": "lrpdlaser",
         "WS0006": "lrpdlaser",
-        "WS0007": "heavymg",
-        "WS0008": "heavymg",
-        "WS0009": "heavyburst",
-        "WS0010": "devastator",
-        "WS0011": "tpc"
+        "WS0007": "hs_sagittarius_mrm",
+        "WS0008": "hs_sagittarius_mrm",
+        "WS0009": "heavymauler",
+        "WS0010": "devastator"
       }
     }
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing"
+    "HS_Achernar_Wing"
   ]
 }

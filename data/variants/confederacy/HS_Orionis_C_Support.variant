@@ -3,27 +3,11 @@
   "hullId": "HS_Orionis_Confederacy",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 8,
-  "fluxVents": 16,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "autorepair",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "heavyarmor",
-    "turretgyros",
-    "reinforcedhull"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -32,9 +16,9 @@
         "WS0001": "heatseeker",
         "WS0002": "heatseeker",
         "WS0003": "heatseeker",
-        "WS0004": "devastator",
-        "WS0005": "guardian",
-        "WS0006": "guardian",
+        "WS0004": "guardian",
+        "WS0005": "devastator",
+        "WS0006": "devastator",
         "WS0007": "lrpdlaser",
         "WS0008": "lrpdlaser",
         "WS0009": "pilum",
@@ -45,17 +29,16 @@
         "WS0014": "pilum",
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
-        "WS0017": "minelayer2",
-        "WS0028": "tpc",
-        "WS0029": "tpc"
+        "WS0018": "autopulse",
+        "WS0019": "autopulse"
       }
     }
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing",
-    "hoplon_wing",
-    "thunder_wing",
-    "thunder_wing"
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing"
   ]
 }

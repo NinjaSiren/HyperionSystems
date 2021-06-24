@@ -3,42 +3,24 @@
   "hullId": "HS_Sirius",
   "displayName": "Sirius",
   "goalVariant": true,
-  "fluxCapacitors": 10,
+  "fluxCapacitors": 20,
   "fluxVents": 20,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "autorepair",
-    "auxiliarythrusters",
-    "blast_doors",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxdistributor",
-    "fluxcoil",
-    "fluxbreakers",
-    "heavyarmor",
-    "turretgyros",
-    "reinforcedhull",
-    "pointdefenseai",
-    "fluxshunt",
-    "missleracks"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "amblaster",
-        "WS0002": "amblaster",
-        "WS0003": "lrpdlaser",
-        "WS0004": "lrpdlaser",
-        "WS0005": "heavyac",
-        "WS0006": "heavyac",
-        "WS0007": "heavymauler",
-        "WS0008": "atropos"
+        "WS0001": "hs_cygnus_pd",
+        "WS0002": "hs_cygnus_pd",
+        "WS0003": "hs_cygnus_pd",
+        "WS0004": "hs_cygnus_pd",
+        "WS0005": "hs_sagittarius_mrm",
+        "WS0006": "hs_sagittarius_mrm",
+        "WS0007": "hs_sagittarius_mrm",
+        "WS0008": "hs_sagittarius_single"
       }
     }
   ],

@@ -19,4 +19,11 @@
 			{"file":"hs_faction_market_hostile.ogg","source":"sounds/music","volume":0.5,"randomStart":true},
 		],
 	},
+
+	"hs_minotaur_sound":[
+		{"file":"sounds/weapons/hs_minotaur_cannon_1.ogg","pitch":0.5,"volume":0.7},
+		{"file":"sounds/weapons/hs_minotaur_cannon_1_loud.ogg","pitch":0.5,"volume":0.7},
+		{"file":"sounds/weapons/hs_minotaur_cannon_2.ogg","pitch":1,"volume":0.7},
+		{"file":"sounds/weapons/hs_minotaur_cannon_2_loud.ogg","pitch":1,"volume":0.7},
+	],   
 }

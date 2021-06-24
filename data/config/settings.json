@@ -1,4 +1,11 @@
 {
+	#"adminMaxHireable":2000,
+	"idleAdminSalaryMult":0.1,
+	
+	"baseMaxOutposts":2000,
+	"baseMaxAdmins":2000,
+	"colonyOverMaxPenalty":2000,
+
 	"graphics":{
 		"blueprint_packages":{
            			"HCO_package":"graphics/icons/cargo/HCO_package.png",

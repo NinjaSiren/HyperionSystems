@@ -3,7 +3,7 @@
   "hullId": "HS_Valkyrie_Confederacy",
   "displayName": "Defensive",
   "goalVariant": true,
-  "fluxCapacitors": 8,
+  "fluxCapacitors": 5,
   "fluxVents": 12,
   "quality": 3,
   "permaMods": [],

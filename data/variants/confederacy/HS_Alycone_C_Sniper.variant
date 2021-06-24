@@ -3,25 +3,11 @@
   "hullId": "HS_Alycone_Confederacy",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 7,
-  "fluxVents": 14,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "insulatedengine",
-    "reinforcedhull",
-    "stabilizedshieldemitter",
-    "advancedshieldemitter",
-    "auxiliary_fuel_tanks",
-    "auxiliarythrusters",
-    "extendedshieldemitter",
-    "fluxcoil",
-    "fluxdistributor",
-    "fluxshunt",
-    "fourteenth",
-    "hardenedshieldemitter"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -29,14 +15,13 @@
       "weapons": {
         "WS0001": "heavymg",
         "WS0002": "heavymg",
-        "WS0003": "gauss",
-        "WS0004": "gauss",
+        "WS0003": "hs_minotaur_cannon",
+        "WS0004": "hs_minotaur_cannon",
         "WS0005": "lrpdlaser",
         "WS0007": "dualflak",
         "WS0008": "dualflak",
         "WS0009": "hveldriver",
-        "WS0010": "guardian",
-        "WS0011": "tpc"
+        "WS0010": "guardian"
       }
     },
     {
@@ -64,6 +49,6 @@
   ],
   "modules": [],
   "wings": [
-    "thunder_wing"
+    "HS_Achernar_Wing"
   ]
 }

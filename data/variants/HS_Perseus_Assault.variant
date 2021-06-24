@@ -3,8 +3,8 @@
   "hullId": "HS_Perseus",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 12,
-  "fluxVents": 6,
+  "fluxCapacitors": 44,
+  "fluxVents": 50,
   "quality": 3,
   "permaMods": [],
   "hullMods": [],
@@ -13,19 +13,32 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0001": "heavymauler",
-        "WS0002": "heavymauler",
-        "WS0003": "heavyac",
-        "WS0004": "heavyac",
-        "WS0005": "lrpdlaser",
-        "WS0006": "lrpdlaser",
-        "WS0007": "lrpdlaser",
-        "WS0008": "lrpdlaser",
-        "WS0009": "tpc",
-        "WS0010": "tpc"
+        "WS0001": "hs_minotaur_builtin",
+        "WS0002": "hs_minotaur_builtin",
+        "WS0003": "hs_sagittarius_mrm",
+        "WS0004": "hs_sagittarius_mrm",
+        "WS0005": "hs_cygnus_pd",
+        "WS0006": "hs_cygnus_pd",
+        "WS0007": "heavymauler",
+        "WS0008": "heavymauler",
+        "WS0009": "hs_cygnus_pd",
+        "WS0010": "hs_cygnus_pd"
       }
     }
   ],
   "modules": [],
-  "wings": []
+  "wings": [
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing",
+    "HS_Lynx_Wing"
+  ]
 }

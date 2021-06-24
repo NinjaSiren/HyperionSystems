@@ -3,25 +3,11 @@
   "hullId": "HS_Bellatrix_Confederacy",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 13,
-  "fluxVents": 28,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "autorepair",
-    "auxiliarythrusters",
-    "auxiliary_fuel_tanks",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxcoil",
-    "fluxdistributor",
-    "heavyarmor"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -32,13 +18,12 @@
         "WS0003": "heavyburst",
         "WS0004": "guardian",
         "WS0005": "guardian",
-        "WS0006": "heavyburst",
-        "WS0007": "heavyburst",
-        "WS0008": "pilum",
-        "WS0009": "pilum",
+        "WS0006": "heatseeker",
+        "WS0007": "heatseeker",
+        "WS0008": "heatseeker",
+        "WS0009": "heatseeker",
         "WS0010": "lrpdlaser",
         "WS0011": "lrpdlaser",
-        "WS0012": "tpc",
         "WS0013": "swarmer",
         "WS0014": "swarmer"
       }
@@ -46,6 +31,6 @@
   ],
   "modules": [],
   "wings": [
-    "thunder_wing"
+    "HS_Lynx_Wing"
   ]
 }

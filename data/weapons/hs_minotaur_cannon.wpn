@@ -1,0 +1,55 @@
+{
+  "id": "hs_minotaur_cannon",
+  "specClass": "projectile",
+  "projectileSpecId": "hs_minotaur_shot",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "turretSprite": "graphics/weapons/minotaur_cannon_turret_base.png",
+  "turretGunSprite": "graphics/weapons/minotaur_cannon_turret_recoil.png",
+  "hardpointSprite": "graphics/weapons/minotaur_cannon_hardpoint_base.png",
+  "hardpointGunSprite": "graphics/weapons/minotaur_cannon_hardpoint_recoil.png",
+  "visualRecoil": 1,
+  "turretOffsets": [
+    27,
+    6,
+    27,
+    0,
+    27,
+    -6
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    41,
+    7,
+    41,
+    0,
+    41,
+    -7
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING_BURST",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 30,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.5,
+    "particleCount": 20,
+    "particleColor": [
+      103,
+      149,
+      233,
+      192
+    ]
+  },
+  "fireSoundTwo": "hs_minotaur_sound"
+}

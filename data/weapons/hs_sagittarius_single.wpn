@@ -1,0 +1,44 @@
+{
+  "id": "hs_sagittarius_single",
+  "specClass": "projectile",
+  "projectileSpecId": "hs_sagittarius_missile",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/missile_rack_open_s_1x_turret_base.png",
+  "hardpointSprite": "graphics/weapons/missile_rack_open_s_1x_hardpoint_base.png",
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    5.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "renderHints":[RENDER_LOADED_MISSILES],
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 20,
+    "particleSizeRange": 20,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackSpread": 10,
+    "particleColor": [
+      103,
+      149,
+      233,
+      192
+    ]
+  },
+  "fireSoundTwo": "hs_sagittarius_launch"
+}

@@ -1,0 +1,2 @@
+command,class,tags,syntax,help
+AllIndustrySpecials,data.console.commands.removeThis,"cheat, campaign",allindustryspecials <amount>,Adds all industry enhancment items with a specific amount.

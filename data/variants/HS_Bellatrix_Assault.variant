@@ -3,42 +3,27 @@
   "hullId": "HS_Bellatrix",
   "displayName": "Assault",
   "goalVariant": true,
-  "fluxCapacitors": 17,
+  "fluxCapacitors": 30,
   "fluxVents": 30,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "armoredweapons",
-    "auxiliarythrusters",
-    "autorepair",
-    "blast_doors",
-    "eccm",
-    "ecm",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "hbi",
-    "heavyarmor",
-    "magazines",
-    "missile_reload",
-    "missleracks"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "heavymauler",
-        "WS0002": "ionpulser",
-        "WS0003": "ionpulser",
-        "WS0004": "mark9",
-        "WS0005": "mark9",
-        "WS0006": "dualflak",
-        "WS0007": "dualflak",
-        "WS0008": "harpoonpod",
-        "WS0009": "harpoonpod",
-        "WS0010": "lrpdlaser",
-        "WS0011": "lrpdlaser",
+        "WS0001": "ionpulser",
+        "WS0002": "hs_sagittarius_mrm",
+        "WS0003": "hs_sagittarius_mrm",
+        "WS0004": "hephag",
+        "WS0005": "hephag",
+        "WS0006": "atropos_single",
+        "WS0007": "atropos_single",
+        "WS0008": "breach",
+        "WS0009": "breach",
+        "WS0010": "pdburst",
+        "WS0011": "pdburst",
         "WS0013": "swarmer",
         "WS0014": "swarmer"
       }
@@ -46,6 +31,6 @@
   ],
   "modules": [],
   "wings": [
-    "thunder_wing"
+    "HS_Achernar_Wing"
   ]
 }

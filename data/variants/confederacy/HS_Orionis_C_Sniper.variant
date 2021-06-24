@@ -3,27 +3,11 @@
   "hullId": "HS_Orionis_Confederacy",
   "displayName": "Sniper",
   "goalVariant": true,
-  "fluxCapacitors": 10,
-  "fluxVents": 20,
+  "fluxCapacitors": 36,
+  "fluxVents": 50,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "armoredweapons",
-    "auxiliarythrusters",
-    "autorepair",
-    "blast_doors",
-    "chassis_storage",
-    "dedicated_targeting_core",
-    "eccm",
-    "ecm",
-    "fluxbreakers",
-    "fluxcoil",
-    "fluxdistributor",
-    "heavyarmor",
-    "turretgyros",
-    "reinforcedhull"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -32,9 +16,9 @@
         "WS0001": "railgun",
         "WS0002": "railgun",
         "WS0003": "railgun",
-        "WS0004": "autopulse",
-        "WS0005": "gauss",
-        "WS0006": "gauss",
+        "WS0004": "hs_minotaur_cannon",
+        "WS0005": "hs_minotaur_cannon",
+        "WS0006": "hs_minotaur_cannon",
         "WS0007": "lrpdlaser",
         "WS0008": "lrpdlaser",
         "WS0009": "phasebeam",
@@ -45,17 +29,16 @@
         "WS0014": "phasebeam",
         "WS0015": "lrpdlaser",
         "WS0016": "lrpdlaser",
-        "WS0017": "minelayer2",
-        "WS0028": "tpc",
-        "WS0029": "tpc"
+        "WS0018": "autopulse",
+        "WS0019": "autopulse"
       }
     }
   ],
   "modules": [],
   "wings": [
-    "hoplon_wing",
-    "hoplon_wing",
-    "thunder_wing",
-    "thunder_wing"
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing"
   ]
 }

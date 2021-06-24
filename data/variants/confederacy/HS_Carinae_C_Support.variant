@@ -3,27 +3,11 @@
   "hullId": "HS_Carinae_Confederacy",
   "displayName": "Support",
   "goalVariant": true,
-  "fluxCapacitors": 7,
-  "fluxVents": 13,
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
   "quality": 3,
   "permaMods": [],
-  "hullMods": [
-    "advancedoptics",
-    "auxiliarythrusters",
-    "armoredweapons",
-    "eccm",
-    "advancedshieldemitter",
-    "hardenedshieldemitter",
-    "heavyarmor",
-    "missile_reload",
-    "missleracks",
-    "magazines",
-    "safetyoverrides",
-    "turretgyros",
-    "ecm",
-    "fluxdistributor",
-    "fluxcoil"
-  ],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": false,
@@ -35,8 +19,7 @@
         "WS0004": "lightdualmg",
         "WS0005": "lrpdlaser",
         "WS0006": "dualflak",
-        "WS0007": "swarmer",
-        "WS0008": "tpc"
+        "WS0007": "swarmer"
       }
     }
   ],
