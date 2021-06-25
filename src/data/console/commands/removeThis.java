@@ -8,6 +8,7 @@ package data.console.commands;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.SpecialItemData;
+import data.scripts.HyperionModPlugin;
 import org.lazywizard.console.BaseCommand;
 import static org.lazywizard.console.CommandUtils.*;
 import org.lazywizard.console.CommonStrings;
@@ -18,8 +19,6 @@ import org.lazywizard.console.Console;
  * @author NinjaSiren
  */
 public class removeThis implements BaseCommand {
-    
-    final boolean isDIY = Global.getSettings().getModManager().isModEnabled("diyplanets");
     
     @Override
     public BaseCommand.CommandResult runCommand(String args, BaseCommand.CommandContext context) {
@@ -36,7 +35,7 @@ public class removeThis implements BaseCommand {
         final CargoAPI cargo = Global.getSector().getPlayerFleet().getCargo();
         
         // DIY Planets special items
-        if(isDIY) {
+        if(new HyperionModPlugin().isDIYPlanets()) {
             try {
                 cargo.addSpecial(new SpecialItemData("atmo_mineralizer", "atmo_mineralizer"), amount);
                 cargo.addSpecial(new SpecialItemData("atmo_sublimator", "atmo_sublimator"), amount);

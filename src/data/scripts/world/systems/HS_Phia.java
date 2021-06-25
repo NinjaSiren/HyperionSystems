@@ -37,12 +37,18 @@ public class HS_Phia {
         return min + rand.nextInt(max - min + 1);
     }
     
+    // Roll the dice
+    private float randFloat(float min, float max) {
+        Random rand = new Random();
+        return min + rand.nextFloat() * (max - min);
+    }
+    
     public void generate(SectorAPI sector) {
         
         // Add star system
         StarSystemAPI system = sector.createStarSystem("Phia");
         system.getLocation().set(-25600, -20500);
-        system.setAge(StarAge.OLD);
+        system.setAge(StarAge.YOUNG);
         system.setBackgroundTextureFilename("graphics/backgrounds/background" + rand_bg() + ".jpg");
         ProcgenUsedNames.notifyUsed("Phia");  
         
@@ -79,10 +85,10 @@ public class HS_Phia {
                 phia, // Star
                 system.getAge(), // Sets the potential entities added depending on system age
                 10, rand(10, 20), // Min-Max entities to add
-                phia.getRadius() * 2, // Radius to start at
+                starSize * randFloat(1.75f, 2f), // Radius to start at
                 1, // Naming offset
-                true, // Custom or system based names
-                true); // Should habitables appear        
+                false, // Custom or system based names
+                true); // Should habitables appear   
         
         // Automatically generates random factions in the system based on the values you added
         new HS_AutoGenerateFactions().generateFactions(
@@ -90,7 +96,7 @@ public class HS_Phia {
                 phia, // The star that the planets will orbit on
                 "HS_Corporation_Separatist", // Faction ID of the first faction
                 Factions.REMNANTS, // Faction ID of the second faction
-                0.6, // The percentage of factionA appearing vs factionB on the system, min=0 max=100
+                0.6, // The percentage of factionA appearing vs factionB on the system, min=0 max=1
                 true, // Do we generate factions
                 false, // Do we generate stations
                 true); // Do we generate an abandoned station

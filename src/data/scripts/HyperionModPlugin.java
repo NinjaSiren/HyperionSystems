@@ -9,14 +9,19 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
+import data.scripts.world.HyperionExerelinGen;
 import data.scripts.world.HyperionGen;
 import exerelin.campaign.SectorManager; 
+import java.util.logging.Logger;
 /**
  *
  * @author NinjaSiren
  */
 public class HyperionModPlugin extends BaseModPlugin {
-    public static boolean isExerelin = false;
+    private static boolean isExerelin = false;
+    private static boolean isDIYPlanets = false;
+    private static boolean isBetterColonies = false;
+    protected static final Logger Log = Logger.getLogger(HyperionModPlugin.class.getName());
     
     @Override
     public void onNewGame() { 
@@ -24,7 +29,7 @@ public class HyperionModPlugin extends BaseModPlugin {
         if(!isExerelin || SectorManager.getCorvusMode()) {
             new HyperionGen().generate(Global.getSector());
         } else {
-            new HyperionGen().generate(Global.getSector());
+            new HyperionExerelinGen().generate(Global.getSector());
         }
     } 
     
@@ -56,6 +61,8 @@ public class HyperionModPlugin extends BaseModPlugin {
         boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
         boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
+        isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
         
         if(!hasLazyLib) {
             throw new RuntimeException("Hyperion Systems requires LazyLib!" +
@@ -71,5 +78,13 @@ public class HyperionModPlugin extends BaseModPlugin {
             throw new RuntimeException("Hyperion Systems requires MagicLib! Where is the magic?" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718.0");
         }
+    }
+    
+    public boolean isDIYPlanets() {
+        return isDIYPlanets;
+    }
+    
+    public boolean isBetterColonies() {
+        return isBetterColonies;
     }
 }

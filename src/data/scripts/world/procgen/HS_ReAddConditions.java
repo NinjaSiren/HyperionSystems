@@ -19,11 +19,10 @@ public class HS_ReAddConditions {
         
         // Adds current conditions
         int counter = condition_list.size() - 1;
-        for(int i = 0; counter >= i; counter--) {
-            if(counter < 0) break;
+        do {
             market.addCondition(condition_list.get(counter));
-        }
-        
+            counter = counter - 1;
+        } while(counter >= 0);
         market.reapplyConditions();
     }
 }

@@ -1,6 +1,6 @@
 package data.scripts.world.systems;
 
-import data.scripts.HyperionRandomizer;
+import data.scripts.world.procgen.HyperionRandomizer;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.JumpPointAPI;

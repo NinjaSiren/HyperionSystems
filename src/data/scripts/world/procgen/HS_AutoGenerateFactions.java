@@ -43,13 +43,14 @@ public class HS_AutoGenerateFactions {
             systemSize = system.getPlanets().size();
             
             // Adds factions, if habitable or hazards are less than 150%
-            for(int counter = systemSize - 1; counter >= 0; counter--) {
-                PlanetAPI planet;
-                String planetType;
-                MarketAPI planetMarket;
-                float planetHazardValue;
-                List<MarketConditionAPI> marketCondition;
-
+            PlanetAPI planet;
+            String planetType;
+            MarketAPI planetMarket;
+            float planetHazardValue;
+            List<MarketConditionAPI> marketCondition;
+            int counter = systemSize - 1;
+            
+            do {
                 if(system.getPlanets().get(counter) != null) {
                     planet = system.getPlanets().get(counter);
                     
@@ -104,7 +105,7 @@ public class HS_AutoGenerateFactions {
                                                     factions, // The percentage of factionA appearing vs factionB on the system
                                                     system);
                                             
-                                        } else if (planetHazardValue <= 150 && randPercent() <= 0.1) {
+                                        } else if (planetHazardValue <= 150 && randPercent() <= 0.05) {
                                             new HS_AddFactions().generateNow(
                                                     planet, // PlanetAPI array
                                                     factionA, // Faction A, to be generated
@@ -116,7 +117,7 @@ public class HS_AutoGenerateFactions {
                                                     system);
                                             
                                         } else if (planetHazardValue > 150 && planetHazardValue <= 175 && 
-                                                randPercent() <= 0.01) {
+                                                randPercent() <= 0.005) {
                                             new HS_AddFactions().generateNow(
                                                     planet, // PlanetAPI array
                                                     factionA, // Faction A, to be generated
@@ -138,7 +139,8 @@ public class HS_AutoGenerateFactions {
                         } 
                     }
                 }
-            }
+                counter = counter - 1;
+            } while(counter >= 0);
             
             // Adds an abandoned station
             if(enableAbandonedStation) {

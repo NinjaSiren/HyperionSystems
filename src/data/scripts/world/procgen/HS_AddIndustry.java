@@ -1,13 +1,14 @@
 package data.scripts.world.procgen;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Items;
+import data.scripts.HyperionModPlugin;
 import data.scripts.world.procgen.variables.DIY_INDUSTRIES;
 import data.scripts.world.procgen.variables.DIY_ITEMS;
 import data.scripts.world.procgen.variables.PLANET_TYPES;
@@ -20,7 +21,6 @@ import java.util.Random;
  * @author NinjaSiren
  */
 public class HS_AddIndustry {
-    private static boolean isDIYPlanets = false;
     
     // Roll the dice
     private double rand() {
@@ -31,9 +31,6 @@ public class HS_AddIndustry {
     }
     
     public HS_AddIndustry(PlanetAPI planet, MarketAPI market, FactionAPI faction, StarSystemAPI sector) { 
-        
-        // True if DIY Planets is enabled as a mod
-        isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
         
         // Industry size depending on market size and current industries added
         int iSize = new HS_IndustryLimit().industryLimit(market, planet);
@@ -370,21 +367,29 @@ public class HS_AddIndustry {
                         planet.getMarket().hasIndustry(Industries.REFINING)) {
                     if(rand() <= 0.4) {
                         market.addIndustry(Industries.HEAVYINDUSTRY, 
-                                new ArrayList<>(Arrays.asList(randNanoforge())));
+                                new ArrayList<>(Arrays.asList(
+                                        randNanoforge(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     } else {
                         market.addIndustry(Industries.ORBITALWORKS, 
-                                new ArrayList<>(Arrays.asList(randNanoforge())));
+                                new ArrayList<>(Arrays.asList(
+                                        randNanoforge(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     }
                 } else {
                     if(rand() <= 0.55) {
                         market.addIndustry(Industries.HEAVYINDUSTRY, 
-                                new ArrayList<>(Arrays.asList(randNanoforge())));
+                                new ArrayList<>(Arrays.asList(
+                                        randNanoforge(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     } else {
                         market.addIndustry(Industries.ORBITALWORKS, 
-                                new ArrayList<>(Arrays.asList(randNanoforge())));
+                                new ArrayList<>(Arrays.asList(
+                                        randNanoforge(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     }
                 }
@@ -401,25 +406,33 @@ public class HS_AddIndustry {
                         planet.getMarket().hasCondition(Conditions.VOLATILES_PLENTIFUL)) {
                     if(rand() <= 0.75) {
                         market.addIndustry(Industries.FUELPROD, 
-                                new ArrayList<>(Arrays.asList(randSynchotron())));
+                                new ArrayList<>(Arrays.asList(
+                                        randSynchotron(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     }     
                 } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_DIFFUSE)) {
                     if(rand() <= 0.75 && rand() > 0.25) {
                         market.addIndustry(Industries.FUELPROD, 
-                                new ArrayList<>(Arrays.asList(randSynchotron()))); 
+                                new ArrayList<>(Arrays.asList(
+                                        randSynchotron(
+                                                faction.getId())))); 
                         iSize = iSize - 1;
                     }
                 } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_TRACE)) {
                     if(rand() <= 0.25) {
                         market.addIndustry(Industries.FUELPROD, 
-                                new ArrayList<>(Arrays.asList(randSynchotron())));
+                                new ArrayList<>(Arrays.asList(
+                                        randSynchotron(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     }
                 } else {
                     if(rand() <= 0.1) {
                         market.addIndustry(Industries.FUELPROD, 
-                                new ArrayList<>(Arrays.asList(randSynchotron())));
+                                new ArrayList<>(Arrays.asList(
+                                        randSynchotron(
+                                                faction.getId()))));
                         iSize = iSize - 1;
                     }
                 }
@@ -464,14 +477,14 @@ public class HS_AddIndustry {
             }
             
             // Add DIY Planets' Industries if DIY Planets is enabled
-            if(isDIYPlanets) {
+            if(new HyperionModPlugin().isDIYPlanets()) {
                 
                 // Radiation Removal
                 if(planet.hasCondition(Conditions.IRRADIATED) ||
                         market.hasCondition(Conditions.IRRADIATED)) {
                     if(rand() <= 0.75) {
                         market.addIndustry(new DIY_INDUSTRIES().RAD_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randRadRemover())));
+                                new ArrayList<>(Arrays.asList(randRadRemover(faction.getId()))));
                     }
                 }
                 
@@ -490,7 +503,13 @@ public class HS_AddIndustry {
                         planet.getTypeId().equals(new PLANET_TYPES().US_FROZEN_B) ||
                         planet.getTypeId().equals(new PLANET_TYPES().TUNDRA)) {
                     if(rand() <= 0.75) {
-                        market.addIndustry(new DIY_INDUSTRIES().WATER_LAUNCHER_WATER_FROZEN_CRYO_ONLY);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(
+                                    new DIY_INDUSTRIES().WATER_LAUNCHER_WATER_FROZEN_CRYO_ONLY);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(
+                                    new DIY_INDUSTRIES().WATER_LAUNCHER_WATER_FROZEN_CRYO_ONLY);
+                        }
                     }
                 }
                 
@@ -511,7 +530,11 @@ public class HS_AddIndustry {
                         !planet.getTypeId().equals(new PLANET_TYPES().US_FROZEN_B) ||
                         !planet.getTypeId().equals(new PLANET_TYPES().TUNDRA)) {
                     if(rand() <= 0.75) {
-                        market.addIndustry(new DIY_INDUSTRIES().WATER_RECIEVER);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(new DIY_INDUSTRIES().WATER_RECIEVER);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(new DIY_INDUSTRIES().WATER_RECIEVER);
+                        }
                     }
                 } else if(!hasWaterPlanetType(sector, counter) && 
                         !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_A) ||
@@ -528,7 +551,11 @@ public class HS_AddIndustry {
                         !planet.getTypeId().equals(new PLANET_TYPES().US_FROZEN_B) ||
                         !planet.getTypeId().equals(new PLANET_TYPES().TUNDRA)) {
                     if(rand() <= 0.75) {
-                        market.addIndustry(new DIY_INDUSTRIES().COMET_WATER);   
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(new DIY_INDUSTRIES().COMET_WATER);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(new DIY_INDUSTRIES().COMET_WATER);
+                        }
                     }
                 }
                 
@@ -536,7 +563,11 @@ public class HS_AddIndustry {
                 if(planet.hasCondition(Conditions.POLLUTION) ||
                         market.hasCondition(Conditions.POLLUTION)) {
                     if(rand() <= 0.75) {
-                        market.addIndustry(new DIY_INDUSTRIES().POLLUTION_REMOVER);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(new DIY_INDUSTRIES().POLLUTION_REMOVER);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(new DIY_INDUSTRIES().POLLUTION_REMOVER);
+                        }
                     }
                 }
                 
@@ -546,9 +577,21 @@ public class HS_AddIndustry {
                         planet.hasCondition(Conditions.DECIVILIZED_SUBPOP) ||
                         market.hasCondition(Conditions.DECIVILIZED_SUBPOP)) {
                     if(rand() <= 0.33) {
-                        market.addIndustry(new DIY_INDUSTRIES().DECIVILIZED_REMOVER_INTEGRATE);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(
+                                    new DIY_INDUSTRIES().DECIVILIZED_REMOVER_INTEGRATE);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(
+                                    new DIY_INDUSTRIES().DECIVILIZED_REMOVER_INTEGRATE);
+                        }
                     } else if(rand() > 0.33 && rand() <= 0.66) {
-                        market.addIndustry(new DIY_INDUSTRIES().DECIVILIZED_REMOVER_SUBJUGATE);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(
+                                    new DIY_INDUSTRIES().DECIVILIZED_REMOVER_SUBJUGATE);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(
+                                    new DIY_INDUSTRIES().DECIVILIZED_REMOVER_SUBJUGATE);
+                        }
                     }
                 }
                 
@@ -559,7 +602,7 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.DENSE_ATMOSPHERE)) {
                     if(rand() <= 0.75) {
                         market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_FILTER, 
-                                new ArrayList<>(Arrays.asList(randAtmoMineralizer())));
+                                new ArrayList<>(Arrays.asList(randAtmoMineralizer(faction.getId()))));
                     }
                 }
                 
@@ -570,10 +613,10 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.THIN_ATMOSPHERE)) {
                     if(rand() <= 0.33) {
                         market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_PUMP, 
-                                new ArrayList<>(Arrays.asList(randAtmoSublimator())));
+                                new ArrayList<>(Arrays.asList(randAtmoSublimator(faction.getId()))));
                     } else if(rand() > 0.33 && rand() <= 0.66) {
                         market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_PUMP_EXPENSIVE, 
-                                new ArrayList<>(Arrays.asList(randAtmoSublimator())));
+                                new ArrayList<>(Arrays.asList(randAtmoSublimator(faction.getId()))));
                     }
                 }
                 
@@ -584,10 +627,10 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.COLD)) {
                     if(rand() <= 0.33) {
                         market.addIndustry(new DIY_INDUSTRIES().COLD_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randHeatRemover())));
+                                new ArrayList<>(Arrays.asList(randHeatRemover(faction.getId()))));
                     } else if(rand() > 0.33 && rand() <= 0.66) {
                         market.addIndustry(new DIY_INDUSTRIES().STELLAR_MIRROR_EXPENSIVE, 
-                                new ArrayList<>(Arrays.asList(randHeatRemover())));
+                                new ArrayList<>(Arrays.asList(randHeatRemover(faction.getId()))));
                     }
                 }
                 
@@ -598,10 +641,10 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.HOT)) {
                     if(rand() <= 0.33) {
                         market.addIndustry(new DIY_INDUSTRIES().HEAT_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randHeatRemover())));
+                                new ArrayList<>(Arrays.asList(randHeatRemover(faction.getId()))));
                     } else if(rand() > 0.33 && rand() <= 0.66) {
                         market.addIndustry(new DIY_INDUSTRIES().STELLAR_MIRROR_EXPENSIVE, 
-                                new ArrayList<>(Arrays.asList(randHeatRemover())));
+                                new ArrayList<>(Arrays.asList(randHeatRemover(faction.getId()))));
                     }
                 }
                 
@@ -610,7 +653,7 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.POOR_LIGHT)) {
                     if(rand() <= 0.75) {
                         market.addIndustry(new DIY_INDUSTRIES().POOR_LIGHT_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randHeatRemover())));
+                                new ArrayList<>(Arrays.asList(randHeatRemover(faction.getId()))));
                     }
                 }
                 
@@ -621,10 +664,10 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY)) {
                     if(rand() <= 0.33) {
                         market.addIndustry(new DIY_INDUSTRIES().TECTONIC_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randTectonicRemover())));
+                                new ArrayList<>(Arrays.asList(randTectonicRemover(faction.getId()))));
                     } else if(rand() > 0.33 && rand() <= 0.66) {
                         market.addIndustry(new DIY_INDUSTRIES().TECTONIC_REMOVER_EXPENSIVE, 
-                                new ArrayList<>(Arrays.asList(randTectonicRemover())));
+                                new ArrayList<>(Arrays.asList(randTectonicRemover(faction.getId()))));
                     }
                 }
                 
@@ -633,7 +676,7 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.EXTREME_WEATHER)) {
                     if(rand() <= 0.5) {
                         market.addIndustry(new DIY_INDUSTRIES().EXTREME_WEATHER_REMOVER, 
-                                new ArrayList<>(Arrays.asList(randWeatherRemover())));
+                                new ArrayList<>(Arrays.asList(randWeatherRemover(faction.getId()))));
                     }
                 }
                 
@@ -641,7 +684,11 @@ public class HS_AddIndustry {
                 if(planet.hasCondition(Conditions.INIMICAL_BIOSPHERE) ||
                         market.hasCondition(Conditions.INIMICAL_BIOSPHERE)) {
                     if(rand() <= 0.5) {
-                        market.addIndustry(new DIY_INDUSTRIES().INIMICAL_REMOVER);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(new DIY_INDUSTRIES().INIMICAL_REMOVER);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(new DIY_INDUSTRIES().INIMICAL_REMOVER);
+                        }
                     }
                 }
                 
@@ -652,7 +699,7 @@ public class HS_AddIndustry {
                         market.hasCondition(Conditions.HIGH_GRAVITY)) {
                     if(rand() <= 0.75) {
                         market.addIndustry(new DIY_INDUSTRIES().GRAV_OSCILLATOR, 
-                                new ArrayList<>(Arrays.asList(randGravOscillator())));
+                                new ArrayList<>(Arrays.asList(randGravOscillator(faction.getId()))));
                     }
                 }
                 
@@ -661,7 +708,7 @@ public class HS_AddIndustry {
                         planet.getTypeId().contains("WATER")) {
                     if(rand() <= 0.75) {
                         market.addIndustry(new DIY_INDUSTRIES().PERFECT_CLIMATE_TERRAN_WATER_ONLY, 
-                                new ArrayList<>(Arrays.asList(randClimateTerraform())));
+                                new ArrayList<>(Arrays.asList(randClimateTerraform(faction.getId()))));
                     }
                 }
                 
@@ -672,7 +719,11 @@ public class HS_AddIndustry {
                         planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_A) ||
                         planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_B)) {
                     if(rand() <= 0.5) {
-                        market.addIndustry(new DIY_INDUSTRIES().LOBSTER_BREEDING);
+                        if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
+                            if(rand() <= 0.5) market.addIndustry(new DIY_INDUSTRIES().LOBSTER_BREEDING);
+                        } else if(faction.getId().equalsIgnoreCase(Factions.REMNANTS)) {
+                            if(rand() <= 0.75) market.addIndustry(new DIY_INDUSTRIES().LOBSTER_BREEDING);
+                        }
                     }
                 }
             }
@@ -691,56 +742,116 @@ public class HS_AddIndustry {
         } while(counter > 0);
         return false;
     }
-    
-    private String randNanoforge() {
-        if(rand() <= 0.33) return Items.PRISTINE_NANOFORGE;
-        else if(rand() > 0.33 && rand() <= 0.66) return Items.CORRUPTED_NANOFORGE;
-        else if(rand() > 0.66) return Items.CORRUPTED_NANOFORGE;
+
+    private String randNanoforge(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return Items.PRISTINE_NANOFORGE;
+                else if(rand() > 0.5) return Items.CORRUPTED_NANOFORGE;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return Items.PRISTINE_NANOFORGE;
+                else if(rand() > 0.25) return Items.CORRUPTED_NANOFORGE;
+            }
+        }
         return null;
     }
     
-    private String randSynchotron() {
-        if(rand() <= 0.5) return Items.SYNCHROTRON;
-        else return null;
+    private String randSynchotron(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return Items.SYNCHROTRON;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return Items.SYNCHROTRON;
+            }
+        }
+        return null;
     }
     
-    private String randRadRemover() {
-        if(rand() <= 0.5) return new DIY_ITEMS().RADIATION_REMOVER;
-        else return null;
+    private String randRadRemover(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().RADIATION_REMOVER;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().RADIATION_REMOVER;
+            }
+        }
+        return null;
     }
     
-    private String randGravOscillator() {
-        if(rand() <= 0.5) return new DIY_ITEMS().GRAV_OSCILLATOR;
-        else return null;
+    private String randGravOscillator(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().GRAV_OSCILLATOR;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().GRAV_OSCILLATOR;
+            }
+        }
+        return null;
     }
     
-    private String randAtmoMineralizer() {
-        if(rand() <= 0.5) return new DIY_ITEMS().ATMOSPHERE_MINERALIZER;
-        else return null;
+    private String randAtmoMineralizer(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().ATMOSPHERE_MINERALIZER;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().ATMOSPHERE_MINERALIZER;
+            }
+        }
+        return null;
     }
     
-    private String randAtmoSublimator() {
-        if(rand() <= 0.5) return new DIY_ITEMS().ATMOSPHERE_SUBLIMATOR;
-        else return null;
+    private String randAtmoSublimator(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().ATMOSPHERE_SUBLIMATOR;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().ATMOSPHERE_SUBLIMATOR;
+            }
+        }
+        return null;
     }
     
-    private String randClimateTerraform() {
-        if(rand() <= 0.5) return new DIY_ITEMS().CLIMATE_TERRAFORMER;
-        else return null;
+    private String randClimateTerraform(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().CLIMATE_TERRAFORMER;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().CLIMATE_TERRAFORMER;
+            }
+        }
+        return null;
     }
     
-    private String randHeatRemover() {
-        if(rand() <= 0.5) return new DIY_ITEMS().HEAT_REMOVER_CORE;
-        else return null;
+    private String randHeatRemover(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().HEAT_REMOVER_CORE;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().HEAT_REMOVER_CORE;
+            }
+        }
+        return null;
     }
     
-    private String randTectonicRemover() {
-        if(rand() <= 0.5) return new DIY_ITEMS().TECTONIC_REMOVER;
-        else return null;
+    private String randTectonicRemover(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().TECTONIC_REMOVER;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().TECTONIC_REMOVER;
+            }
+        }
+        return null;
     }
     
-    private String randWeatherRemover() {
-        if(rand() <= 0.5) return new DIY_ITEMS().WEATHER_REMOVER_CORE;
-        else return null;
+    private String randWeatherRemover(String faction) {
+        if(faction != null) {
+            if(faction.equalsIgnoreCase("HS_Corporation_Separatist")) {
+                if(rand() <= 0.5) return new DIY_ITEMS().WEATHER_REMOVER_CORE;
+            } else if(faction.equalsIgnoreCase(Factions.REMNANTS)) {
+                if(rand() <= 0.75) return new DIY_ITEMS().WEATHER_REMOVER_CORE;
+            }
+        }
+        return null;
     }
 }

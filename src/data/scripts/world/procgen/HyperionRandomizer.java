@@ -1,4 +1,4 @@
-package data.scripts.world.systems;
+package data.scripts.world.procgen;
 
 import java.util.ArrayList;
 import java.util.Random;

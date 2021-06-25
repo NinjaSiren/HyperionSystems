@@ -3,9 +3,7 @@ package data.scripts.world.systems;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
-import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.StarTypes;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
@@ -39,12 +37,18 @@ public class HS_Klat {
         return min + rand.nextInt(max - min + 1);
     }
     
+    // Roll the dice
+    private float randFloat(float min, float max) {
+        Random rand = new Random();
+        return min + rand.nextFloat() * (max - min);
+    }
+    
     public void generate(SectorAPI sector) {
         
         // Add star system
         StarSystemAPI system = sector.createStarSystem("Klat");
         system.getLocation().set(-9750, 24500);
-        system.setAge(StarAge.YOUNG);
+        system.setAge(StarAge.ANY);
         system.setBackgroundTextureFilename("graphics/backgrounds/background" + rand_bg() + ".jpg");
         ProcgenUsedNames.notifyUsed("Klat");
         
@@ -81,9 +85,9 @@ public class HS_Klat {
                 klat, // Star
                 system.getAge(), // Sets the potential entities added depending on system age
                 10, rand(10, 20), // Min-Max entities to add
-                klat.getRadius() * 2, // Radius to start at
+                starSize * randFloat(1.75f, 2f), // Radius to start at
                 1, // Naming offset
-                true, // Custom or system based names
+                false, // Custom or system based names
                 true); // Should habitables appear
         
         // Automatically generates random factions in the system based on the values you added
@@ -92,46 +96,10 @@ public class HS_Klat {
                 klat, // The star that the planets will orbit on
                 "HS_Corporation_Separatist", // Faction ID of the first faction
                 Factions.REMNANTS, // Faction ID of the second faction
-                0.6, // The percentage of factionA appearing vs factionB on the system, min=0 max=100
+                0.6, // The percentage of factionA appearing vs factionB on the system, min=0 max=1
                 true, // Do we generate factions
                 false, // Do we generate stations
                 true); // Do we generate an abandoned station
-        
-        //Nav Buoy
-        SectorEntityToken nav_buoy = system.addCustomEntity(
-                "klat_navbuoy",
-                "Klat Nav Buoy",
-                Entities.NAV_BUOY,
-                "HS_Corporation_Separatist");
-        nav_buoy.setCircularOrbit(
-                klat, 
-                system.getPlanets().get(1).getCircularOrbitRadius() * 1.5f, 
-                system.getPlanets().get(1).getCircularOrbitAngle() * 1.5f, 
-                system.getPlanets().get(1).getCircularOrbitPeriod() * 1.5f);
-
-        //Comm Relay
-        SectorEntityToken comm_relay = system.addCustomEntity(
-                "klat_commrelay",
-                "Klat Relay",
-                Entities.COMM_RELAY,
-                "HS_Corporation_Separatist");
-        comm_relay.setCircularOrbit(
-                klat, 
-                system.getPlanets().get(2).getCircularOrbitRadius() * 1.5f, 
-                system.getPlanets().get(2).getCircularOrbitAngle() * 1.5f, 
-                system.getPlanets().get(2).getCircularOrbitPeriod() * 1.5f);
-
-        //Sensor Array
-        SectorEntityToken sensor_array = system.addCustomEntity(
-                "klat_sensorarray",
-                "Klat Sensor Array",
-                Entities.SENSOR_ARRAY,
-                "HS_Corporation_Separatist");
-        sensor_array.setCircularOrbit(
-                klat, 
-                system.getPlanets().get(3).getCircularOrbitRadius() * 1.5f, 
-                system.getPlanets().get(3).getCircularOrbitAngle() * 1.5f, 
-                system.getPlanets().get(3).getCircularOrbitPeriod() * 1.5f);
         
         // Adds nav buoy, comm relay, and sensor array
         new HS_AddStuffs().generateStuffs(system, klat, "HS_Corporation_Separatist");

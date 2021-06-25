@@ -19,7 +19,7 @@ import java.util.Random;
  *
  * @author NinjaSiren
  */
-public class HyperionGen implements SectorGeneratorPlugin {
+public class HyperionExerelinGen implements SectorGeneratorPlugin {
     
     // Roll the dice
     private double rand() {

@@ -1,2 +1,2 @@
 # HyperionSystems
-[Starsector 0.9.1a] Hyperion Systems - Adds new pre-domain collapse ships
+[Starsector 0.95a] Hyperion Systems - Adds new pre-domain collapse ships

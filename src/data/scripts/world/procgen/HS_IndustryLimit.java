@@ -1,9 +1,9 @@
 package data.scripts.world.procgen;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
+import data.scripts.HyperionModPlugin;
 
 /**
  *
@@ -18,70 +18,36 @@ public final class HS_IndustryLimit {
     public int industryLimit(MarketAPI market, PlanetAPI planet) {
         int iLimit;
         int marketSize = market.getSize();
-        boolean isBC = Global.getSettings().getModManager().isModEnabled("timid_admins");
         
-            if(!isBC) {
-                if(market.getIndustry(Industries.POPULATION).getSpecialItem() != null) {
-                    if(market.getIndustry(Industries.POPULATION)
-                                .getSpecialItem().toString().equals("coronal_portal")) {
-                        switch (marketSize) {
-                            case 1:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 2:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 3:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 4:
-                                iLimit = 3 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 5:
-                                iLimit = 4 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 6:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 7:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 8:
-                                iLimit = 5 - mHasIndustry(market, planet); 
-                                return iLimit;
-                            case 9:
-                                iLimit = 5 - mHasIndustry(market, planet); 
-                                return iLimit;
-                            case 10:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                        }
-                    }
-                } else {              
-                    switch (marketSize) {
+        // Vanilla, with Coronal Hypershunt
+        if(!new HyperionModPlugin().isBetterColonies()) {
+            if(market.getIndustry(Industries.POPULATION).getSpecialItem() != null) {
+                if(market.getIndustry(Industries.POPULATION)
+                            .getSpecialItem().toString().equals("coronal_portal")) {
+                    switch(marketSize) {
                         case 1:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 2:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 3:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 4:
                             iLimit = 2 - mHasIndustry(market, planet);
                             return iLimit;
-                        case 5:
+                        case 2:
+                            iLimit = 2 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 3:
+                            iLimit = 2 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 4:
                             iLimit = 3 - mHasIndustry(market, planet);
                             return iLimit;
-                        case 6:
+                        case 5:
                             iLimit = 4 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 6:
+                            iLimit = 5 - mHasIndustry(market, planet);
                             return iLimit;
                         case 7:
-                            iLimit = 4 - mHasIndustry(market, planet);
+                            iLimit = 5 - mHasIndustry(market, planet);
                             return iLimit;
                         case 8:
-                            iLimit = 4 - mHasIndustry(market, planet); 
+                            iLimit = 5 - mHasIndustry(market, planet); 
                             return iLimit;
                         case 9:
                             iLimit = 5 - mHasIndustry(market, planet); 
@@ -91,79 +57,116 @@ public final class HS_IndustryLimit {
                             return iLimit;
                     }
                 }
-            } else {
-                if(market.getIndustry(Industries.POPULATION).getSpecialItem() != null) {
-                    if(market.getIndustry(Industries.POPULATION)
-                                .getSpecialItem().toString().equals("coronal_portal")) {
-                        switch (marketSize) {
-                            case 1:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 2:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 3:
-                                iLimit = 2 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 4:
-                                iLimit = 3 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 5:
-                                iLimit = 4 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 6:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 7:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                            case 8:
-                                iLimit = 5 - mHasIndustry(market, planet); 
-                                return iLimit;
-                            case 9:
-                                iLimit = 5 - mHasIndustry(market, planet); 
-                                return iLimit;
-                            case 10:
-                                iLimit = 5 - mHasIndustry(market, planet);
-                                return iLimit;
-                        }
-                    }
-                } else {
+            // Vanilla, without Coronal Hypershunt
+            } else {              
+                switch (marketSize) {
+                    case 1:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 2:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 3:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 4:
+                        iLimit = 2 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 5:
+                        iLimit = 3 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 6:
+                        iLimit = 4 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 7:
+                        iLimit = 4 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 8:
+                        iLimit = 4 - mHasIndustry(market, planet); 
+                        return iLimit;
+                    case 9:
+                        iLimit = 5 - mHasIndustry(market, planet); 
+                        return iLimit;
+                    case 10:
+                        iLimit = 5 - mHasIndustry(market, planet);
+                        return iLimit;
+                }
+            }
+        // Better Colonies, with Coronal Hypershunt
+        } else {
+            if(market.getIndustry(Industries.POPULATION).getSpecialItem() != null) {
+                if(market.getIndustry(Industries.POPULATION)
+                            .getSpecialItem().toString().equals("coronal_portal")) {
                     switch (marketSize) {
                         case 1:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 2:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 3:
-                            iLimit = 1 - mHasIndustry(market, planet);
-                            return iLimit;
-                        case 4:
                             iLimit = 2 - mHasIndustry(market, planet);
                             return iLimit;
-                        case 5:
+                        case 2:
+                            iLimit = 2 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 3:
+                            iLimit = 2 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 4:
                             iLimit = 3 - mHasIndustry(market, planet);
                             return iLimit;
-                        case 6:
+                        case 5:
                             iLimit = 4 - mHasIndustry(market, planet);
+                            return iLimit;
+                        case 6:
+                            iLimit = 5 - mHasIndustry(market, planet);
                             return iLimit;
                         case 7:
-                            iLimit = 4 - mHasIndustry(market, planet);
+                            iLimit = 5 - mHasIndustry(market, planet);
                             return iLimit;
                         case 8:
-                            iLimit = 4 - mHasIndustry(market, planet); 
+                            iLimit = 5 - mHasIndustry(market, planet); 
                             return iLimit;
                         case 9:
-                            iLimit = 4 - mHasIndustry(market, planet); 
+                            iLimit = 5 - mHasIndustry(market, planet); 
                             return iLimit;
                         case 10:
-                            iLimit = 4 - mHasIndustry(market, planet);
+                            iLimit = 5 - mHasIndustry(market, planet);
                             return iLimit;
                     }
                 }
+            // Better Colonies, without Coronal Hypershunt
+            } else {
+                switch (marketSize) {
+                    case 1:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 2:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 3:
+                        iLimit = 1 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 4:
+                        iLimit = 2 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 5:
+                        iLimit = 3 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 6:
+                        iLimit = 4 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 7:
+                        iLimit = 4 - mHasIndustry(market, planet);
+                        return iLimit;
+                    case 8:
+                        iLimit = 4 - mHasIndustry(market, planet); 
+                        return iLimit;
+                    case 9:
+                        iLimit = 4 - mHasIndustry(market, planet); 
+                        return iLimit;
+                    case 10:
+                        iLimit = 4 - mHasIndustry(market, planet);
+                        return iLimit;
+                }
             }
-            return 0;
+        }
+        return 0;
     }
     
     // Checks if planet market has specific industry

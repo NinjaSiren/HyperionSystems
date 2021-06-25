@@ -25,7 +25,7 @@
 	"marketSpawnWeight":0.85,
 
 	"factionsLiked":["persean", "sindrian_diktat", "independent", "lions_guard"],
-	"factionsDisliked":["hegemony", "interstellarimperium", "pirates", "new_galactic_order", "mayorate"],
+	"factionsDisliked":["hegemony", "pirates", "tritachyon"],
 		
 	"startRelationships":{
 		"hegemony": -0.9, 

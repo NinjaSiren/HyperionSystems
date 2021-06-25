@@ -64,7 +64,8 @@ public class HS_AddStuffs {
         float[] orbit_a = new float[system.getPlanets().size()];
         float[] orbit_p = new float[system.getPlanets().size()];
         
-        for(int counter = system.getPlanets().size() - 1; counter >= 0; counter--) {
+        int counter = system.getPlanets().size() - 1;
+        do {
             if(system.getPlanets().get(counter).getOrbitFocus() == star ||
                     !system.getPlanets().get(counter).isMoon() &&
                     !system.getPlanets().get(counter).isStar()) {
@@ -72,7 +73,8 @@ public class HS_AddStuffs {
                 orbit_p[counter] = system.getPlanets().get(counter).getCircularOrbitPeriod();
                 orbit_a[counter] = system.getPlanets().get(counter).getCircularOrbitAngle();
             }
-        }
+            counter = counter - 1;
+        } while(counter >= 0);
         
         int max = system.getPlanets().size() - 1;
         
