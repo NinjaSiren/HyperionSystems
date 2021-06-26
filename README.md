@@ -1,7 +1,7 @@
 # HyperionSystems
 [Starsector 0.95a] Hyperion Systems - Adds new pre-domain collapse ships, new weapons & a new faction.
 
-[![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://packagecontrol.io/packages/SwitchDictionary)
+[![Package Control total downloads](https://img.shields.io/packagecontrol/dt/SwitchDictionary.svg)](https://github.com/NinjaSiren/HyperionSystems)
 
 [![licensebuttons by-nc-sa](https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0)
 
