@@ -18,9 +18,10 @@ public final class HS_IndustryLimit {
     public int industryLimit(MarketAPI market, PlanetAPI planet) {
         int iLimit;
         int marketSize = market.getSize();
+        boolean isBC = new HyperionModPlugin().isBetterColonies();
         
         // Vanilla, with Coronal Hypershunt
-        if(!new HyperionModPlugin().isBetterColonies()) {
+        if(!isBC) {
             if(market.getIndustry(Industries.POPULATION).getSpecialItem() != null) {
                 if(market.getIndustry(Industries.POPULATION)
                             .getSpecialItem().toString().equals("coronal_portal")) {

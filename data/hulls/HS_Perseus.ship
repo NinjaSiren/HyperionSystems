@@ -1,5 +1,5 @@
 {
-  "hullName": "Perseus-class Supercarrier",
+  "hullName": "Perseus-class Carrier",
   "hullId": "HS_Perseus",
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/ships/Perseus.png",
@@ -76,162 +76,6 @@
       "locations": [-35.5, 20]
     },
     {
-      "id": "LB 1",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        -3, 21.5,
-        1, 14.5,
-        -3, 7.5
-      ]
-    },
-    {
-      "id": "LB 2",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        21, 21.5,
-        25, 14.5,
-        21, 7.5
-      ]
-    },
-    {
-      "id": "LB 3",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        45, 21.5,
-        49, 14.5,
-        45, 7.5
-      ]
-    },
-    {
-      "id": "LB 4",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        69, 21.5,
-        73, 14.5,
-        69, 7.5
-      ]
-    },
-    {
-      "id": "LB 5",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        93, 21.5,
-        97, 14.5,
-        93, 7.5
-      ]
-    },
-    {
-      "id": "LB 6",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        117, 21.5,
-        121, 14.5,
-        117, 7.5
-      ]
-    },
-    {
-      "id": "LB 7",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        -3, -7.5,
-        1, -14.5,
-        -3, -21.5
-      ]
-    },
-    {
-      "id": "LB 8",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        21, -7.5,
-        25, -14.5,
-        21, -21.5
-      ]
-    },
-    {
-      "id": "LB 9",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        45, -7.5,
-        49, -14.5,
-        45, -21.5
-      ]
-    },
-    {
-      "id": "LB 10",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        69, -7.5,
-        73, -14.5,
-        69, -21.5
-      ]
-    },
-    {
-      "id": "LB 11",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        93, -7.5,
-        97, -14.5,
-        93, -21.5
-      ]
-    },
-    {
-      "id": "LB 12",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY",
-      "mount": "HIDDEN",
-      "arc": 360,
-      "angle": 0,
-      "locations": [
-        117, -7.5,
-        121, -14.5,
-        117, -21.5
-      ]
-    },
-    {
       "id": "WS0007",
       "size": "MEDIUM",
       "type": "UNIVERSAL",
@@ -266,6 +110,78 @@
       "arc": 180,
       "angle": 45,
       "locations": [54, 39.5]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        12, 14.5,
+        25, 14.5
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        60, 14.5,
+        73, 14.5
+      ]
+    },
+    {
+      "id": "LB 3",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        107.5, 14.5,
+        121, 14.5
+      ]
+    },
+    {
+      "id": "LB 4",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        107.5, -16,
+        121, -15.5
+      ]
+    },
+    {
+      "id": "LB 5",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        60, -16,
+        73, -15.5
+      ]
+    },
+    {
+      "id": "LB 6",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        12, -15.5,
+        25, -15.5
+      ]
     }
   ],
   "engineSlots": [

@@ -118,7 +118,7 @@
     {
       "id": "WS0012",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "UNIVERSAL",
       "mount": "TURRET",
       "arc": 360,
       "angle": -90,

@@ -4,7 +4,7 @@
   "displayName": "Offense",
   "goalVariant": true,
   "fluxCapacitors": 0,
-  "fluxVents": 13,
+  "fluxVents": 12,
   "quality": 3,
   "permaMods": [],
   "hullMods": [
@@ -27,7 +27,7 @@
         "WS0009": "hs_minotaur_cannon",
         "WS0010": "hs_minotaur_cannon",
         "WS0011": "pdburst",
-        "WS0012": "riftlance",
+        "WS0012": "hs_mini_minotaur",
         "WS0013": "hs_cygnus_pd",
         "WS0014": "pdburst",
         "WS0015": "hs_cygnus_pd",

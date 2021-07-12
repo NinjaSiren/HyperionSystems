@@ -26,4 +26,17 @@
 		{"file":"sounds/weapons/hs_minotaur_cannon_2.ogg","pitch":1,"volume":0.7},
 		{"file":"sounds/weapons/hs_minotaur_cannon_2_loud.ogg","pitch":1,"volume":0.7},
 	],   
+	
+	"hs_sagittarius_launch":[
+		{"file":"sounds/weapons/hs_sagittarius_launch.ogg","pitch":0.5,"volume":0.7},
+		{"file":"sounds/weapons/hs_sagittarius_launch_loud.ogg","pitch":0.5,"volume":0.7},
+	],
+
+	"hs_polaris_start":[
+		{"file":"sounds/weapons/hs_polaris_start.ogg","pitch":0.5,"volume":0.7},
+	],
+
+	"hs_polaris_shot":[
+		{"file":"sounds/weapons/hs_polaris_shot.ogg","pitch":0.5,"volume":0.7},
+	],
 }

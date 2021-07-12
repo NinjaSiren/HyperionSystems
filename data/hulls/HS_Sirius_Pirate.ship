@@ -1,0 +1,129 @@
+{
+  "hullName": "Sirius-class Phase Destroyer (Pirate)",
+  "hullId": "HS_Sirius_Pirate",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/pirates/Sirius_pirate.png",
+  "style": "HIGH_TECH",
+  "height": 140,
+  "width": 130,
+  "center": [65.5, 68.5],
+  "collisionRadius": 78.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 85,
+  "viewOffset": 0,
+  "builtInMods": [
+    "unstable_injector"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": -45,
+      "locations": [37.5, -30.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 45,
+      "locations": [37.5, 30.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 201,
+      "angle": -90,
+      "locations": [-2, -49]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 201,
+      "angle": 90,
+      "locations": [-2, 49]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -45,
+      "locations": [2.5, -22]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 45,
+      "locations": [2.5, 22]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 0,
+      "locations": [32.5, -0]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [66.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-64.5, -29],
+      "length": 79,
+      "width": 31,
+      "angle": 180,
+      "contrailSize": 31,
+      "style": "COBRA_BOMBER"
+    },
+    {
+      "location": [-64.5, 29],
+      "length": 79,
+      "width": 31,
+      "angle": -180,
+      "contrailSize": 31,
+      "style": "COBRA_BOMBER"
+    }
+  ],
+  "bounds": [
+    70.5, 5.5,
+    55.5, 28.5,
+    41, 45,
+    6, 58.5,
+    -9, 59.5,
+    -29, 53,
+    -53, 46,
+    -66, 39,
+    -68, 7.5,
+    -68, -7.5,
+    -66, -39,
+    -53, -46,
+    -29, -53,
+    -9, -59.5,
+    6, -58.5,
+    41, -45,
+    55.5, -28.5,
+    70.5, -5.5
+  ]
+}

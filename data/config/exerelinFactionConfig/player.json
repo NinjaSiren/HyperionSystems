@@ -1,0 +1,9 @@
+{
+    "playableFaction":true,
+    "corvusCompatible":true,
+    
+    "startShipsSuper":[
+       ["HS_Summit_Ballistic"],
+       ["HS_Summit_Energy"]
+    ],
+}

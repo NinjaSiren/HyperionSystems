@@ -1,0 +1,37 @@
+{
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		"hulls":{
+			"HS_Sirius_Pirate":0.2, # it's pretty good, so make it more rare
+			"HS_Eridani_Pirate":0.3, # it's pretty good, so make it more rare
+			"HS_Cassiopeia_Pirate":0.25, # it's pretty good, so make it more rare
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		"tags":["base_bp", "pirate_bp", "pirates"],
+		"hulls":[
+			"HS_Sirius_Pirate", # it's pretty good, so make it more rare
+			"HS_Eridani_Pirate", # it's pretty good, so make it more rare
+			"HS_Cassiopeia_Pirate", # it's pretty good, so make it more rare
+		],
+	},
+	"knownShips":{
+		"tags":["base_bp", "pirate_bp", "pirates"],
+		"hulls":[
+			"HS_Sirius_Pirate", # it's pretty good, so make it more rare
+			"HS_Eridani_Pirate", # it's pretty good, so make it more rare
+			"HS_Cassiopeia_Pirate", # it's pretty good, so make it more rare
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[],
+		"hulls":[
+		],
+	},
+}
+
+
+
+

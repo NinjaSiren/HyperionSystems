@@ -32,6 +32,8 @@ public class HS_AddIndustry {
     
     public HS_AddIndustry(PlanetAPI planet, MarketAPI market, FactionAPI faction, StarSystemAPI sector) { 
         
+        boolean isDIY = new HyperionModPlugin().isDIYPlanets();
+        
         // Industry size depending on market size and current industries added
         int iSize = new HS_IndustryLimit().industryLimit(market, planet);
         
@@ -477,7 +479,7 @@ public class HS_AddIndustry {
             }
             
             // Add DIY Planets' Industries if DIY Planets is enabled
-            if(new HyperionModPlugin().isDIYPlanets()) {
+            if(isDIY) {
                 
                 // Radiation Removal
                 if(planet.hasCondition(Conditions.IRRADIATED) ||

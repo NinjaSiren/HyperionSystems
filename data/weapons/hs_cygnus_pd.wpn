@@ -4,22 +4,22 @@
   "projectileSpecId": "hs_cygnus_proj",
   "type": "BALLISTIC",
   "size": "SMALL",
-  "turretSprite": "graphics/weapons/cygnus_pd_turret_base.png",
+  "turretSprite": "graphics/weapons/cygnus_pd_turret_base00.png",
   "turretGlowSprite": "graphics/weapons/cygnus_pd_turret_glow.png",
-  "hardpointSprite": "graphics/weapons/cygnus_pd_hardpoint_base.png",
+  "hardpointSprite": "graphics/weapons/cygnus_pd_hardpoint_base00.png",
   "hardpointGlowSprite": "graphics/weapons/cygnus_pd_hardpoint_glow.png",
   "glowColor": [
     103,
     149,
     233,
-    192
+    96
   ],
   "turretOffsets": [
-    -4,
+    12,
     -2,
-    -4,
+    12,
     0,
-    -4,
+    12,
     2
   ],
   "turretAngleOffsets": [
@@ -28,12 +28,12 @@
     0
   ],
   "hardpointOffsets": [
-    1,
-    2,
-    1,
+    16,
+    -2,
+    16,
     0,
-    1,
-    -2
+    16,
+    2
   ],
   "hardpointAngleOffsets": [
     0,
@@ -42,12 +42,14 @@
   ],
   "barrelMode": "ALTERNATING_BURST",
   "animationType": "GLOW_AND_FLASH",
+  "numFrames": 6,
+  "frameRate": 20,
   "requiresFullCharge": false,
   "muzzleFlashSpec": {
-    "length": 60,
-    "spread": 40,
-    "particleSizeMin": 10,
-    "particleSizeRange": 10,
+    "length": 7.5,
+    "spread": 15,
+    "particleSizeMin": 1,
+    "particleSizeRange": 5,
     "particleDuration": 0.5,
     "particleCount": 20,
     "particleColor": [

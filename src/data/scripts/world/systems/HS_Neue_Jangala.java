@@ -26,6 +26,7 @@ import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.HyperionModPlugin;
 import data.scripts.world.procgen.HS_AddIndustry;
 import data.scripts.world.procgen.HS_AddMarketplace;
 import data.scripts.world.procgen.variables.PLANET_TYPES;
@@ -59,7 +60,7 @@ public class HS_Neue_Jangala {
     public void generate(SectorAPI sector) {
 
         // Checks if Unknown Skies is enabled
-        boolean isUS = Global.getSettings().getModManager().isModEnabled("US");
+        boolean isUS = new HyperionModPlugin().isUnknownSkies();
         
         // Add star system
         StarSystemAPI system = sector.createStarSystem("Neue Jangala");

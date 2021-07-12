@@ -18,6 +18,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.HyperionModPlugin;
 import java.util.Random;
 
 /**
@@ -69,9 +70,8 @@ public class HS_AbandonedStation {
 
         //Items and Hull Randomizer
         int rand = new HyperionRandomizer(3).value;
-        boolean hasSCY = Global.getSettings().getModManager().isModEnabled("SCY");
-        boolean hasDME = Global.getSettings().getModManager()
-                .isModEnabled("istl_dam");
+        boolean hasSCY = new HyperionModPlugin().isSCYNation();
+        boolean hasDME = new HyperionModPlugin().isDassaultMikoyan();
 
         switch (rand) {
             case 1:

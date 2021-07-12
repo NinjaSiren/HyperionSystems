@@ -9,7 +9,6 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
-import data.scripts.world.HyperionExerelinGen;
 import data.scripts.world.HyperionGen;
 import exerelin.campaign.SectorManager; 
 import java.util.logging.Logger;
@@ -21,6 +20,11 @@ public class HyperionModPlugin extends BaseModPlugin {
     private static boolean isExerelin = false;
     private static boolean isDIYPlanets = false;
     private static boolean isBetterColonies = false;
+    private static boolean isConsoleCommands = false;
+    private static boolean isSCYNation = false;
+    private static boolean isUnknownSkies = false;
+    private static boolean isDassaultMikoyan = false;
+    private static boolean isIndustrialEvolution = false;
     protected static final Logger Log = Logger.getLogger(HyperionModPlugin.class.getName());
     
     @Override
@@ -28,8 +32,6 @@ public class HyperionModPlugin extends BaseModPlugin {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         if(!isExerelin || SectorManager.getCorvusMode()) {
             new HyperionGen().generate(Global.getSector());
-        } else {
-            new HyperionExerelinGen().generate(Global.getSector());
         }
     } 
     
@@ -63,6 +65,11 @@ public class HyperionModPlugin extends BaseModPlugin {
         isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
         isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
+        isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
+        isSCYNation = Global.getSettings().getModManager().isModEnabled("lw_console");
+        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("lw_console");
+        isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
+        isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
         
         if(!hasLazyLib) {
             throw new RuntimeException("Hyperion Systems requires LazyLib!" +
@@ -86,5 +93,25 @@ public class HyperionModPlugin extends BaseModPlugin {
     
     public boolean isBetterColonies() {
         return isBetterColonies;
+    }
+    
+    public boolean isConsoleCommands() {
+        return isConsoleCommands;
+    }
+    
+    public boolean isSCYNation() {
+        return isSCYNation;
+    }
+    
+    public boolean isUnknownSkies() {
+        return isUnknownSkies;
+    }
+    
+    public boolean isDassaultMikoyan() {
+        return isDassaultMikoyan;
+    }
+    
+    public boolean isIndEvolution() {
+        return isIndustrialEvolution;
     }
 }

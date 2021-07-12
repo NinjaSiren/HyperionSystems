@@ -1,0 +1,25 @@
+{
+	"id":"hs_polaris_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":70.0,
+	"width":25.0,
+	"fadeTime":0.25,
+	"fringeColor": [
+    		179,
+    		141,
+    		238,
+    		128
+  	],
+	"coreColor": [
+    		80,
+    		51,
+    		125,
+    		192
+  	],
+	"textureType": CHUNKY,  # only needed for BEAM spawnType
+	"textureScrollSpeed": 292,
+	"pixelsPerTexel":5.0	
+}

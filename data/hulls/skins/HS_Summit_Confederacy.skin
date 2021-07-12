@@ -1,0 +1,11 @@
+{
+  "baseHullId": "HS_Summit",
+  "baseValueMult": 2.0,
+  "descriptionId": "HS_Summit_HCO",
+  "hullName": "Summit-class Supership (Confederacy)",
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Summit_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Summit_confederacy.png",
+  "tags":["HCO_bp", "rare_bp"],
+  "tech":"Hyperion Confederacy"
+}

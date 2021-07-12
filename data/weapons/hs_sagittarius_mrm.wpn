@@ -4,8 +4,10 @@
   "projectileSpecId": "hs_sagittarius_missile",
   "type": "MISSILE",
   "size": "MEDIUM",
-  "turretSprite": "graphics/weapons/sagittarius_launcher_turret_base.png",
-  "hardpointSprite": "graphics/weapons/sagittarius_launcher_hardpoint_base.png",
+  "turretSprite": "graphics/weapons/sagittarius_launcher_turret_base00.png",
+  "hardpointSprite": "graphics/weapons/sagittarius_launcher_hardpoint_base00.png",
+  "numFrames":6,
+  "frameRate":20,
   "turretOffsets": [
     -5,
     0,

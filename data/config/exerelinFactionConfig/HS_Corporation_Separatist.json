@@ -116,14 +116,8 @@
 		["HS_Atlas_C_Offensive", "HS_Gemini_C_Defensive", "HS_Valkyrie_C_Offensive"],
 	],
 	"startShipsSuper":[
-		["HS_Naos_C_Assault"], 
-		["HS_Naos_C_Sniper"], 
-		["HS_Naos_C_Support"],
-		["HS_Orionis_C_Assault"], 
-		["HS_Orionis_C_Sniper"], 
-		["HS_Orionis_C_Support"],
-		["HS_Atlas_C_Defensive"], 
-		["HS_Atlas_C_Offensive"],
+		["HS_Summit_C_Assault"], 
+		["HS_Summit_C_Sniper"], 
 	],
 
 	"startSpecialItems":[

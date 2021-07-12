@@ -13,8 +13,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "hs_cygnus_pd",
-        "WS0002": "hs_cygnus_pd",
+        "WS0001": "hs_mini_minotaur",
+        "WS0002": "hs_mini_minotaur",
         "WS0003": "hs_cygnus_pd",
         "WS0004": "hs_cygnus_pd",
         "WS0005": "hs_sagittarius_mrm",

@@ -4,7 +4,9 @@ Minotaur Cannon (Built-in),hs_minotaur_builtin,3,1,,2000,,350,700,5,15,,,,,ENERG
 Sagittarius MRM Pod,hs_sagittarius_mrm,3,0.075,24000,3000,,700,350,10,30,15,3,0.05,3,ENERGY,100,,0,0.25,3,0.125,0,0,0,0,,1500,500,15,150,,,"STRIKE, USE_VS_FRIGATES","strike20, missile20, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Finisher,Fast,Excellent,,,,,,,,13002
 Sagittarius MRM (Single),hs_sagittarius_single,3,0.075,12000,3000,,700,350,10,30,10,1,0.05,1,ENERGY,100,,0,0.25,1,,0,0,0,0,,1500,500,15,150,,,"STRIKE, USE_VS_FRIGATES","strike20, missile20, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Finisher,Fast,Excellent,,,,,,,,13003
 Sagittarius MRM (Built-in Single),hs_sagittarius_builtin,3,1,,3000,,700,350,10,30,,1,0.05,1,ENERGY,100,,0,0.25,1,,0,0,0,0,,1500,500,15,150,,,"SYSTEM, STRIKE, USE_VS_FRIGATES","strike20, missile20, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Finisher,Fast,Excellent,,,,,,,,13004
-Cygnus Autocannon,hs_cygnus_pd,3,0.075,16000,1500,,50,25,1,120,10,,,,ENERGY,50,,0,0.125,1,,0,5,1,10,,1750,,,35,,,"PD, ANTI_FTR","pd7, kinetic4, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Point Defense,,,,,,,,,,13005
+Cygnus Autocannon,hs_cygnus_pd,3,0.075,16000,1500,,50,25,1,75,10,,,,ENERGY,50,,0,0.125,1,,0,5,1,10,,1750,,,35,,,"PD, ANTI_FTR","pd7, kinetic4, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Point Defense,,,,,,,,,,13005
+Polaris Projector,hs_polaris_projector,3,0.075,48000,2500,700,,700,5,15,20,,,,ENERGY,,1000,0,0.5,1,,,,,,10000,,,,,,,FIRE_WHEN_INEFFICIENT,"energy20, beam15, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,Suppression,,,,,"Projectile fires EMP arcs at nearby enemy targets while traveling. The damage shown is for the EMP arcs, the projectile itself does not deal damage and will pass over ships.",,,,TRUE,13006
+Mini Minotaur Cannon,hs_mini_minotaur,3,0.075,16000,1000,,175,350,2.5,30,10,,,,ENERGY,250,,0,0.5,1,,0,5,1,10,,2000,,,37.5,,,"STRIKE, USE_VS_FRIGATES","energy18, he17, kinetic17, hightech_bp, rare_bp, HCO_bp",,Hyperion Systems,,General,,,,,,,,,,13007
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -55,51 +57,6 @@ Cygnus Autocannon,hs_cygnus_pd,3,0.075,16000,1500,,50,25,1,120,10,,,,ENERGY,50,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Minipulser,minipulser,3,,25000,500,,50,,1,50,8,20,2,10,KINETIC,50,,0.05,0.05,,,0,5,1,15,,1000,,,,,,,"kinetic9, omega, restricted",,Unknown,,Anti Shield,,,,,,,,,,0.5
-Shock Repeater,shockrepeater,3,,20000,300,,50,200,0,100,7,,,,ENERGY,75,,0,0.5,1,,,,,,,10000,,,,,25,PD,"pd14, omega, restricted",,Unknown,,Point Defense,,,,Perfect,Fires an EMP arc at the nearest target close to the weapon's current facing. The arc always hits.,,,,,19.25
-Rift Lance,riftlance,3,,30000,600,1000,,,0,20,9,,,,ENERGY,,1000,0.125,0.25,0.5,2,,,,,3200,,,,,,,,"energy11, beam10, omega, restricted",,Unknown,,General,,,,,,,,,,29.1
-Rift Lance Minelayer,riftlance_minelayer,0,,,,,500,,25,,,,,,ENERGY,0,,,,1,,,,,,,0,0,20,1000,,,SYSTEM,,,Unknown,,,,,,,,,,,,38.5
-Rift Beam,riftbeam,3,,100000,400,150,,,0,100,15,,,,ENERGY,,150,0.1,0.1,,,,,,,2400,,,,,,,PD,"beam10, pd15, omega, restricted",,Unknown,,Point Defense,,,,,"Creates space-time rifts along the beam length, targeted at nearby enemy missiles and fighters. Each rift deals up to %s energy damage to nearby targets.",200,,,,21
-Rift Beam Minelayer,riftbeam_minelayer,0,,,,,200,,25,,,,,,ENERGY,0,,,,1,,,,,,,0,0,20,1000,,,SYSTEM,,,Unknown,,,,,,,,,,,,38.5
-Cryoflamer,cryoflux,3,,100000,400,,75,,3,60,15,120,4,40,ENERGY,50,,,0.05,2,0.05,0,0,0,0,,500,,,,,,,"energy15, SR, omega, restricted",,Unknown,,General,,,,,,,,,,
-Cryoblaster,cryoblaster,3,,100000,600,,1600,,50,20,16,,,,FRAGMENTATION,500,,0,1,,,0,0,0,0,,750,,,,,,,"energy15, omega, restricted",,Unknown,,General,,,,,,,,,,22.25
-Disintegrator,disintegrator,3,,100000,700,,100,,25,20,14,,,,HIGH_EXPLOSIVE,200,,0,2,3,0.2,4,4,,,,700,,,,,,,"he18, omega, restricted",,Unknown,,Anti Armor,,,,Spread Pattern,Each shot deals an additional 500 damage to armor over 20 seconds. This damage is not reduced by armor.,500 | 20,,,,22.25
-Rift Cascade Emitter,riftcascade,3,,200000,1000,1000,,,0,7,30,,,,ENERGY,,3000,0.5,1,1,4,,,,,10000,,,,,,,,"energy22, beam17, LR, omega, restricted",,Unknown,,General,,,,,Creates space-time rifts on impact. More rifts are spawned when the beam is fired at short range. Each rift deals up to %s energy damage to nearby targets.,1000,,,,29.1
-Rift Cascade Emitter Minelayer,riftcascade_minelayer,0,,,,,1000,,25,,,,,,ENERGY,0,,,,1,,,,,,,0,0,20,1000,,,SYSTEM,,,Unknown,,,,,,,,,,,,38.5
-Volatile Particle Driver,vpdriver,3,,200000,800,,150,,10,20,30,30,3,15,KINETIC,150,,0.05,0.05,1,,0,10,1,10,,1000,,,,,,,"kinetic20, omega, restricted",,Unknown,,Anti Shield,,,,,Shots may lose cohesion and dissolve. %s of the shots reach half the maximum range and %s of the shots reach full range.,100% | 50%,,,,25
-Reality Disruptor,realitydisruptor,3,,250000,1000,,100,1500,10,5,35,,,,ENERGY,2000,,1,9,,,,,,,,300,0,100,3000,,,,"energy22, LR, omega, restricted",,Unknown,,Suppression,,,,,"Projectile fires EMP arcs at nearby enemy targets while traveling. The damage shown is for the EMP arcs, the projectile itself does not deal damage and will pass over ships.",,,,TRUE,25
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Antimatter SRM Launcher,amsrm,3,,40000,1200,,1000,,15,50,7,3,0.05,,ENERGY,1000,,0,0.5,1,,0,0,0,0,,1000,200,3,250,,,"DO_NOT_AIM, DO_NOT_CONSERVE","utility8, missile9, strike7, omega, restricted",,Unknown,,Anti Small Craft,Extremely Fast,Excellent,,,,,,,TRUE,10
-Resonator MRM Launcher,resonatormrm,3,,100000,2500,,200,,15,20,16,4,0.4,4,KINETIC,200,,0,4.25,4,0.25,0,0,0,,,400,200,10,250,,,"DO_NOT_AIM, DO_NOT_CONSERVE","missile15, strike11, omega, restricted",,Unknown,,Anti Shield,Fast,Excellent,,,,,,,,12
-Rift Torpedo Launcher,rifttorpedo,3,,500000,2000,,6000,,75,10,30,1,0.05,,ENERGY,6000,,0,1,1,,0,0,0,0,,200,100,15,2000,,,"STRIKE, DO_NOT_AIM","strike20, missile20, omega, restricted",,Unknown,,Guided Torpedo,Slow,Excellent,,,,,,,TRUE,9
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,31
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,32
-Interdictor Beam,interdictorbeam,2,,1000,700,0,,,100,15,5,,,,ENERGY,,100,0.5,1,,,,,,,2400,,,,,,,SYSTEM,,,,,,,,,,,,,,,33
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,34
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,35
-Flare Launcher 1,flarelauncher1,,,,400,,10,100,,,,,0,,ENERGY,0,0,0,0.1,10,0.1,60,60,0,0,,150,300,3,1,,,SYSTEM,,,,,,,,,,,,,,,36
-Decoy Flare Launcher,flarelauncher2,,,,200,,10,0,,,,,0,,ENERGY,0,0,0,0.1,3,0.4,30,30,0,0,,200,100,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
-Decoy Flare Launcher (Single),flarelauncher21,,,,200,,10,0,,,,,0,,ENERGY,0,0,0,0.1,1,,30,30,0,0,,200,100,5,500,,,SYSTEM,,,,,,,,,,,,,,,37
-Seeker Flare Launcher,flarelauncher3,,,,500,,10,400,,,,,0,,ENERGY,0,0,0,0.1,3,0.1,90,90,0,0,,400,200,7,1,,,SYSTEM,,,,,,,,,,,,,,,38
-Mote Launcher,motelauncher,,,,500,,1,1500,,,,,0,,ENERGY,0,0,0,0.1,1,,30,30,0,0,,400,200,10000,500,,,SYSTEM,,,,,,,,,,,,,,,38.25
-Mote Launcher,motelauncher_hf,,,,500,,300,1500,,,,,0,,ENERGY,0,0,0,0.1,1,,30,30,0,0,,400,200,10000,500,,,SYSTEM,,,,,,,,,,,,,,,38.26
-Minelayer,minelayer1,0,,200000,1000,,2000,,25,30,12,30,,,HIGH_EXPLOSIVE,0,,0,3,1,,0,0,0,0,,50,50,20,500,,,SYSTEM,,,,,,,,,,,,,,,38.5
-Heavy Minelayer,minelayer2,0,,200000,1000,,2000,,25,30,12,30,,,HIGH_EXPLOSIVE,0,,0,3,1,,0,0,0,0,,50,50,20,500,,,SYSTEM,,,,,,,,,,,,,,,38.7
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,39
-Thermal Pulse Cannon,tpc,0,,100000,1000,,250,,0,0,,20,1,,ENERGY,150,,0,0.2,1,,0,10,2,5,,1000,,,,,,"SYSTEM,SHOW_IN_CODEX",,TPC_only,,,General,,,,,,,,,,40
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,41
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,42
-Sensor Dish,sensordish,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,43
-Blinker Red,blinker_red,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,44
-Blinker Green,blinker_green,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,45
-Lights - Buffalo,lights_buffalo,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,46
-Lights - Hound,lights_hound,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,47
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,49
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50

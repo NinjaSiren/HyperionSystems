@@ -47,42 +47,17 @@ public class HyperionGen implements SectorGeneratorPlugin {
         hyperion.setRelationship(hegemony.getId(), RepLevel.INHOSPITABLE);
         hyperion.setRelationship(tritachyon.getId(), RepLevel.SUSPICIOUS);
         hyperion.setRelationship(pirates.getId(), RepLevel.VENGEFUL);
-        hyperion.setRelationship(independent.getId(), RepLevel.FRIENDLY);
+        hyperion.setRelationship(independent.getId(), RepLevel.COOPERATIVE);
         hyperion.setRelationship(kol.getId(), RepLevel.SUSPICIOUS);
         hyperion.setRelationship(church.getId(), RepLevel.NEUTRAL);
         hyperion.setRelationship(path.getId(), RepLevel.VENGEFUL);
         hyperion.setRelationship(diktat.getId(), RepLevel.FAVORABLE);
-        hyperion.setRelationship(league.getId(), RepLevel.NEUTRAL);
+        hyperion.setRelationship(league.getId(), RepLevel.FAVORABLE);
         hyperion.setRelationship(remnants.getId(), RepLevel.HOSTILE);
         hyperion.setRelationship(neutral.getId(), RepLevel.NEUTRAL);
         
         //Custom factions
-        hyperion.setRelationship("dassault_mikoyan", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("6eme_bureau", RepLevel.HOSTILE);
-        hyperion.setRelationship("the_deserter", RepLevel.HOSTILE);
-        hyperion.setRelationship("blade_breakers", RepLevel.FAVORABLE);
-        hyperion.setRelationship("shadow_industry", RepLevel.HOSTILE);
-        hyperion.setRelationship("blackrock_driveyards", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("exigency", RepLevel.HOSTILE);
-        hyperion.setRelationship("tiandong", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("diableavionics", RepLevel.FRIENDLY);
-        hyperion.setRelationship("ORA", RepLevel.SUSPICIOUS);
-        hyperion.setRelationship("SCY", RepLevel.FRIENDLY);
-        hyperion.setRelationship("neutrinocorp", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("interstellarimperium", RepLevel.HOSTILE);
-        hyperion.setRelationship("syndicate_asp", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("pack", RepLevel.INHOSPITABLE);
-        hyperion.setRelationship("junk_pirates", RepLevel.HOSTILE);
-        hyperion.setRelationship("fob", RepLevel.HOSTILE);
-        hyperion.setRelationship("sylphon", RepLevel.HOSTILE);
-        hyperion.setRelationship("nullorder", RepLevel.HOSTILE);
-        hyperion.setRelationship("Coalition", RepLevel.HOSTILE);
-        hyperion.setRelationship("vass_shipyards", RepLevel.HOSTILE);
-        hyperion.setRelationship("nomads", RepLevel.HOSTILE);
-        hyperion.setRelationship("crystanite", RepLevel.HOSTILE);
-        hyperion.setRelationship("sad", RepLevel.HOSTILE);
-        hyperion.setRelationship("new_galactic_order", RepLevel.VENGEFUL);
-        hyperion.setRelationship("redlegion", RepLevel.COOPERATIVE);
+        new CustomFactionsRelations(hyperion);
     }
     
     @Override
