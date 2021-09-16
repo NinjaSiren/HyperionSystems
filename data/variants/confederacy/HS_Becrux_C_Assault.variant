@@ -1,0 +1,36 @@
+{
+  "variantId": "HS_Becrux_C_Assault",
+  "hullId": "HS_Becrux_Confederacy",
+  "displayName": "Assault",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "gravitonbeam",
+        "WS0002": "heavyac",
+        "WS0003": "heavyac",
+        "WS0004": "hellbore",
+        "WS0005": "hellbore",
+        "WS0006": "annihilator",
+        "WS0007": "annihilator",
+        "WS0008": "annihilator",
+        "WS0009": "annihilator",
+        "WS0010": "lrpdlaser",
+        "WS0011": "lrpdlaser",
+        "WS0013": "swarmer",
+        "WS0014": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "HS_Mintaka_Wing"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "variantId": "HS_Summit_C_Ballistic",
+  "hullId": "HS_Summit_Confederacy",
+  "displayName": "Heavy Assault",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 26,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "hs_minotaur_cannon",
+        "WS0002": "hs_minotaur_cannon",
+        "WS0003": "pulselaser",
+        "WS0004": "pulselaser",
+        "WS0005": "hs_cygnus_pd",
+        "WS0006": "hs_cygnus_pd",
+        "WS0007": "lrpdlaser",
+        "WS0008": "lrpdlaser",
+        "WS0009": "lrpdlaser",
+        "WS0010": "lrpdlaser",
+        "WS0011": "hs_cygnus_pd",
+        "WS0012": "hs_cygnus_pd",
+        "WS0013": "hs_cygnus_pd",
+        "WS0014": "hs_cygnus_pd",
+        "WS0015": "hs_minotaur_cannon",
+        "WS0016": "lrpdlaser",
+        "WS0017": "hs_sagittarius_single",
+        "WS0018": "hs_sagittarius_single",
+        "WS0019": "lrpdlaser",
+        "WS0020": "hs_sagittarius_single",
+        "WS0021": "hs_sagittarius_single",
+        "WS0022": "hs_sagittarius_single"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Mintaka_Wing",
+    "HS_Mintaka_Wing",
+    "HS_Mintaka_Wing"
+  ]
+}

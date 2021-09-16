@@ -1,0 +1,126 @@
+{
+  "hullName": "Mintaka-class Interceptor",
+  "hullId": "HS_Mintaka_Wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/Mintaka.png",
+  "style": "HIGH_TECH",
+  "height": 43,
+  "width": 26,
+  "center": [13, 20.5],
+  "collisionRadius": 23,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 25,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "pdburst_fighter",
+    "WS0002": "pdburst_fighter",
+    "WS0003": "pdburst_fighter",
+    "WS0004": "pdburst_fighter",
+    "WS0005": "pdburst_fighter",
+    "WS0006": "pdburst_fighter",
+    "WS0007": "swarmer"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 0,
+      "locations": [15, -5.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -0,
+      "locations": [15, 5.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 0,
+      "locations": [12, -8]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -0,
+      "locations": [12, 8]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 0,
+      "locations": [6, -11]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -0,
+      "locations": [6, 11]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 95,
+      "angle": 0,
+      "locations": [20.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-18, -6.5],
+      "length": 36.783981,
+      "width": 8.351942,
+      "angle": -170,
+      "contrailSize": 8.351942,
+      "style": "LOW_TECH_FIGHTER"
+    },
+    {
+      "location": [-18, 6.5],
+      "length": 36.783981,
+      "width": 8.351942,
+      "angle": 170,
+      "contrailSize": 8.351942,
+      "style": "LOW_TECH_FIGHTER"
+    },
+    {
+      "location": [-11, -0],
+      "length": 78.5,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "LOW_TECH_FIGHTER"
+    }
+  ],
+  "bounds": [
+    21.5, 0,
+    7.5, 12,
+    -10, 12,
+    -19.5, 6.5,
+    -12.5, 0,
+    -12.5, -0,
+    -19.5, -6.5,
+    -10, -12,
+    7.5, -12,
+    21.5, -0
+  ]
+}

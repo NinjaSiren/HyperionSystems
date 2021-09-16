@@ -12,7 +12,9 @@
   "shieldRadius": 319.5,
   "viewOffset": 0,
   "builtInMods": [
-    "assault_package"
+    "assault_package",
+    "phasefield",
+    "delicate"
   ],
   "weaponSlots": [
     {

@@ -1161,15 +1161,15 @@ public class HS_Neue_Jangala {
             case 1:
                 return "HS_Naos";
             case 2:
-                return "HS_Betelgeuse";
+                return "HS_Scuti";
             case 3:
                 return "HS_Arcturus";
             case 4:
-                return "HS_Icarus";
+                return "HS_Izar";
             case 5:
                 return "HS_Alycone";
             case 6:
-                return "HS_Bellatrix";
+                return "HS_Becrux";
             case 7:
                 return "HS_Carinae";
             case 8:
@@ -1204,7 +1204,7 @@ public class HS_Neue_Jangala {
             case 5:
                 return "HS_Alycone_Confederacy";
             case 6:
-                return "HS_Bellatrix_Confederacy";
+                return "HS_Becrux_Confederacy";
             case 7:
                 return "HS_Carinae_Confederacy";
             case 8:

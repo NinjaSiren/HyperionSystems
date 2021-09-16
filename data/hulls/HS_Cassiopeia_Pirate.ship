@@ -12,7 +12,9 @@
   "shieldRadius": 66.5,
   "viewOffset": 0,
   "builtInMods": [
-    "unstable_injector"
+    "unstable_injector",
+    "phasefield",
+    "delicate"
   ],
   "weaponSlots": [
     {

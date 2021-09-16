@@ -1,0 +1,23 @@
+{
+  "baseHullId": "HS_Becrux",
+  "baseValueMult": 2,
+  "builtInMods": [
+    "stealth_minefield"
+  ],
+  "descriptionId": "HS_Becrux_HCO",
+  "fighterBays": 0,
+  "fpMod": 0,
+  "hullDesignation": "FRIGATE",
+  "hullName": "Becrux (Confederacy)",
+  "manufacturer": "",
+  "removeBuiltInMods": [
+    "hardened_subsystems",
+    "militarized_subsystems",
+    "advancedcore",
+    "supercomputer"
+  ],
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Becrux_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Becrux_confederacy.png",
+  "tech": "Hyperion Confederacy"
+}

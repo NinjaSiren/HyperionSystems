@@ -1,0 +1,45 @@
+{
+  "variantId": "HS_Scuti_Offense",
+  "hullId": "HS_Scuti",
+  "displayName": "Offense",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 19,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "annihilator",
+        "WS0002": "annihilator",
+        "WS0004": "amblaster",
+        "WS0005": "lrpdlaser",
+        "WS0006": "lrpdlaser",
+        "WS0007": "hs_minotaur_cannon",
+        "WS0010": "hs_sagittarius_mrm",
+        "WS0011": "hs_sagittarius_mrm",
+        "WS0012": "hs_sagittarius_single",
+        "WS0013": "hs_sagittarius_single",
+        "WS0014": "lrpdlaser",
+        "WS0015": "lrpdlaser",
+        "WS0016": "heavymauler",
+        "WS0017": "heavymauler",
+        "WS0018": "heavymauler",
+        "WS0019": "heavymauler",
+        "WS0022": "hs_sagittarius_single",
+        "WS0023": "hs_sagittarius_single",
+        "WS0026": "hs_minotaur_cannon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "HS_Achernar_Wing",
+    "HS_Achernar_Wing",
+    "HS_Mintaka_Wing",
+    "HS_Mintaka_Wing"
+  ]
+}

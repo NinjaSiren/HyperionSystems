@@ -1,0 +1,28 @@
+{
+  "variantId": "HS_Mintaka_Wing_Standard",
+  "hullId": "HS_Mintaka_Wing",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "lightmg",
+        "WS0002": "lightmg",
+        "WS0003": "lightmg",
+        "WS0004": "lightmg",
+        "WS0005": "swarmer",
+        "WS0006": "swarmer",
+        "WS0007": "heavyblaster"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

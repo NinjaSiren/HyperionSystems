@@ -1,0 +1,35 @@
+{
+  "variantId": "HS_Izar_Support",
+  "hullId": "HS_Izar",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
+  "quality": 3,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hs_cygnus_pd",
+        "WS0002": "hs_cygnus_pd",
+        "WS0003": "hs_cygnus_pd",
+        "WS0004": "hs_cygnus_pd",
+        "WS0005": "hs_cygnus_pd",
+        "WS0006": "hs_cygnus_pd",
+        "WS0007": "devastator",
+        "WS0008": "devastator",
+        "WS0009": "heatseeker",
+        "WS0010": "heatseeker",
+        "WS0011": "heatseeker",
+        "WS0012": "swarmer"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "thunder_wing"
+  ]
+}

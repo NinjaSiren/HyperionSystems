@@ -13,7 +13,9 @@
   "viewOffset": 0,
   "builtInMods": [
     "auxiliary_fuel_tanks",
-    "assault_package"
+    "assault_package",
+    "phasefield",
+    "delicate"
   ],
   "weaponSlots": [
     {

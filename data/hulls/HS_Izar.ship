@@ -1,0 +1,180 @@
+{
+  "hullName": "Izar-class Troopcarrier",
+  "hullId": "HS_Izar",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/Izar.png",
+  "style": "MIDLINE",
+  "height": 284,
+  "width": 126,
+  "center": [63, 142],
+  "collisionRadius": 144.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 152,
+  "viewOffset": 0,
+  "builtInMods": [
+    "additional_berthing",
+    "assault_package",
+    "phasefield",
+    "delicate"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -90,
+      "locations": [75, -47]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 90,
+      "locations": [75, 47]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": -90,
+      "locations": [-21, -46]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 90,
+      "locations": [-21, 46]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -90,
+      "locations": [-82, -37]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 90,
+      "locations": [-82, 37]
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 180,
+      "locations": [-88, -0]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": -90,
+      "locations": [28, -11]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": 90,
+      "locations": [28, 11]
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [72, -0]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 20,
+      "angle": 0,
+      "locations": [113, -0]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 20,
+      "angle": 180,
+      "locations": [-129, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-136, 18],
+      "length": 100.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-136, -18],
+      "length": 101.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-136, -1],
+      "length": 100.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    139, 0,
+    125.5, 46,
+    109, 38,
+    94.5, 59,
+    49.5, 59.5,
+    17.5, 42.5,
+    -12.5, 57.5,
+    -50, 42.5,
+    -75.5, 52,
+    -107, 51,
+    -138, 25,
+    -138, -25,
+    -107, -51,
+    -75.5, -52,
+    -50, -42.5,
+    -12.5, -57.5,
+    17.5, -42.5,
+    49.5, -59.5,
+    94.5, -59,
+    109, -38,
+    125.5, -46,
+    139, -0
+  ]
+}

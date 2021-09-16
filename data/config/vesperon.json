@@ -5,21 +5,29 @@
         "HS_Naos",
         "HS_Orionis",
         "HS_Perseus",
-        "HS_Bellatrix",
-        "HS_Betelgeuse",
+        "HS_Becrux",
+        "HS_Scuti",
         "HS_Arcturus",
+	"HS_Summit"
         #Really tasty goodies
         "HS_Atlas_Confederacy",
         "HS_Alycone_Confederacy",
-        "HS_Bellatrix_Confederacy",
+        "HS_Becrux_Confederacy",
         "HS_Naos_Confederacy",
         "HS_Orionis_Confederacy",
+	"HS_Summit_Confederacy"
     ],
     "weaponSpecIds": [
+	"hs_cygnus_pd",
+	"hs_mini_minotaur",
+	"hs_minotaur_cannon",
+	"hs_polaris_projector",
+	"hs_sagittarius_mrm",
+	"hs_sagittarius_single"
     ],
     "fighterWingIds": [
         "HS_Achernar_Wing",
-        "HS_Lynx_Wing",
+        "HS_Mintaka_Wing",
     ]
   }
 }
