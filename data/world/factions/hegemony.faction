@@ -4,7 +4,7 @@
 		"tags":{
 			"heg_aux_bp":2,
 			"XIV_bp":0.25,
-			"HSS_bp":1,
+			"HSS_bp":1
 		},
 		"hulls":{
 		},
@@ -15,14 +15,14 @@
 		"hulls":[
 			"HS_Scuti",
 			"HS_Izar",
-			"HS_Arcturus",			
+			"HS_Arcturus"			
 		],
 	},
 	"knownFighters":{
 		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "hegemony", "pirates", "HSS_bp"],
 		"fighters":[	
 			"HS_Mintaka_Wing",
-			"HS_Achernar_Wing",
+			"HS_Achernar_Wing"
 		],
 	},
 }

@@ -8,14 +8,17 @@
         "HS_Becrux",
         "HS_Scuti",
         "HS_Arcturus",
-	"HS_Summit"
+	"HS_Summit",
         #Really tasty goodies
         "HS_Atlas_Confederacy",
         "HS_Alycone_Confederacy",
         "HS_Becrux_Confederacy",
         "HS_Naos_Confederacy",
         "HS_Orionis_Confederacy",
-	"HS_Summit_Confederacy"
+	"HS_Summit_Confederacy",
+	#Pirate goodies
+	"HS_Cassiopeia_Pirate",
+	"HS_Eridani_Pirate"
     ],
     "weaponSpecIds": [
 	"hs_cygnus_pd",
@@ -27,7 +30,7 @@
     ],
     "fighterWingIds": [
         "HS_Achernar_Wing",
-        "HS_Mintaka_Wing",
+        "HS_Mintaka_Wing"
     ]
   }
 }

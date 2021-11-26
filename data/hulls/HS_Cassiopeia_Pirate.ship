@@ -1,7 +1,7 @@
 {
   "hullName": "Cassiopeia-class Phase Missile Frigate (Pirate)",
   "hullId": "HS_Cassiopeia_Pirate",
-  "hullSize": "FIGHTER",
+  "hullSize": "FRIGATE",
   "spriteName": "graphics/ships/pirates/Cassiopeia_pirate.png",
   "style": "HIGH_TECH",
   "height": 120,

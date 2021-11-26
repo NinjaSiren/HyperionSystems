@@ -11,36 +11,36 @@
 	"shipRoles":{
 		# hybrid ships with good combat and cargo capacity
 		"combatFreighterMedium":{
-			"HS_Scuti_Offense":0.25,
-			"HS_Scuti_Defensive":0.25,	
+			"HS_Scuti_Offense":0.05,
+			"HS_Scuti_Defensive":0.05,	
 		},
 		"combatFreighterLarge":{
-			"HS_Scuti_Offense":0.5,
-			"HS_Scuti_Defensive":0.5,	
+			"HS_Scuti_Offense":0.075,
+			"HS_Scuti_Defensive":0.075,	
 		},
 
 		# combat tankers, good fuel carriers good combat ships
 		"tankerLarge":{
-			"HS_Arcturus_Offense":0.5,
-			"HS_Arcturus_Defensive":0.5,
+			"HS_Arcturus_Offense":0.075,
+			"HS_Arcturus_Defensive":0.075,
 		},
 		
 		# combat troop carrier and liners, good crew carriers and combat ships
 		"personnelMedium":{
-			"HS_Izar_Assault":0.25,
-			"HS_Izar_Support":0.25,
+			"HS_Izar_Assault":0.05,
+			"HS_Izar_Support":0.05,
 		},
 		"personnelLarge":{
-			"HS_Izar_Assault":0.5,
-			"HS_Izar_Support":0.5,                
+			"HS_Izar_Assault":0.075,
+			"HS_Izar_Support":0.075,                
 		},
 		"linerMedium":{
-			"HS_Izar_Assault":0.5,
-			"HS_Izar_Support":0.5,
+			"HS_Izar_Assault":0.075,
+			"HS_Izar_Support":0.075,
 		},
 		"linerLarge":{
-			"HS_Izar_Assault":0.75,
-			"HS_Izar_Support":0.75,
+			"HS_Izar_Assault":0.1,
+			"HS_Izar_Support":0.1,
 		},
 	},
 }

@@ -19,35 +19,47 @@ import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.HyperionModPlugin;
-import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HS_AbandonedStation {
-    
-    // Roll the dice
-    private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
-    }    
-    
+
     public HS_AbandonedStation(StarSystemAPI system, PlanetAPI star, PlanetAPI planet) {
+        
+        // Orbit calculations
+        int loc_orbit = new HS_Randomizer().intRand(1, 3);
+        int orbit_angle_add;
+        switch(loc_orbit) {
+            case 1:
+                orbit_angle_add = 90;
+                break;
+            case 2:
+                orbit_angle_add = 180;
+                break;
+            case 3:
+                orbit_angle_add = 270;
+                break;
+            default:
+                orbit_angle_add = 90;
+                break;
+        }
+        
         //Other stations
         SectorEntityToken old_station = system.addCustomEntity(
-                "hs_old_station_01",
+                "hs_old_station",
                 "Hyperion Systems Persean Sector Research Station",
                 "station_research",
                 null);
         old_station.setCircularOrbitPointingDown(star, 
-                204, 
-                (planet.getCircularOrbitRadius() * rand(2, 4)), 
-                89);
+                planet.getCircularOrbitAngle() + orbit_angle_add,
+                planet.getCircularOrbitRadius() + new HS_Randomizer().intRand(-15, 15), 
+                planet.getCircularOrbitPeriod() + new HS_Randomizer().intRand(-5, 5));
         old_station.setDiscoverable(true);
         old_station.setDiscoveryXP(5000f);
         old_station.setSensorProfile(0.25f);
-        old_station.setCustomDescriptionId("hs_old_station_01");
+        old_station.setCustomDescriptionId("hs_old_station");
         old_station.setInteractionImage("illustrations", "abandoned_station2");
         
         //Adds market to old station

@@ -9,7 +9,7 @@
 		"HS_Cassiopeia_Assault":0.4,
 		"HS_Cassiopeia_Support":0.4, 
 
-		"fallback":{"combatMedium":0.5},
+		"fallback":{"combatMedium":0.5}
 	},
 	"combatMedium":{
 		"HS_Alycone_Assault":0.2,
@@ -27,7 +27,7 @@
 		"HS_Cassiopeia_Assault":0.7,
 		"HS_Cassiopeia_Support":0.7,
 
-		"fallback":{"combatSmall":1},
+		"fallback":{"combatSmall":1}
 	},
 	"combatLarge":{
 		"HS_Summit_Ballistic":0.2,
@@ -52,7 +52,7 @@
 		"HS_Sirius_Assault":1,
 		"HS_Sirius_Support":1,
 
-		"fallback":{"combatMedium":1},
+		"fallback":{"combatMedium":1}
 	},
 	"combatCapital":{
 		"HS_Summit_Ballistic":0.2,
@@ -73,7 +73,7 @@
 		"HS_Becrux_Sniper":0.7,
 		"HS_Becrux_Support":0.7,
 
-		"fallback":{"combatLarge":1},	
+		"fallback":{"combatLarge":1}	
 	},
 	
 	
@@ -82,13 +82,13 @@
 		"HS_Scuti_Offense":1,
 		"HS_Scuti_Defensive":1,	
 
-		"fallback":{"combatFreighterSmall":1},
+		"fallback":{"combatFreighterSmall":1}
 	},
 	"combatFreighterLarge":{
 		"HS_Scuti_Offense":1.5,
 		"HS_Scuti_Defensive":1.5,
 	
-		"fallback":{"combatFreighterMedium":1},
+		"fallback":{"combatFreighterMedium":1}
 	},
 
 	# carriers
@@ -104,7 +104,7 @@
 		"HS_Perseus_Support":1,
 
 		"fallback":{"carrierSmall":1},
-		"fallback2":{"carrierLarge":0.5},
+		"fallback2":{"carrierLarge":0.5}
 	},
 	"carrierLarge":{
 		"HS_Naos_Assault":1,
@@ -118,7 +118,7 @@
 		"HS_Perseus_Support":1.2,	
 
 		"fallback":{"carrierMedium":1},
-		"fallback2":{"carrierSmall":1},
+		"fallback2":{"carrierSmall":1}
 	},
 
 	# phase ships
@@ -130,7 +130,7 @@
 		"HS_Becrux_Support":0.2,
 
 		"fallback":{"phaseMedium":0.5},
-		"fallback2":{"phaseLarge":0.25},
+		"fallback2":{"phaseLarge":0.25}
 	},
 	"phaseMedium":{
 		"HS_Becrux_Assault":1,
@@ -141,7 +141,7 @@
 		"HS_Orionis_Support":0.2,
 
 		"fallback":{"phaseSmall":1},
-		"fallback2":{"phaseLarge":0.5},
+		"fallback2":{"phaseLarge":0.5}
 	},
 	"phaseLarge":{
 		"HS_Orionis_Assault":0.7,
@@ -151,14 +151,14 @@
 		"HS_Summit_Energy":0.2,
 
 		"fallback":{"phaseMedium":1},
-		"fallback2":{"phaseSmall":1},
+		"fallback2":{"phaseSmall":1}
 	},
 	"phaseCapital":{
 		"HS_Summit_Ballistic":0.7,
 		"HS_Summit_Energy":0.7,
 
 		"fallback":{"phaseLarge":1},
-		"fallback2":{"phaseMedium":0.5},
+		"fallback2":{"phaseMedium":0.5}
 	},
 
 	# combat tankers, good fuel carriers good combat ships
@@ -167,7 +167,7 @@
 		"HS_Arcturus_Defensive":0.7,
 
 		"fallback":{"tankerMedium":1},
-		"fallback2":{"tankerSmall":1},
+		"fallback2":{"tankerSmall":1}
 	},
 	
 	# combat troop carrier and liners, good crew carriers and combat ships
@@ -176,27 +176,27 @@
 		"HS_Izar_Support":0.7,
 
 		"fallback":{"personnelSmall":1},
-		"fallback2":{"personnelLarge":0.5},
+		"fallback2":{"personnelLarge":0.5}
 	},
 	"personnelLarge":{
 		"HS_Izar_Assault":0.4,
 		"HS_Izar_Support":0.4,    
 
 		"fallback":{"personnelMedium":1},
-		"fallback2":{"personnelSmall":1},            
+		"fallback2":{"personnelSmall":1}           
 	},
 	"linerMedium":{
 		"HS_Izar_Assault":0.4,
 		"HS_Izar_Support":0.4,
 
 		"fallback":{"linerSmall":1},
-		"fallback2":{"linerLarge":0.5},
+		"fallback2":{"linerLarge":0.5}
 	},
 	"linerLarge":{
 		"HS_Izar_Assault":0.7,
 		"HS_Izar_Support":0.7,
 
 		"fallback":{"linerMedium":1},
-		"fallback2":{"linerSmall":1},
+		"fallback2":{"linerSmall":1}
 	},
 }
