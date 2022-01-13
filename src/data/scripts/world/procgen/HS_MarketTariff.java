@@ -13,6 +13,7 @@ import java.util.Random;
  */
 public class HS_MarketTariff {
     
+    // Sets a random tariff value from 0% to 0.12%
     public float tariff() {
         Random rand = new Random();
         final float max = 0.12f;

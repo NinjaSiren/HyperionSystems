@@ -18,7 +18,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.HyperionModPlugin;
+import data.scripts.HyperionModDependencies;
 
 /**
  *
@@ -82,8 +82,8 @@ public class HS_AbandonedStation {
 
         //Items and Hull Randomizer
         int rand = new HyperionRandomizer(3).value;
-        boolean hasSCY = new HyperionModPlugin().isSCYNation();
-        boolean hasDME = new HyperionModPlugin().isDassaultMikoyan();
+        boolean hasSCY = new HyperionModDependencies().isSCYNation();
+        boolean hasDME = new HyperionModDependencies().isDassaultMikoyan();
 
         switch (rand) {
             case 1:

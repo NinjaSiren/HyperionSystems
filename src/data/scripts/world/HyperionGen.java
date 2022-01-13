@@ -7,28 +7,20 @@ import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.world.procgen.HS_Randomizer;
 import data.scripts.world.systems.Base_Penelope;
 import data.scripts.world.systems.HS_Diamant;
 import data.scripts.world.systems.HS_Klat;
 import data.scripts.world.systems.HS_Neue_Jangala;
 import data.scripts.world.systems.HS_Nirraok;
 import data.scripts.world.systems.HS_Phia;
-import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HyperionGen implements SectorGeneratorPlugin {
-    
-    // Roll the dice
-    private double rand() {
-        Random rand = new Random();
-        final double max = 1.0;
-        final double min = 0.0;
-        return min + rand.nextDouble() * (max - min);
-    }
-    
+
     public static void initFactionRelationships(SectorAPI sector) {
         FactionAPI hyperion = sector.getFaction("HS_Corporation_Separatist"); 
         FactionAPI hegemony = sector.getFaction(Factions.HEGEMONY);
@@ -71,7 +63,7 @@ public class HyperionGen implements SectorGeneratorPlugin {
         new HS_Klat().generate(sector); // Klat
         new HS_Nirraok().generate(sector); // Nirraok
         
-        if(rand() <= 0.5) {
+        if(new HS_Randomizer().randFixed() <= 0.5) {
             new Base_Penelope().generate(sector); // Penelope's star
         }
         

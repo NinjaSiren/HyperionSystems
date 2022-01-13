@@ -3,7 +3,7 @@ package data.scripts.world.procgen;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
-import data.scripts.HyperionModPlugin;
+import data.scripts.HyperionModDependencies;
 
 /**
  *
@@ -18,7 +18,7 @@ public final class HS_IndustryLimit {
     public int industryLimit(MarketAPI market, PlanetAPI planet) {
         int iLimit;
         int marketSize = market.getSize();
-        boolean isBC = new HyperionModPlugin().isBetterColonies();
+        boolean isBC = new HyperionModDependencies().isBetterColonies();
         
         // Vanilla, with Coronal Hypershunt
         if(!isBC) {

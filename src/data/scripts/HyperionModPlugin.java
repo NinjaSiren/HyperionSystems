@@ -17,26 +17,22 @@ import java.util.logging.Logger;
  * @author NinjaSiren
  */
 public class HyperionModPlugin extends BaseModPlugin {
-    private static boolean isExerelin = false;
-    private static boolean isDIYPlanets = false;
-    private static boolean isBetterColonies = false;
-    private static boolean isConsoleCommands = false;
-    private static boolean isSCYNation = false;
-    private static boolean isUnknownSkies = false;
-    private static boolean isDassaultMikoyan = false;
-    private static boolean isIndustrialEvolution = false;
     protected static final Logger Log = Logger.getLogger(HyperionModPlugin.class.getName());
     
     @Override
     public void onNewGame() { 
+        
+        // Checks if Nexrelin is enabled or not
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
-        if(!isExerelin || SectorManager.getCorvusMode()) {
+        if(!new HyperionModDependencies().isExerelin() || SectorManager.getCorvusMode()) {
             new HyperionGen().generate(Global.getSector());
         }
     } 
     
     @Override
     public void onNewGameAfterEconomyLoad() {
+        
+        // Add Hyperion Confederate faction leader
         MarketAPI capitalMarket = Global.getSector().getEconomy().getMarket("hs_planet_neuejangala");
         if(capitalMarket != null) {
             PersonAPI factionLeader = Global.getFactory().createPerson();
@@ -59,59 +55,25 @@ public class HyperionModPlugin extends BaseModPlugin {
     
     @Override
     public void onApplicationLoad() {
-        boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
-        boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
-        boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
-        isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
-        isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
-        isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isSCYNation = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
-        isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
         
-        if(!hasLazyLib) {
+        // Call all mod dependencies
+        new HyperionModDependencies();
+        
+        
+        // Check important dependencies
+        if(!new HyperionModDependencies().hasLazyLib()) {
             throw new RuntimeException("Hyperion Systems requires LazyLib!" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
         }
         
-        if(!hasGraphicsLib) {
+        if(!new HyperionModDependencies().hasGraphicsLib()) {
             throw new RuntimeException("Hyperion Systems requires GraphicsLib!" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=10982");
         }
         
-        if(!hasMagicLib) {
+        if(!new HyperionModDependencies().hasMagicLib()) {
             throw new RuntimeException("Hyperion Systems requires MagicLib! Where is the magic?" +
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718.0");
         }
-    }
-    
-    public boolean isDIYPlanets() {
-        return isDIYPlanets;
-    }
-    
-    public boolean isBetterColonies() {
-        return isBetterColonies;
-    }
-    
-    public boolean isConsoleCommands() {
-        return isConsoleCommands;
-    }
-    
-    public boolean isSCYNation() {
-        return isSCYNation;
-    }
-    
-    public boolean isUnknownSkies() {
-        return isUnknownSkies;
-    }
-    
-    public boolean isDassaultMikoyan() {
-        return isDassaultMikoyan;
-    }
-    
-    public boolean isIndEvolution() {
-        return isIndustrialEvolution;
     }
 }

@@ -43,13 +43,13 @@ public class HS_Diamant {
         
         // Add stars, Diamant
         PlanetAPI diamant = system.initStar(
-                    "hs_diamant", // unique id for this star
-                    StarTypes.ORANGE,  // id in planets.json
-                    starSize,           // radius (in pixels at default zoom)
-                    starSize * 1.5f,            // corona radius, from star edge
-                    2.5f,             // solar wind burn level
-                    0.7f,           // flare probability
-                    2.2f);          // CR loss multipiers
+                "hs_diamant", // unique id for this star
+                StarTypes.ORANGE,  // id in planets.json
+                starSize,           // radius (in pixels at default zoom)
+                starSize * 1.5f,            // corona radius, from star edge
+                2.5f,             // solar wind burn level
+                0.7f,           // flare probability
+                2.2f);          // CR loss multipiers
         
         diamant.setCustomDescriptionId("hs_star_diamant");
         diamant.setName("Diamant");   

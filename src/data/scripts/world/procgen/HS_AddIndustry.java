@@ -8,7 +8,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Items;
-import data.scripts.HyperionModPlugin;
+import data.scripts.HyperionModDependencies;
 import data.scripts.world.procgen.variables.DIY_INDUSTRIES;
 import data.scripts.world.procgen.variables.DIY_ITEMS;
 import data.scripts.world.procgen.variables.PLANET_TYPES;
@@ -23,7 +23,7 @@ public class HS_AddIndustry {
     
     public HS_AddIndustry(PlanetAPI planet, MarketAPI market, FactionAPI faction, StarSystemAPI sector) { 
         
-        boolean isDIY = new HyperionModPlugin().isDIYPlanets();
+        boolean isDIY = new HyperionModDependencies().isDIYPlanets();
         
         // Industry size depending on market size and current industries added
         int iSize = new HS_IndustryLimit().industryLimit(market, planet);

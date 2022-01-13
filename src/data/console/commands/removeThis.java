@@ -8,7 +8,7 @@ package data.console.commands;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.SpecialItemData;
-import data.scripts.HyperionModPlugin;
+import data.scripts.HyperionModDependencies;
 import org.lazywizard.console.BaseCommand;
 import static org.lazywizard.console.CommandUtils.*;
 import org.lazywizard.console.CommonStrings;
@@ -28,9 +28,9 @@ public class removeThis implements BaseCommand {
     @Override
     public BaseCommand.CommandResult runCommand(String args, BaseCommand.CommandContext context) {
         
-        boolean isCC = new HyperionModPlugin().isConsoleCommands();
-        boolean isDIY = new HyperionModPlugin().isDIYPlanets();
-        boolean isIE = new HyperionModPlugin().isIndEvolution();
+        boolean isCC = new HyperionModDependencies().isConsoleCommands();
+        boolean isDIY = new HyperionModDependencies().isDIYPlanets();
+        boolean isIE = new HyperionModDependencies().isIndEvolution();
         
         if(isCC) {
             

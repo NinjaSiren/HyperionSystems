@@ -1,7 +1,7 @@
 {
 	#"baseMaxOutposts":2,
-	#"colonyOverMaxPenalty":0,
-	#"maxColonySize":10,
+	"colonyOverMaxPenalty":0,
+	"maxColonySize":10,
 
 	"graphics":{
 		"blueprint_packages":{

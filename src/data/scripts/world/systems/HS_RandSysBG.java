@@ -10,6 +10,9 @@ import java.util.Random;
 /**
  *
  * @author NinjaSiren
+ * 
+ * Sets a random number for a random system background
+ * 
  */
 public class HS_RandSysBG {
    

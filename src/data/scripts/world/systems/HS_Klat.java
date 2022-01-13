@@ -5,16 +5,17 @@ import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.StarTypes;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.ProcgenUsedNames;
 import com.fs.starfarer.api.impl.campaign.procgen.StarAge;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.HyperionModDependencies;
 import data.scripts.world.procgen.HS_AddStuffs;
 import data.scripts.world.procgen.HS_AutoGenerateFactions;
 import data.scripts.world.procgen.HS_Randomizer;
+import data.scripts.world.procgen.variables.STAR_TYPES;
 import java.awt.Color;
 
 /**
@@ -23,6 +24,21 @@ import java.awt.Color;
  */
 public class HS_Klat {
 
+    // Sets a random star type if Unknown Skies is enabled
+    private String star_type() {
+        int randomValue = new HS_Randomizer().intRand(0, 1);
+        if(new HyperionModDependencies().isUnknownSkies()) {
+            switch (randomValue) {
+                case 1:
+                    return new STAR_TYPES().BLUE_GIANT;
+                default:
+                    return new STAR_TYPES().BLUE_GIANT_US;
+            }
+        } else {
+            return new STAR_TYPES().BLUE_GIANT;
+        }
+    }
+    
     public void generate(SectorAPI sector) {
         
         // Add star system
@@ -39,7 +55,7 @@ public class HS_Klat {
         // Add stars, Klat
         PlanetAPI klat = system.initStar(
                     "hs_klat", // unique id for this star
-                    StarTypes.BLUE_GIANT,  // id in planets.json
+                    star_type(),  // id in planets.json
                     starSize,           // radius (in pixels at default zoom)
                     starSize * 1.5f,            // corona radius, from star edge
                     2.5f,             // solar wind burn level
