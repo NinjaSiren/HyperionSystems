@@ -31,14 +31,8 @@ public class HS_Nirraok {
 
     // Sets a random star type if Unknown Skies is enabled
     private String star_type() {
-        int randomValue = new HS_Randomizer().intRand(0, 1);
         if(new HyperionModDependencies().isUnknownSkies()) {
-            switch (randomValue) {
-                case 1:
-                    return new STAR_TYPES().YELLOW;
-                default:
-                    return new STAR_TYPES().YELLOW_US;
-            }
+            return new STAR_TYPES().YELLOW_US;
         } else {
             return new STAR_TYPES().YELLOW;
         }

@@ -43,9 +43,9 @@ public class HyperionModPlugin extends BaseModPlugin {
             factionLeader.setImportance(PersonImportance.VERY_HIGH);
             factionLeader.setId("hyperion_leader");
             factionLeader.setPortraitSprite("graphics/portraits/leaderPortrait.png");
-            factionLeader.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
-            factionLeader.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, 3);
-            factionLeader.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, 3);
+            factionLeader.getStats().setSkillLevel(Skills.APT_LEADERSHIP, 3);
+            factionLeader.getStats().setSkillLevel(Skills.APT_TECHNOLOGY, 3);
+            factionLeader.getStats().setSkillLevel(Skills.APT_INDUSTRY, 3);
             factionLeader.setMarket(capitalMarket);
             capitalMarket.setAdmin(factionLeader);
             capitalMarket.getCommDirectory().addPerson(factionLeader, 0);
@@ -58,7 +58,6 @@ public class HyperionModPlugin extends BaseModPlugin {
         
         // Call all mod dependencies
         new HyperionModDependencies();
-        
         
         // Check important dependencies
         if(!new HyperionModDependencies().hasLazyLib()) {

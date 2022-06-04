@@ -14,19 +14,19 @@ import com.fs.starfarer.api.Global;
 public class HyperionModDependencies {
     
     // Important Mods
-    private static boolean hasLazyLib = false;
-    private static boolean hasGraphicsLib = false;
-    private static boolean hasMagicLib = false;
+    private boolean hasLazyLib = false;
+    private boolean hasGraphicsLib = false;
+    private boolean hasMagicLib = false;
     
     // Optional Mods
-    private static boolean isExerelin = false;
-    private static boolean isDIYPlanets = false;
-    private static boolean isBetterColonies = false;
-    private static boolean isConsoleCommands = false;
-    private static boolean isSCYNation = false;
-    private static boolean isUnknownSkies = false;
-    private static boolean isDassaultMikoyan = false;
-    private static boolean isIndustrialEvolution = false;
+    private boolean isExerelin = false;
+    private boolean isDIYPlanets = false;
+    private boolean isBetterColonies = false;
+    private boolean isConsoleCommands = false;
+    private boolean isSCYNation = false;
+    private boolean isUnknownSkies = false;
+    private boolean isDassaultMikoyan = false;
+    private boolean isIndustrialEvolution = false;
     
     
     // Set all mod dependencies
@@ -38,8 +38,8 @@ public class HyperionModDependencies {
         isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
         isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
         isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isSCYNation = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("lw_console");
+        isSCYNation = Global.getSettings().getModManager().isModEnabled("SCY");
+        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("US");
         isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
         isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
     }
