@@ -1,0 +1,11 @@
+{
+  "baseHullId": "HS_Krakatoa",
+  "baseValueMult": 2.0,
+  "descriptionId": "HS_Krakatoa_HCO",
+  "hullName": "Krakatoa-class Supership (Confederacy)",
+  "restoreToBaseHull": false,
+  "skinHullId": "HS_Krakatoa_Confederacy",
+  "spriteName": "graphics/ships/confederacy/Krakatoa_confederacy.png",
+  "tags":["HCO_bp", "rare_bp"],
+  "tech":"Hyperion Confederacy"
+}

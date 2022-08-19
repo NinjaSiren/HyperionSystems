@@ -2,8 +2,8 @@
 	"id":"hyperionsystems",
 	"name":"Hyperion Systems",
 	"author":"NinjaSiren",
-	"version":"0.8.4-a1",
-	"description":"Adds Hyperion Systems ships, a non-faction corporation contracted by the Hegemony to produce special, state-of-the-art ships.",
+	"version":"0.9.1-a1",
+	"description":"Adds Hyperion Systems ships, a non-faction corporation contracted by the Hegemony to produce special, state-of-the-art but historical ships.",
 	"gameVersion":"0.95.1a-RC6",
 	"jars":["jars/HyperionSystems.jar"],
 	"modPlugin":"data.scripts.HyperionModPlugin"

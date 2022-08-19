@@ -30,8 +30,8 @@
 		"fallback":{"combatSmall":1}
 	},
 	"combatLarge":{
-		"HS_Summit_Ballistic":0.2,
-		"HS_Summit_Energy":0.2,
+		"HS_Krakatoa_Ballistic":0.2,
+		"HS_Krakatoa_Energy":0.2,
 		"HS_Naos_Assault":0.4,
 		"HS_Naos_Sniper":0.4,
 		"HS_Naos_Support":0.4,
@@ -55,8 +55,8 @@
 		"fallback":{"combatMedium":1}
 	},
 	"combatCapital":{
-		"HS_Summit_Ballistic":0.2,
-		"HS_Summit_Energy":0.2,
+		"HS_Krakatoa_Ballistic":0.2,
+		"HS_Krakatoa_Energy":0.2,
 		"HS_Naos_Assault":0.4,
 		"HS_Naos_Sniper":0.4,
 		"HS_Naos_Support":0.4,
@@ -147,15 +147,15 @@
 		"HS_Orionis_Assault":0.7,
 		"HS_Orionis_Sniper":0.7,
 		"HS_Orionis_Support":0.7,
-		"HS_Summit_Ballistic":0.2,
-		"HS_Summit_Energy":0.2,
+		"HS_Krakatoa_Ballistic":0.2,
+		"HS_Krakatoa_Energy":0.2,
 
 		"fallback":{"phaseMedium":1},
 		"fallback2":{"phaseSmall":1}
 	},
 	"phaseCapital":{
-		"HS_Summit_Ballistic":0.7,
-		"HS_Summit_Energy":0.7,
+		"HS_Krakatoa_Ballistic":0.7,
+		"HS_Krakatoa_Energy":0.7,
 
 		"fallback":{"phaseLarge":1},
 		"fallback2":{"phaseMedium":0.5}
