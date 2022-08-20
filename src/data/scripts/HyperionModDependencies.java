@@ -14,35 +14,19 @@ import com.fs.starfarer.api.Global;
 public class HyperionModDependencies {
     
     // Important Mods
-    private boolean hasLazyLib = false;
-    private boolean hasGraphicsLib = false;
-    private boolean hasMagicLib = false;
+    boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
+    boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+    boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
     
     // Optional Mods
-    private boolean isExerelin = false;
-    private boolean isDIYPlanets = false;
-    private boolean isBetterColonies = false;
-    private boolean isConsoleCommands = false;
-    private boolean isSCYNation = false;
-    private boolean isUnknownSkies = false;
-    private boolean isDassaultMikoyan = false;
-    private boolean isIndustrialEvolution = false;
-    
-    
-    // Set all mod dependencies
-    public HyperionModDependencies() {      
-        hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
-        hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
-        hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
-        isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
-        isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
-        isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isSCYNation = Global.getSettings().getModManager().isModEnabled("SCY");
-        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("US");
-        isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
-        isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
-    }
+    boolean isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+    boolean isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
+    boolean isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
+    boolean isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
+    boolean isSCYNation = Global.getSettings().getModManager().isModEnabled("SCY");
+    boolean isUnknownSkies = Global.getSettings().getModManager().isModEnabled("US");
+    boolean isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
+    boolean isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
     
     // Returns
     public boolean hasLazyLib() {
