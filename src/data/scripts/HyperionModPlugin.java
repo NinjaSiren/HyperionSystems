@@ -7,7 +7,6 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.world.HyperionGen;
 import exerelin.campaign.SectorManager; 
@@ -55,10 +54,6 @@ public class HyperionModPlugin extends BaseModPlugin {
     
     @Override
     public void onApplicationLoad() {
-        
-        // Call all mod dependencies
-        new HyperionModDependencies();
-        
         // Check important dependencies
         if(!new HyperionModDependencies().hasLazyLib()) {
             throw new RuntimeException("Hyperion Systems requires LazyLib!" +

@@ -56,8 +56,11 @@ public class HyperionGen implements SectorGeneratorPlugin {
     public void generate(SectorAPI sector) {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
         initFactionRelationships(sector);
+        
+        // Main World
         new HS_Neue_Jangala().generate(sector); // Neue Jangala
         
+        // Outer Worlds
         new HS_Phia().generate(sector); // Phia
         new HS_Diamant().generate(sector); // Diamant
         new HS_Klat().generate(sector); // Klat

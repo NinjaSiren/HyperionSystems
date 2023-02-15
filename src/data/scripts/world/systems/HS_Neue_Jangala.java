@@ -55,7 +55,7 @@ public class HS_Neue_Jangala {
         
         // Add star system
         StarSystemAPI system = sector.createStarSystem("Neue Jangala");
-        system.getLocation().set(-12350, -18900);
+        system.getLocation().set(-14350, -18900);
         system.setBackgroundTextureFilename("graphics/backgrounds/background5.jpg");
         ProcgenUsedNames.notifyUsed("Neue");
 

@@ -11,8 +11,8 @@
   "numFrames":6,
   "frameRate":20,
   "glowColor": [
-    185,
-    157,
+    74,
+    165,
     230,
     128
   ],
@@ -33,21 +33,21 @@
   ],
   "beamFireOnlyOnFullCharge": true,
   "fringeColor": [
-    179,
-    141,
-    238,
-    192
+    	0,
+    	127,
+    	255,
+    	125
   ],
   "coreColor": [
-    80,
-    51,
-    125,
-    255
+    	0,
+    	32,
+    	255,
+    	255
   ],
   "darkCore": true,
   "width": 10,
   "textureType": WEAVE,
-  "textureScrollSpeed": 292,
+  "textureScrollSpeed": 75,
   "pixelsPerTexel": 5,
   "pierceSet": [
     PROJECTILE_FF,

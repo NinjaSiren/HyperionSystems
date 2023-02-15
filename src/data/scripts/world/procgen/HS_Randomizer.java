@@ -13,7 +13,6 @@ import java.util.Random;
  */
 public class HS_Randomizer {
     
-    
     // Randomizer for integer values, limits are inputted
     public int intRand(int min, int max) {
         Random rand = new Random();
@@ -33,6 +32,4 @@ public class HS_Randomizer {
         final double min = 0.0;
         return min + rand.nextDouble() * (max - min);
     }
-    
-    
 }

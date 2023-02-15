@@ -42,10 +42,10 @@
     "particleDuration": 0.25,
     "particleCount": 5,
     "particleColor": [
-      103,
-      149,
-      233,
-      192
+      74,
+    	165,
+    	230,
+    	128
     ]
   },
   "fireSoundTwo": "hs_minotaur_cannon"

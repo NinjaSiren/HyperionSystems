@@ -8,16 +8,16 @@
 	"width":25.0,
 	"fadeTime":0.25,
 	"fringeColor": [
-    		179,
-    		141,
-    		238,
-    		128
+    		0,
+    		127,
+    		255,
+    		125
   	],
 	"coreColor": [
-    		80,
-    		51,
-    		125,
-    		192
+    		0,
+    		32,
+    		255,
+    		255
   	],
 	"textureType": CHUNKY,  # only needed for BEAM spawnType
 	"textureScrollSpeed": 292,

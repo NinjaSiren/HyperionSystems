@@ -53,10 +53,10 @@
     "particleDuration": 0.5,
     "particleCount": 20,
     "particleColor": [
-      103,
-      149,
-      233,
-      192
+      74,
+    	165,
+    	230,
+    	128
     ]
   },
   "fireSoundTwo": "hs_cygnus_shot"
