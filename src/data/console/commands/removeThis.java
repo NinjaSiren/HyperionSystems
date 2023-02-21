@@ -28,7 +28,7 @@ public class removeThis implements BaseCommand {
     @Override
     public BaseCommand.CommandResult runCommand(String args, BaseCommand.CommandContext context) {
         
-        if(new HyperionModDependencies().isConsoleCommands()) {  
+        if(new HyperionModDependencies().hasConsoleCommands() && Global.getSettings().getBoolean("enableHiddenCheats")) {  
             if (!context.isInCampaign()) {
                 Console.showMessage(CommonStrings.ERROR_CAMPAIGN_ONLY);
                 return BaseCommand.CommandResult.WRONG_CONTEXT;
@@ -41,7 +41,7 @@ public class removeThis implements BaseCommand {
             final CargoAPI cargo = Global.getSector().getPlayerFleet().getCargo();
 
             // DIY Planets special items
-            if(new HyperionModDependencies().isDIYPlanets()) {
+            if(new HyperionModDependencies().hasDIYPlanets()) {
                 cargo.addSpecial(new SpecialItemData("atmo_mineralizer", "atmo_mineralizer"), amount);
                 cargo.addSpecial(new SpecialItemData("atmo_sublimator", "atmo_sublimator"), amount);
                 cargo.addSpecial(new SpecialItemData("solar_reflector", "solar_reflector"), amount);
@@ -55,7 +55,7 @@ public class removeThis implements BaseCommand {
             }
 
             // Industrial Evolution special items
-            if(new HyperionModDependencies().isIndEvolution()) {
+            if(new HyperionModDependencies().hasIndEvolution()) {
                 cargo.addSpecial(new SpecialItemData("IndEvo_log_core", "IndEvo_log_core"), amount);
                 cargo.addSpecial(new SpecialItemData("IndEvo_neurals", "IndEvo_neurals"), amount);
                 cargo.addSpecial(new SpecialItemData("IndEvo_transmitter", "IndEvo_transmitter"), amount);  
@@ -80,11 +80,9 @@ public class removeThis implements BaseCommand {
             cargo.addSpecial(new SpecialItemData("drone_replicator", "drone_replicator"), amount);
 
             // AI Cores
-            if(!new HyperionModDependencies().isIndEvolution()) {
-                cargo.addCommodity("alpha_core", amount);
-                cargo.addCommodity("beta_core", amount);
-                cargo.addCommodity("gamma_core", amount);
-            } 
+            cargo.addCommodity("alpha_core", amount);
+            cargo.addCommodity("beta_core", amount);
+            cargo.addCommodity("gamma_core", amount);
             
             Console.showMessage("Added " + format(amount) + " of all planetary enhancements in your inventory.");
             return BaseCommand.CommandResult.SUCCESS;

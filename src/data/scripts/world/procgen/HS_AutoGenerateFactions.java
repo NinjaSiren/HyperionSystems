@@ -9,7 +9,7 @@ import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
-import data.scripts.world.procgen.variables.PLANET_TYPES;
+import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import java.util.List;
 
 /**
@@ -29,7 +29,6 @@ public class HS_AutoGenerateFactions {
             
             // Adds factions, if habitable or hazards are less than 150%
             PlanetAPI planet;
-            String planetType;
             MarketAPI planetMarket;
             float planetHazardValue;
             List<MarketConditionAPI> marketCondition;
@@ -40,7 +39,7 @@ public class HS_AutoGenerateFactions {
                     planet = system.getPlanets().get(counter);
                     
                     if(system.getPlanets().get(counter).getTypeId() != null) {
-                        planetType = system.getPlanets().get(counter).getTypeId();
+                        system.getPlanets().get(counter).getTypeId();
                         
                         if(planet.getMarket() != null) {
                             planetMarket = planet.getMarket();
@@ -53,33 +52,7 @@ public class HS_AutoGenerateFactions {
 
                                     // Adds factions, if habitable or hazards are less than 200%
                                     if(enableFactions) {
-                                        if(planetType.equals(new PLANET_TYPES().ARID) ||
-                                                planetType.equals(new PLANET_TYPES().DESERT_A) ||
-                                                planetType.equals(new PLANET_TYPES().DESERT_B) ||
-                                                planetType.equals(new PLANET_TYPES().JUNGLE) ||
-                                                planetType.equals(new PLANET_TYPES().OCEAN) ||
-                                                planetType.equals(new PLANET_TYPES().TERRAN) ||
-                                                planetType.equals(new PLANET_TYPES().TERRAN_ECCENTRIC) ||
-                                                planetType.equals(new PLANET_TYPES().TUNDRA) ||
-                                                planetType.equals(new PLANET_TYPES().US_ALKALI) ||
-                                                planetType.equals(new PLANET_TYPES().US_ARID) ||
-                                                planetType.equals(new PLANET_TYPES().US_ARID_LIFELESS) ||
-                                                planetType.equals(new PLANET_TYPES().US_AURIC) ||
-                                                planetType.equals(new PLANET_TYPES().US_AURIC_CLOUDY) ||
-                                                planetType.equals(new PLANET_TYPES().US_CRIMSON) ||
-                                                planetType.equals(new PLANET_TYPES().US_DESERT_A) ||
-                                                planetType.equals(new PLANET_TYPES().US_DESERT_B) ||
-                                                planetType.equals(new PLANET_TYPES().US_DESERT_C) ||
-                                                planetType.equals(new PLANET_TYPES().US_JUNGLE) ||
-                                                planetType.equals(new PLANET_TYPES().US_LIFELESS) ||
-                                                planetType.equals(new PLANET_TYPES().US_MAGNETIC) ||
-                                                planetType.equals(new PLANET_TYPES().US_METHANE) ||
-                                                planetType.equals(new PLANET_TYPES().US_OCEAN_A) ||
-                                                planetType.equals(new PLANET_TYPES().US_OCEAN_B) ||
-                                                planetType.equals(new PLANET_TYPES().US_RED) ||
-                                                planetType.equals(new PLANET_TYPES().US_RED_WIND) ||
-                                                planetType.equals(new PLANET_TYPES().US_STORM) ||
-                                                planetType.equals(new PLANET_TYPES().US_TERRAN)) {
+                                        if(planetMarket.hasCondition(Conditions.HABITABLE)) {
                                             new HS_AddFactions().generateNow(
                                                     planet, // PlanetAPI array
                                                     factionA, // Faction A, to be generated

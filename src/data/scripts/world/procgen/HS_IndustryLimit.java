@@ -18,7 +18,7 @@ public final class HS_IndustryLimit {
     public int industryLimit(MarketAPI market, PlanetAPI planet) {
         int iLimit;
         int marketSize = market.getSize();
-        boolean isBC = new HyperionModDependencies().isBetterColonies();
+        boolean isBC = new HyperionModDependencies().hasBetterColonies();
         
         // Vanilla, with Coronal Hypershunt
         if(!isBC) {

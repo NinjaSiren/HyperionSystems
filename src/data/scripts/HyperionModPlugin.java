@@ -7,6 +7,7 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
+import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.world.HyperionGen;
 import exerelin.campaign.SectorManager; 
@@ -22,8 +23,10 @@ public class HyperionModPlugin extends BaseModPlugin {
     public void onNewGame() { 
         
         // Checks if Nexrelin is enabled or not
-        SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
-        if(!new HyperionModDependencies().isExerelin() || SectorManager.getCorvusMode()) {
+        if(Global.getSettings().getBoolean("enableHyperionFaction")) {
+            SharedData.getData().getPersonBountyEventData().addParticipatingFaction("HS_Corporation_Separatist");
+        }
+        if(!new HyperionModDependencies().hasExerelin() || SectorManager.getCorvusMode()) {
             new HyperionGen().generate(Global.getSector());
         }
     } 
@@ -32,23 +35,28 @@ public class HyperionModPlugin extends BaseModPlugin {
     public void onNewGameAfterEconomyLoad() {
         
         // Add Hyperion Confederate faction leader
-        MarketAPI capitalMarket = Global.getSector().getEconomy().getMarket("hs_planet_neuejangala");
-        if(capitalMarket != null) {
-            PersonAPI factionLeader = Global.getFactory().createPerson();
-            factionLeader.setFaction("HS_Corporation_Separatist");
-            factionLeader.setGender(FullName.Gender.FEMALE);
-            factionLeader.setRankId(Ranks.FACTION_LEADER);
-            factionLeader.setPostId(Ranks.POST_FACTION_LEADER);
-            factionLeader.setImportance(PersonImportance.VERY_HIGH);
-            factionLeader.setId("hyperion_leader");
-            factionLeader.setPortraitSprite("graphics/portraits/leaderPortrait.png");
-            /*factionLeader.getStats().setSkillLevel(Skills.APT_LEADERSHIP, 3);
-            factionLeader.getStats().setSkillLevel(Skills.APT_TECHNOLOGY, 3);
-            factionLeader.getStats().setSkillLevel(Skills.APT_INDUSTRY, 3);*/
-            factionLeader.setMarket(capitalMarket);
-            capitalMarket.setAdmin(factionLeader);
-            capitalMarket.getCommDirectory().addPerson(factionLeader, 0);
-            capitalMarket.addPerson(factionLeader);
+        if(Global.getSettings().getBoolean("enableHyperionFaction")) {
+            MarketAPI capitalMarket = Global.getSector().getEconomy().getMarket("hs_planet_neuejangala");
+            if(capitalMarket != null) {
+                PersonAPI factionLeader = Global.getFactory().createPerson();
+                factionLeader.setFaction("HS_Corporation_Separatist");
+                factionLeader.setGender(FullName.Gender.FEMALE);
+                factionLeader.setRankId(Ranks.FACTION_LEADER);
+                factionLeader.setPostId(Ranks.POST_FACTION_LEADER);
+                factionLeader.setImportance(PersonImportance.VERY_HIGH);
+                factionLeader.setId("hyperion_leader");
+                factionLeader.setPortraitSprite("graphics/portraits/leaderPortrait.png");
+                factionLeader.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
+                factionLeader.getStats().setSkillLevel(Skills.HYPERCOGNITION, 3);
+                factionLeader.getStats().setAptitudeLevel(Skills.APT_COMBAT, 10);
+                factionLeader.getStats().setAptitudeLevel(Skills.APT_INDUSTRY, 10);
+                factionLeader.getStats().setAptitudeLevel(Skills.APT_LEADERSHIP, 10);
+                factionLeader.getStats().setAptitudeLevel(Skills.APT_TECHNOLOGY, 10);
+                factionLeader.setMarket(capitalMarket);
+                capitalMarket.setAdmin(factionLeader);
+                capitalMarket.getCommDirectory().addPerson(factionLeader, 0);
+                capitalMarket.addPerson(factionLeader);
+            }
         }
     }
     

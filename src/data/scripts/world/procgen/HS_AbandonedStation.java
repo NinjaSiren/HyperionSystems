@@ -82,8 +82,8 @@ public class HS_AbandonedStation {
 
         //Items and Hull Randomizer
         int rand = new HyperionRandomizer(3).value;
-        boolean hasSCY = new HyperionModDependencies().isSCYNation();
-        boolean hasDME = new HyperionModDependencies().isDassaultMikoyan();
+        boolean hasSCY = new HyperionModDependencies().hasSCYNation();
+        boolean hasDME = new HyperionModDependencies().hasDassaultMikoyan();
 
         switch (rand) {
             case 1:

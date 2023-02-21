@@ -31,7 +31,7 @@ public class HS_AddStuffs {
                     + new HS_Randomizer().intRand(-250, 250);
             float planet_op = planet.getCircularOrbitPeriod();
             
-            if(planet_market != null && !planet.isMoon() && planet_market.hasSpaceport()) {
+            if(planet_market.isInEconomy()) {
                 
                 JumpPointAPI jump_point = Global.getFactory().createJumpPoint(
                 "hs_" + planet_name + "_jp", planet_name + " Jump Point");
@@ -40,7 +40,8 @@ public class HS_AddStuffs {
                         star, planet_oa, planet_or, planet_op);
                 
                 jump_point.setOrbit(orbit);
-                jump_point.setStandardWormholeToHyperspaceVisual();
+                jump_point.setAutoCreateEntranceFromHyperspace(true);
+                jump_point.setRelatedPlanet(planet);
                 system.addEntity(jump_point);
             }
         }

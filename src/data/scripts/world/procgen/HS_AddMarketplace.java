@@ -58,6 +58,8 @@ public class HS_AddMarketplace{
         
         if(newMarket.getAdmin() == null) {
             PersonAPI adminGen = new HS_AddRandomAdmins().generateAdmins(newMarket);
+            adminGen.setFaction(newMarket.getFactionId());
+            adminGen.setMarket(newMarket);
             newMarket.setAdmin(adminGen);
             newMarket.getCommDirectory().addPerson(adminGen, 0);
             newMarket.addPerson(adminGen);

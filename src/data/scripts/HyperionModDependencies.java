@@ -41,35 +41,35 @@ public class HyperionModDependencies {
         return hasMagicLib;
     }
     
-    public boolean isExerelin() {
+    public boolean hasExerelin() {
         return isExerelin;
     }
     
-    public boolean isDIYPlanets() {
+    public boolean hasDIYPlanets() {
         return isDIYPlanets;
     }
     
-    public boolean isBetterColonies() {
+    public boolean hasBetterColonies() {
         return isBetterColonies;
     }
     
-    public boolean isConsoleCommands() {
+    public boolean hasConsoleCommands() {
         return isConsoleCommands;
     }
     
-    public boolean isSCYNation() {
+    public boolean hasSCYNation() {
         return isSCYNation;
     }
     
-    public boolean isUnknownSkies() {
+    public boolean hasUnknownSkies() {
         return isUnknownSkies;
     }
     
-    public boolean isDassaultMikoyan() {
+    public boolean hasDassaultMikoyan() {
         return isDassaultMikoyan;
     }
     
-    public boolean isIndEvolution() {
+    public boolean hasIndEvolution() {
         return isIndustrialEvolution;
     }
 }

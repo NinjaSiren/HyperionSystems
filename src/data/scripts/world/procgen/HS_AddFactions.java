@@ -8,6 +8,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
+import data.scripts.world.procgen.industries.baseGameInd;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,92 +73,15 @@ public class HS_AddFactions {
                                     Submarkets.SUBMARKET_OPEN,
                                     Submarkets.SUBMARKET_STORAGE)),
                     new HS_MarketTariff().tariff()); // tariff amount
-        
-        // Randomizes market spaceport
-        if(new HS_Randomizer().randFixed() <= 0.4) {
-            markets.addIndustry(Industries.SPACEPORT);
-        } else {
-            if(markets.hasCondition(Conditions.POPULATION_7) 
-                    && new HS_Randomizer().randFixed() <= 0.125) {
-                markets.addIndustry(Industries.MEGAPORT);             
-            } else if(markets.hasCondition(Conditions.POPULATION_8) 
-                    && new HS_Randomizer().randFixed() <= 0.25) {
-                markets.addIndustry(Industries.MEGAPORT);               
-            } else if(markets.hasCondition(Conditions.POPULATION_9) 
-                    && new HS_Randomizer().randFixed() <= 0.375) {
-                markets.addIndustry(Industries.MEGAPORT);              
-            } else if(markets.hasCondition(Conditions.POPULATION_10) 
-                    && new HS_Randomizer().randFixed() <= 0.5) {
-                markets.addIndustry(Industries.MEGAPORT);           
-            } else {
-                markets.addIndustry(Industries.SPACEPORT);
-            }
-        }
 
-        // Randomizes market defences
-        if(new HS_Randomizer().randFixed() <= 0.4) {
-            markets.addIndustry(Industries.GROUNDDEFENSES);
-        } else {
-            if(markets.hasCondition(Conditions.POPULATION_7) 
-                    && new HS_Randomizer().randFixed() <= 0.2) {
-                markets.addIndustry(Industries.HEAVYBATTERIES);
-            } else if(markets.hasCondition(Conditions.POPULATION_8) 
-                    && new HS_Randomizer().randFixed() <= 0.3) {
-                markets.addIndustry(Industries.HEAVYBATTERIES);
-            } else if(markets.hasCondition(Conditions.POPULATION_9) 
-                    && new HS_Randomizer().randFixed() <= 0.4) {
-                markets.addIndustry(Industries.HEAVYBATTERIES);
-            } else if(markets.hasCondition(Conditions.POPULATION_10) 
-                    && new HS_Randomizer().randFixed() <= 0.5) {
-                markets.addIndustry(Industries.HEAVYBATTERIES);
-            } else {
-                markets.addIndustry(Industries.GROUNDDEFENSES);
-            }
-        }                
-
-        // Randomizes market military presence
-        if(new HS_Randomizer().randFixed() <= 0.4) {
-            markets.addIndustry(Industries.PATROLHQ);
-        } else {
-            if(markets.hasCondition(Conditions.POPULATION_7) 
-                    && new HS_Randomizer().randFixed() <= 0.2) {
-                if(new HS_Randomizer().randFixed() <= 0.7) {
-                    markets.addIndustry(Industries.MILITARYBASE);
-                } else {
-                    markets.addIndustry(Industries.HIGHCOMMAND);
-                }
-            } else if(markets.hasCondition(Conditions.POPULATION_8) 
-                    && new HS_Randomizer().randFixed() <= 0.3) {
-                if(new HS_Randomizer().randFixed() <= 0.6) {
-                    markets.addIndustry(Industries.MILITARYBASE);
-                } else {
-                    markets.addIndustry(Industries.HIGHCOMMAND);
-                }
-            } else if(markets.hasCondition(Conditions.POPULATION_9) 
-                    && new HS_Randomizer().randFixed() <= 0.4) {
-                if(new HS_Randomizer().randFixed() <= 0.5) {
-                    markets.addIndustry(Industries.MILITARYBASE);
-                } else {
-                    markets.addIndustry(Industries.HIGHCOMMAND);
-                }
-            } else if(markets.hasCondition(Conditions.POPULATION_10) 
-                    && new HS_Randomizer().randFixed() <= 0.5) {
-                if(new HS_Randomizer().randFixed() <= 0.3) {
-                    markets.addIndustry(Industries.MILITARYBASE);
-                } else {
-                    markets.addIndustry(Industries.HIGHCOMMAND);
-                }
-            } else {
-                markets.addIndustry(Industries.GROUNDDEFENSES);
-            }
-        }  
+        // Adds Spaceport, Planetary Defences, and Military Bases
+        new baseGameInd().initBaseInd(markets, markets.getFaction(), planet);
         
         // Adds military submarket whenever a planet has a military presense in it
-        if(markets.hasIndustry(Industries.MILITARYBASE) || 
-                markets.hasIndustry(Industries.HIGHCOMMAND)) {
+        if(markets.hasIndustry(Industries.MILITARYBASE) || markets.hasIndustry(Industries.HIGHCOMMAND)) {
             markets.addSubmarket(Submarkets.GENERIC_MILITARY);
         }
-
+        
         // Adds decivilized sub-population in a small percentage of planets
         if(new HS_Randomizer().randFixed() <= 0.1) {
             markets.addCondition(Conditions.DECIVILIZED_SUBPOP);
@@ -238,6 +162,5 @@ public class HS_AddFactions {
         
         // Adds industries depending on conditions
         new HS_AddIndustry(planet, markets, markets.getFaction(), system);
-                    
     }
 }
