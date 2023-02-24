@@ -6,11 +6,12 @@ package data.scripts.world.systems;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FactionAPI;
+import com.fs.starfarer.api.campaign.LocationAPI;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import data.scripts.world.procgen.HS_AddIndustry;
+import java.util.List;
 
 /**
  *
@@ -19,19 +20,28 @@ import data.scripts.world.procgen.HS_AddIndustry;
 public class checkAllSystems {
     
     public checkAllSystems() {
-        int maxCount = Global.getSector().getStarSystems().size();
+        List<LocationAPI> marketLocations = Global.getSector().getEconomy().getLocationsWithMarkets();
+        int locCount = marketLocations.size() - 1;
+        int locCounter = 0;
+        int marCounter = 0;
         
-        while(maxCount >= 0) {
-            int planetCount = Global.getSector().getStarSystems().get(maxCount).getPlanets().size();
-            while(planetCount >= 0) {
-                StarSystemAPI sector = Global.getSector().getStarSystems().get(maxCount);
-                PlanetAPI planet = sector.getPlanets().get(planetCount);
-                MarketAPI planetMarket = planet.getMarket();
-                if(planetMarket.hasIndustry(Industries.POPULATION)) {
-                    FactionAPI planetFaction = planetMarket.getFaction();
-                    new HS_AddIndustry(planet, planetMarket, planetFaction, sector);
+        do {
+            List<MarketAPI> locMarkets = Global.getSector().getEconomy().getMarkets(marketLocations.get(locCounter));
+            int marCount = locMarkets.size() - 1;
+            do {
+                MarketAPI market = locMarkets.get(marCount);
+                FactionAPI faction = market.getFaction();
+                StarSystemAPI sector = market.getStarSystem();
+                PlanetAPI planet = market.getPlanetEntity();
+                
+                if(!market.getFactionId().equals("HS_Corporation_Separatist")) {
+                    new HS_AddIndustry(planet, market, faction, sector);
+                    marCounter++;
+                } else {
+                    marCounter = 0;
                 }
-            }
-        }
+            } while(marCount > marCounter);
+            locCounter++;
+        } while(locCount > locCounter);
     }
 }

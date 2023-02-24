@@ -48,7 +48,7 @@ public class HS_AddFactions {
         int marketPopulation = new HS_Randomizer().intRand(3, 10); // Randomizes market population, from 3 to 10
 
         // Randomizes market factions
-        if(new HS_Randomizer().randFixed()<= factions) {
+        if(new HS_Randomizer().randFixed() <= factions) {
             faction = factionA;
         } else {
             faction = factionB;
@@ -63,9 +63,8 @@ public class HS_AddFactions {
                     new ArrayList<>
                             (Arrays.asList( // list of conditions
                                     popAmount(marketPopulation))),
-                    new ArrayList<>
+                     new ArrayList<>
                             (Arrays.asList( // list of industries
-                                    Industries.WAYSTATION,
                                     Industries.POPULATION)),
                     new ArrayList<>(
                             Arrays.asList( // which submarkets to generate
@@ -73,7 +72,7 @@ public class HS_AddFactions {
                                     Submarkets.SUBMARKET_OPEN,
                                     Submarkets.SUBMARKET_STORAGE)),
                     new HS_MarketTariff().tariff()); // tariff amount
-
+        
         // Adds Spaceport, Planetary Defences, and Military Bases
         new baseGameInd().initBaseInd(markets, markets.getFaction(), planet);
         

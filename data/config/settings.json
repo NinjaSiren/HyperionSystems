@@ -3,7 +3,7 @@
 	"colonyOverMaxPenalty":0,
 	"maxColonySize":10,
 
-	"enableSectorIndustryRevamp":FALSE,
+	"enableSectorIndustryRevamp":TRUE,
 	"enableHyperionPenelope":TRUE,
 	"enableHyperionOuterWorlds":TRUE,
 	"enableHyperionFaction":TRUE,

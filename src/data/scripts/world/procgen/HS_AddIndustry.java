@@ -31,67 +31,67 @@ public class HS_AddIndustry {
             //TODO : CORONAL HYPERSHUNT
 
             // Aquaculture
-            new baseGameInd().aquaCulture(market, planet, faction);
             if(market.hasIndustry(Industries.AQUACULTURE)) --iSize;
+            else new baseGameInd().aquaCulture(market, faction);
             if(iSize < 0) break;
 
             // Farming
-            new baseGameInd().farmInd(market, planet, faction);
             if(market.hasIndustry(Industries.FARMING)) --iSize;
+            else new baseGameInd().farmInd(market, faction);
             if(iSize < 0) break;
 
             // Mining
-            new baseGameInd().mineInd(market, planet, faction);
             if(market.hasIndustry(Industries.MINING)) --iSize;
+            else new baseGameInd().mineInd(market, planet, faction);
             if(iSize < 0) break;
 
             // Techmining
-            new baseGameInd().techMining(market, planet, faction);
             if(market.hasIndustry(Industries.TECHMINING)) --iSize;
+            else new baseGameInd().techMining(market, faction);
             if(iSize < 0) break;
             
             // Light Industry
-            new baseGameInd().lightInd(market, planet, faction);
             if(market.hasIndustry(Industries.LIGHTINDUSTRY)) --iSize;
+            else new baseGameInd().lightInd(market, faction);
             if(iSize < 0) break;
 
             // Refining
-            new baseGameInd().refInd(market, planet, faction);
             if(market.hasIndustry(Industries.REFINING)) --iSize;
+            else new baseGameInd().refInd(market, faction);
             if(iSize < 0) break;
 
             // Heavy Industry or Orbital Works
-            new baseGameInd().heavyInd(market, planet, faction);
             if(market.hasIndustry(Industries.HEAVYINDUSTRY) || market.hasIndustry(Industries.ORBITALWORKS)) --iSize;
+            else new baseGameInd().heavyInd(market, faction);
             if(iSize < 0) break;
 
             // Fuel Production
-            new baseGameInd().fuelInd(market, planet, faction);
             if(market.hasIndustry(Industries.FUELPROD)) --iSize;
+            else new baseGameInd().fuelInd(market, faction);
             if(iSize < 0) break;
 
             // Cryosanctum
-            new baseGameInd().cryoSanctum(market, planet, faction);
+            new baseGameInd().cryoSanctum(market, faction);
 
             // Orbital Station
-            new baseGameInd().planetStation(market, faction);
+            // new baseGameInd().planetStation(market, faction);
             
             // Add Industrial Evolution Industries if Industrial Evolution is enabled
             if(isINDEVO) {
 
                 // Supercomputer
-                new indEvoInd().superComputer(market, faction, planet);
                 if(market.hasIndustry(new INDEVO_INDUSTRIES().SUPCOM)) --iSize;
+                else new indEvoInd().superComputer(market, faction);
                 if(iSize < 0) break;
 
                 // Salvage Yards
-                new indEvoInd().superComputer(market, faction, planet);
-                if(market.hasIndustry(new INDEVO_INDUSTRIES().REPAIRDOCKS)) --iSize;
+                if(market.hasIndustry(new INDEVO_INDUSTRIES().SCRAPYARD)) --iSize;
+                else new indEvoInd().superComputer(market, faction);
                 if(iSize < 0) break;
 
                 // Privateer Base
-                new indEvoInd().superComputer(market, faction, planet);
-                if(market.hasIndustry(new INDEVO_INDUSTRIES().REPAIRDOCKS)) iSize = iSize - 2;
+                if(market.hasIndustry(new INDEVO_INDUSTRIES().PIRATEHAVEN)) iSize = iSize - 2;
+                else new indEvoInd().superComputer(market, faction);
                 if(iSize < 0) break;
 
                 // Senate
@@ -104,25 +104,31 @@ public class HS_AddIndustry {
                 new indEvoInd().indEvoAcademy(market, faction);
 
                 // Variable Assembler/Manufactory or Commodity Forge
+                if(market.hasIndustry(new INDEVO_INDUSTRIES().COMFORGE)) --iSize;
+                if(iSize < 0) break;
+                
+                if(market.hasIndustry(new INDEVO_INDUSTRIES().ADMANUF)) --iSize;
                 new indEvoInd().indEvoVarForge(market, faction);
+                if(iSize < 0) break;
+                
                 
                 // Embassy
-                new indEvoInd().indEvoEmbassy(market);
+                new indEvoInd().indEvoEmbassy(market, faction);
                 
                 // Restoration Docks
-                new indEvoInd().indEvoResDock(market);
+                new indEvoInd().indEvoResDock(market, faction);
                 
                 // Requisition Center
-                new indEvoInd().indEvoResDock(market);
+                new indEvoInd().indEvoResDock(market, faction);
                 
                 // Engineering Hub
-                new indEvoInd().indEvoEngHub(market);
+                new indEvoInd().indEvoEngHub(market, faction);
                 
                 // Courier Port
-                new indEvoInd().indEvoCourPort(market);
+                new indEvoInd().indEvoCourPort(market, faction);
                 
                 // Military Relays or Interstellar Relay
-                // new indEvoInd().relaysNoRelay(market, sector);
+                new indEvoInd().relaysNoRelay(market, sector, faction);
                 
                 // TODO : World Symbols
 

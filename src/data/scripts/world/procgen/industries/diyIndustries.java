@@ -25,8 +25,7 @@ public class diyIndustries {
     public diyIndustries(PlanetAPI planet, MarketAPI market, FactionAPI faction, StarSystemAPI sector) {
         
         // Radiation Removal
-        if(planet.hasCondition(Conditions.IRRADIATED) ||
-                market.hasCondition(Conditions.IRRADIATED)) {
+        if(market.hasCondition(Conditions.IRRADIATED)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().RAD_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -120,7 +119,7 @@ public class diyIndustries {
         }
 
         // Environmental Agency
-        if(planet.hasCondition(Conditions.POLLUTION) || market.hasCondition(Conditions.POLLUTION)) {
+        if(market.hasCondition(Conditions.POLLUTION)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
                     if(new HS_Randomizer().randFixed() <= 0.5) 
@@ -136,10 +135,7 @@ public class diyIndustries {
         }
 
         // Integration Corps / Subjugation Corps
-        if(planet.hasCondition(Conditions.DECIVILIZED) ||
-                market.hasCondition(Conditions.DECIVILIZED) ||
-                planet.hasCondition(Conditions.DECIVILIZED_SUBPOP) ||
-                market.hasCondition(Conditions.DECIVILIZED_SUBPOP)) {
+        if(market.hasCondition(Conditions.DECIVILIZED) || market.hasCondition(Conditions.DECIVILIZED_SUBPOP)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
                     if(new HS_Randomizer().randFixed() <= 0.5) market.addIndustry(
@@ -167,8 +163,7 @@ public class diyIndustries {
         }
 
         // Atmospheric Filter
-        if(planet.hasCondition(Conditions.TOXIC_ATMOSPHERE) || market.hasCondition(Conditions.TOXIC_ATMOSPHERE) ||
-                planet.hasCondition(Conditions.DENSE_ATMOSPHERE) || market.hasCondition(Conditions.DENSE_ATMOSPHERE)) {
+        if(market.hasCondition(Conditions.TOXIC_ATMOSPHERE)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_FILTER, 
                         new ArrayList<>(Arrays.asList(
@@ -179,8 +174,7 @@ public class diyIndustries {
         }
 
         // Atmospheric Pump
-        if(planet.hasCondition(Conditions.NO_ATMOSPHERE) || market.hasCondition(Conditions.NO_ATMOSPHERE) ||
-                planet.hasCondition(Conditions.THIN_ATMOSPHERE) || market.hasCondition(Conditions.THIN_ATMOSPHERE)) {
+        if(market.hasCondition(Conditions.NO_ATMOSPHERE)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_PUMP, 
                         new ArrayList<>(Arrays.asList(
@@ -196,8 +190,7 @@ public class diyIndustries {
         }
 
         // Stellar Mirror
-        if(planet.hasCondition(Conditions.VERY_COLD) || market.hasCondition(Conditions.VERY_COLD) ||
-                planet.hasCondition(Conditions.COLD) || market.hasCondition(Conditions.COLD)) {
+        if(market.hasCondition(Conditions.VERY_COLD) || market.hasCondition(Conditions.COLD)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().COLD_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -214,8 +207,7 @@ public class diyIndustries {
         }
 
         // Stellar Shade
-        if(planet.hasCondition(Conditions.VERY_HOT) || market.hasCondition(Conditions.VERY_HOT) ||
-                planet.hasCondition(Conditions.HOT) || market.hasCondition(Conditions.HOT)) {
+        if(market.hasCondition(Conditions.VERY_HOT) || market.hasCondition(Conditions.HOT)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().HEAT_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -232,7 +224,7 @@ public class diyIndustries {
         }
 
         // Stellar Distributor
-        if(planet.hasCondition(Conditions.POOR_LIGHT) || market.hasCondition(Conditions.POOR_LIGHT)) {
+        if(market.hasCondition(Conditions.POOR_LIGHT)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().POOR_LIGHT_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -243,8 +235,7 @@ public class diyIndustries {
         }
 
         // Tectonic Engine
-        if(planet.hasCondition(Conditions.TECTONIC_ACTIVITY) || market.hasCondition(Conditions.TECTONIC_ACTIVITY) ||
-                planet.hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY) || market.hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY)) {
+        if(market.hasCondition(Conditions.TECTONIC_ACTIVITY) || market.hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().TECTONIC_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -261,7 +252,7 @@ public class diyIndustries {
         }
 
         // Cyclonic Regulator
-        if(planet.hasCondition(Conditions.EXTREME_WEATHER) || market.hasCondition(Conditions.EXTREME_WEATHER)) {
+        if(market.hasCondition(Conditions.EXTREME_WEATHER)) {
             if(new HS_Randomizer().randFixed() <= 0.5) {
                 market.addIndustry(new DIY_INDUSTRIES().EXTREME_WEATHER_REMOVER, 
                         new ArrayList<>(Arrays.asList(
@@ -272,7 +263,7 @@ public class diyIndustries {
         }
 
         // Genepurge Project
-        if(planet.hasCondition(Conditions.INIMICAL_BIOSPHERE) || market.hasCondition(Conditions.INIMICAL_BIOSPHERE)) {
+        if(market.hasCondition(Conditions.INIMICAL_BIOSPHERE)) {
             if(new HS_Randomizer().randFixed() <= 0.5) {
                 if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
                     if(new HS_Randomizer().randFixed() <= 0.5) 
@@ -288,8 +279,7 @@ public class diyIndustries {
         }
 
         // N-Brane Oscillator
-        if(planet.hasCondition(Conditions.LOW_GRAVITY) || market.hasCondition(Conditions.LOW_GRAVITY) ||
-                planet.hasCondition(Conditions.HIGH_GRAVITY) || market.hasCondition(Conditions.HIGH_GRAVITY)) {
+        if(market.hasCondition(Conditions.LOW_GRAVITY) || market.hasCondition(Conditions.HIGH_GRAVITY)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().GRAV_OSCILLATOR, 
                         new ArrayList<>(Arrays.asList(
@@ -311,9 +301,8 @@ public class diyIndustries {
         }
 
         // Lobster Breeding Program
-        if(!planet.hasCondition(Conditions.VOLTURNIAN_LOBSTER_PENS) || !market.hasCondition(Conditions.VOLTURNIAN_LOBSTER_PENS) &&
-                planet.getTypeId().equals(new PLANET_TYPES().OCEAN) || planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_A) ||
-                planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_B)) {
+        if(!market.hasCondition(Conditions.VOLTURNIAN_LOBSTER_PENS) && planet.getTypeId().equals(new PLANET_TYPES().OCEAN) || 
+                planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_A) || planet.getTypeId().equals(new PLANET_TYPES().US_OCEAN_B)) {
             if(new HS_Randomizer().randFixed() <= 0.5) {
                 if(faction.getId().equalsIgnoreCase("HS_Corporation_Separatist")) {
                     if(new HS_Randomizer().randFixed() <= 0.5) 

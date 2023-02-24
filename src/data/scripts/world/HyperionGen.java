@@ -79,11 +79,13 @@ public class HyperionGen implements SectorGeneratorPlugin {
                     new Base_Penelope().generate(sector); // Penelope's star
                 }
             }
-
+            
+            /* Disabled until fixed
             if(Global.getSettings().getBoolean("enableSectorIndustryRevamp")) {
                new checkAllSystems(); 
             }
-
+            */
+            
             // All planets of ths mod's star systems are known
             Misc.setAllPlanetsKnown("Phia");
             Misc.setAllPlanetsKnown("Diamant");

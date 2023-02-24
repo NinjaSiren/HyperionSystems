@@ -10,5 +10,5 @@ package data.scripts.world.procgen.variables;
  * @author NinjaSiren
  */
 public class DIY_CONDITIONS {
-    public static final String HYDRATED = "hydrated";
+    public final String HYDRATED = "hydrated";
 }

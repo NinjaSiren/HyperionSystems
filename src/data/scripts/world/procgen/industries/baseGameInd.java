@@ -62,6 +62,13 @@ public class baseGameInd {
                             new BASE_ITEMS().randAICores(faction.getId()))));
         }
 
+        // Waystation
+        if(new HS_Randomizer().randFixed() <= 0.8) {
+            markets.addIndustry(Industries.WAYSTATION, 
+                    new ArrayList<>(Arrays.asList(
+                            new BASE_ITEMS().randAICores(faction.getId()))));
+        }
+        
         // Planet Defences
         if(markets.hasCondition(Conditions.POPULATION_5) && new HS_Randomizer().randFixed() <= 0.13) {
             markets.addIndustry(Industries.HEAVYBATTERIES, 
@@ -101,7 +108,7 @@ public class baseGameInd {
         }
         
         // Military Base
-        if(!markets.hasIndustry(Industries.HIGHCOMMAND) || !planet.getMarket().hasIndustry(Industries.MILITARYBASE) ||
+        if(!markets.hasIndustry(Industries.HIGHCOMMAND) || !markets.hasIndustry(Industries.MILITARYBASE) ||
                 !markets.hasIndustry(Industries.PATROLHQ)) {
             if(markets.hasCondition(Conditions.POPULATION_5) && new HS_Randomizer().randFixed() <= 0.2) {
                 if(new HS_Randomizer().randFixed() <= 0.7) {
@@ -185,11 +192,9 @@ public class baseGameInd {
     }
     
     // Aquaculture
-    public void aquaCulture(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(market.hasCondition(Conditions.WATER) || market.hasCondition(Conditions.WATER_SURFACE) ||
-                planet.hasCondition(Conditions.WATER) || planet.hasCondition(Conditions.WATER_SURFACE) ||
-                planet.getTypeId().contains("OCEAN")) {
-            if(!market.hasIndustry(Industries.AQUACULTURE) || !planet.getMarket().hasIndustry(Industries.AQUACULTURE)) {
+    public void aquaCulture(MarketAPI market, FactionAPI faction) {
+        if(market.hasCondition(Conditions.WATER)) {
+            if(!market.hasIndustry(Industries.AQUACULTURE)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.AQUACULTURE, 
                             new ArrayList<>(Arrays.asList(                            
@@ -200,8 +205,8 @@ public class baseGameInd {
     }
     
     // Farming
-    public void farmInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.FARMING) || !planet.getMarket().hasIndustry(Industries.FARMING)) {
+    public void farmInd(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.FARMING)) {
             if(market.hasCondition(Conditions.FARMLAND_RICH) || market.hasCondition(Conditions.FARMLAND_BOUNTIFUL)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.FARMING, 
@@ -229,12 +234,10 @@ public class baseGameInd {
     
     // Mining
     public void mineInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.MINING) || !planet.getMarket().hasIndustry(Industries.MINING)) {
+        if(!market.hasIndustry(Industries.MINING)) {
 
             // Metals
-            if(planet.getMarket().hasCondition(Conditions.ORE_RICH) || planet.getMarket().hasCondition(Conditions.ORE_ULTRARICH) ||
-                    market.hasCondition(Conditions.ORE_RICH) || market.hasCondition(Conditions.ORE_ULTRARICH) ||
-                    planet.getMarket().hasCondition(Conditions.RARE_ORE_RICH) || planet.getMarket().hasCondition(Conditions.RARE_ORE_ULTRARICH) ||
+            if(market.hasCondition(Conditions.ORE_RICH) || market.hasCondition(Conditions.ORE_ULTRARICH) ||
                     market.hasCondition(Conditions.RARE_ORE_RICH) || market.hasCondition(Conditions.RARE_ORE_ULTRARICH)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.MINING, 
@@ -242,23 +245,21 @@ public class baseGameInd {
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_ABUNDANT) || market.hasCondition(Conditions.ORE_ABUNDANT) || 
-                    planet.getMarket().hasCondition(Conditions.RARE_ORE_ABUNDANT) || market.hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
+            } else if(market.hasCondition(Conditions.ORE_ABUNDANT) || market.hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
                 if(new HS_Randomizer().randFixed() <= 0.45) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_MODERATE) || market.hasCondition(Conditions.ORE_MODERATE) || 
-                    planet.getMarket().hasCondition(Conditions.RARE_ORE_MODERATE) || market.hasCondition(Conditions.RARE_ORE_MODERATE)) {
+            } else if(market.hasCondition(Conditions.ORE_MODERATE) || market.hasCondition(Conditions.RARE_ORE_MODERATE)) {
                 if(new HS_Randomizer().randFixed() <= 0.15) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_SPARSE) || market.hasCondition(Conditions.ORE_SPARSE)) {
+            } else if(market.hasCondition(Conditions.ORE_SPARSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.05) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
@@ -268,33 +269,28 @@ public class baseGameInd {
             }
 
             // Rare Metals
-            else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_RICH) || 
-                    planet.getMarket().hasCondition(Conditions.RARE_ORE_ULTRARICH) ||
-                    market.hasCondition(Conditions.RARE_ORE_RICH) || market.hasCondition(Conditions.RARE_ORE_ULTRARICH)) {
+            else if(market.hasCondition(Conditions.RARE_ORE_RICH) || market.hasCondition(Conditions.RARE_ORE_ULTRARICH)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_ABUNDANT) || 
-                    market.hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
                 if(new HS_Randomizer().randFixed() <= 0.45) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_MODERATE) || 
-                    market.hasCondition(Conditions.RARE_ORE_MODERATE)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_MODERATE)) {
                 if(new HS_Randomizer().randFixed() <= 0.15) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_SPARSE) || 
-                    market.hasCondition(Conditions.RARE_ORE_SPARSE)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_SPARSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.05) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
@@ -304,25 +300,21 @@ public class baseGameInd {
             } 
 
             // Organics
-            else if(planet.getMarket().hasCondition(Conditions.ORGANICS_ABUNDANT) || 
-                    planet.getMarket().hasCondition(Conditions.ORGANICS_PLENTIFUL) ||
-                    market.hasCondition(Conditions.ORGANICS_ABUNDANT) || market.hasCondition(Conditions.ORGANICS_PLENTIFUL)) {
+            else if(market.hasCondition(Conditions.ORGANICS_ABUNDANT) || market.hasCondition(Conditions.ORGANICS_PLENTIFUL)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORGANICS_COMMON) || 
-                    market.hasCondition(Conditions.ORGANICS_COMMON)) {
+            } else if(market.hasCondition(Conditions.ORGANICS_COMMON)) {
                 if(new HS_Randomizer().randFixed() <= 0.5) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randOreItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 } 
-            } else if(planet.getMarket().hasCondition(Conditions.ORGANICS_TRACE) || 
-                    market.hasCondition(Conditions.ORGANICS_TRACE)) {
+            } else if(market.hasCondition(Conditions.ORGANICS_TRACE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
@@ -332,25 +324,21 @@ public class baseGameInd {
             }
 
             // Volatiles
-            else if(planet.getMarket().hasCondition(Conditions.VOLATILES_ABUNDANT) || 
-                    planet.getMarket().hasCondition(Conditions.VOLATILES_PLENTIFUL) ||
-                    market.hasCondition(Conditions.VOLATILES_ABUNDANT) || market.hasCondition(Conditions.VOLATILES_PLENTIFUL)) {
+            else if(market.hasCondition(Conditions.VOLATILES_ABUNDANT) || market.hasCondition(Conditions.VOLATILES_PLENTIFUL)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randVolItem(faction.getId(), planet),                             
                                     new BASE_ITEMS().randAICores(faction.getId())))); 
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_DIFFUSE) || 
-                    market.hasCondition(Conditions.VOLATILES_DIFFUSE)) {
+            } else if(market.hasCondition(Conditions.VOLATILES_DIFFUSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.5) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randVolItem(faction.getId(), planet),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_TRACE) || 
-                    market.hasCondition(Conditions.VOLATILES_TRACE)) {
+            } else if(market.hasCondition(Conditions.VOLATILES_TRACE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.MINING, 
                             new ArrayList<>(Arrays.asList(
@@ -362,22 +350,21 @@ public class baseGameInd {
     }
     
     // Techmining
-    public void techMining(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.TECHMINING) || !planet.getMarket().hasIndustry(Industries.TECHMINING)) {
-            if(planet.getMarket().hasCondition(Conditions.RUINS_VAST) || 
-                    planet.getMarket().hasCondition(Conditions.RUINS_EXTENSIVE)) {
+    public void techMining(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.TECHMINING)) {
+            if(market.hasCondition(Conditions.RUINS_VAST) || market.hasCondition(Conditions.RUINS_EXTENSIVE)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.TECHMINING, 
                             new ArrayList<>(Arrays.asList(                            
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RUINS_WIDESPREAD)) {
+            } else if(market.hasCondition(Conditions.RUINS_WIDESPREAD) || market.hasCondition(Conditions.RUINS_WIDESPREAD)) {
                 if(new HS_Randomizer().randFixed() <=  0.5) {
                     market.addIndustry(Industries.TECHMINING, 
                             new ArrayList<>(Arrays.asList(                            
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RUINS_SCATTERED)) {
+            } else if(market.hasCondition(Conditions.RUINS_SCATTERED) || market.hasCondition(Conditions.RUINS_SCATTERED)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.TECHMINING, 
                             new ArrayList<>(Arrays.asList(                            
@@ -388,26 +375,25 @@ public class baseGameInd {
     }
     
     // Light Industry
-    public void lightInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.LIGHTINDUSTRY) || !planet.getMarket().hasIndustry(Industries.LIGHTINDUSTRY)) {
+    public void lightInd(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.LIGHTINDUSTRY)) {
 
             // If organics are present
-            if(planet.getMarket().hasCondition(Conditions.ORGANICS_ABUNDANT) || 
-                    planet.getMarket().hasCondition(Conditions.ORGANICS_PLENTIFUL)) {
+            if(market.hasCondition(Conditions.ORGANICS_ABUNDANT) || market.hasCondition(Conditions.ORGANICS_PLENTIFUL)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.LIGHTINDUSTRY, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randLightBio(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORGANICS_COMMON)) {
+            } else if(market.hasCondition(Conditions.ORGANICS_COMMON)) {
                 if(new HS_Randomizer().randFixed() <= 0.5) {
                     market.addIndustry(Industries.LIGHTINDUSTRY, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randLightBio(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORGANICS_TRACE)) {
+            } else if(market.hasCondition(Conditions.ORGANICS_TRACE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.LIGHTINDUSTRY, 
                             new ArrayList<>(Arrays.asList(
@@ -428,33 +414,32 @@ public class baseGameInd {
     }
     
     // Refining
-    public void refInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.REFINING) || !planet.getMarket().hasIndustry(Industries.REFINING)) {
+    public void refInd(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.REFINING)) {
 
             // If ores are present
-            if(planet.getMarket().hasCondition(Conditions.ORE_RICH) || 
-                    planet.getMarket().hasCondition(Conditions.ORE_ULTRARICH)) {
+            if(market.hasCondition(Conditions.ORE_RICH) || market.hasCondition(Conditions.ORE_ULTRARICH)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_ABUNDANT)) {
+            } else if(market.hasCondition(Conditions.ORE_ABUNDANT)) {
                 if(new HS_Randomizer().randFixed() <= 0.5) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_MODERATE)) {
+            } else if(market.hasCondition(Conditions.ORE_MODERATE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.ORE_SPARSE)) {
+            } else if(market.hasCondition(Conditions.ORE_SPARSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.1) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
@@ -464,29 +449,29 @@ public class baseGameInd {
             }
 
             // If rare metals are present
-            else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_RICH) || 
-                    planet.getMarket().hasCondition(Conditions.RARE_ORE_ULTRARICH)) {
+            else if(market.hasCondition(Conditions.RARE_ORE_RICH) || 
+                    market.hasCondition(Conditions.RARE_ORE_ULTRARICH)) {
                 if(new HS_Randomizer().randFixed() <= 0.75) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_ABUNDANT)) {
                 if(new HS_Randomizer().randFixed() <= 0.5) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_MODERATE)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_MODERATE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
                                     new BASE_ITEMS().randRefItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.RARE_ORE_SPARSE)) {
+            } else if(market.hasCondition(Conditions.RARE_ORE_SPARSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.1) {
                     market.addIndustry(Industries.REFINING, 
                             new ArrayList<>(Arrays.asList(
@@ -507,12 +492,11 @@ public class baseGameInd {
     }
     
     // Heavy Industry
-    public void heavyInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.HEAVYINDUSTRY) || !planet.getMarket().hasIndustry(Industries.HEAVYINDUSTRY) || 
-                !market.hasIndustry(Industries.ORBITALWORKS) || !planet.getMarket().hasIndustry(Industries.ORBITALWORKS)) {
+    public void heavyInd(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.HEAVYINDUSTRY) || !market.hasIndustry(Industries.ORBITALWORKS)) {
 
             // If there is a refining industry on the planet
-            if(market.hasIndustry(Industries.REFINING) || planet.getMarket().hasIndustry(Industries.REFINING)) {
+            if(market.hasIndustry(Industries.REFINING)) {
                 if(new HS_Randomizer().randFixed() <= 0.4) {
                     market.addIndustry(Industries.HEAVYINDUSTRY, 
                             new ArrayList<>(Arrays.asList(
@@ -543,18 +527,17 @@ public class baseGameInd {
     }
     
     // Fuel Production
-    public void fuelInd(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.FUELPROD) || !planet.getMarket().hasIndustry(Industries.FUELPROD)) {
+    public void fuelInd(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.FUELPROD)) {
 
-            if(planet.getMarket().hasCondition(Conditions.VOLATILES_ABUNDANT) || 
-                    planet.getMarket().hasCondition(Conditions.VOLATILES_PLENTIFUL)) {
+            if(market.hasCondition(Conditions.VOLATILES_ABUNDANT) || market.hasCondition(Conditions.VOLATILES_PLENTIFUL)) {
                     if(new HS_Randomizer().randFixed() <= 0.75) {
                         market.addIndustry(Industries.FUELPROD, 
                                 new ArrayList<>(Arrays.asList(
                                         new BASE_ITEMS().randFuelItem(faction.getId(), market),                             
                                         new BASE_ITEMS().randAICores(faction.getId()))));
                     }
-            } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_DIFFUSE)) {
+            } else if(market.hasCondition(Conditions.VOLATILES_DIFFUSE)) {
                 if(new HS_Randomizer().randFixed() <= 0.75 && 
                         new HS_Randomizer().randFixed() > 0.25) {
                     market.addIndustry(Industries.FUELPROD, 
@@ -562,7 +545,7 @@ public class baseGameInd {
                                     new BASE_ITEMS().randFuelItem(faction.getId(), market),                             
                                     new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if(planet.getMarket().hasCondition(Conditions.VOLATILES_TRACE)) {
+            } else if(market.hasCondition(Conditions.VOLATILES_TRACE)) {
                 if(new HS_Randomizer().randFixed() <= 0.25) {
                     market.addIndustry(Industries.FUELPROD, 
                             new ArrayList<>(Arrays.asList(
@@ -581,43 +564,43 @@ public class baseGameInd {
     }
     
     // Cryosanctum
-    public void cryoSanctum(MarketAPI market, PlanetAPI planet, FactionAPI faction) {
-        if(!market.hasIndustry(Industries.CRYOSANCTUM) || !planet.getMarket().hasIndustry(Industries.CRYOSANCTUM)) {
-            if(market.hasCondition(Conditions.POPULATION_5) || planet.hasCondition(Conditions.POPULATION_5)) {
+    public void cryoSanctum(MarketAPI market, FactionAPI faction) {
+        if(!market.hasIndustry(Industries.CRYOSANCTUM)) {
+            if(market.hasCondition(Conditions.POPULATION_5)) {
                 if(new HS_Randomizer().randFixed() <= 0.01) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
                         new ArrayList<>(Arrays.asList(                            
                                 new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if (market.hasCondition(Conditions.POPULATION_6) || planet.hasCondition(Conditions.POPULATION_6)) {
+            } else if (market.hasCondition(Conditions.POPULATION_6)) {
                 if(new HS_Randomizer().randFixed() <= 0.025) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                            new ArrayList<>(Arrays.asList(                            
+                                    new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if (market.hasCondition(Conditions.POPULATION_7) || planet.hasCondition(Conditions.POPULATION_7)) {
+            } else if (market.hasCondition(Conditions.POPULATION_7)) {
                 if(new HS_Randomizer().randFixed() <= 0.05) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                            new ArrayList<>(Arrays.asList(                            
+                                    new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if (market.hasCondition(Conditions.POPULATION_8) || planet.hasCondition(Conditions.POPULATION_8)) {
+            } else if (market.hasCondition(Conditions.POPULATION_8)) {
                 if(new HS_Randomizer().randFixed() <= 0.075) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                            new ArrayList<>(Arrays.asList(                            
+                                    new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if (market.hasCondition(Conditions.POPULATION_9) || planet.hasCondition(Conditions.POPULATION_9)) {
+            } else if (market.hasCondition(Conditions.POPULATION_9)) {
                 if(new HS_Randomizer().randFixed() <= 0.1) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                            new ArrayList<>(Arrays.asList(                            
+                                    new BASE_ITEMS().randAICores(faction.getId()))));
                 }
-            } else if (market.hasCondition(Conditions.POPULATION_10) || planet.hasCondition(Conditions.POPULATION_10)) {
+            } else if (market.hasCondition(Conditions.POPULATION_10)) {
                 if(new HS_Randomizer().randFixed() <= 0.125) {
                     market.addIndustry(Industries.CRYOSANCTUM, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                            new ArrayList<>(Arrays.asList(                            
+                                    new BASE_ITEMS().randAICores(faction.getId()))));
                 }
             }
         }
@@ -630,60 +613,50 @@ public class baseGameInd {
                 case Factions.REMNANTS:
                     if(new HS_Randomizer().randFixed() <= 0.17) {
                         market.addIndustry(Industries.ORBITALSTATION_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.17 
-                            && new HS_Randomizer().randFixed() <= 0.5) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.17 && new HS_Randomizer().randFixed() <= 0.5) {
                         market.addIndustry(Industries.BATTLESTATION_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.5 
-                            && new HS_Randomizer().randFixed() <= 0.9) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.5 && new HS_Randomizer().randFixed() <= 0.9) {
                         market.addIndustry(Industries.STARFORTRESS_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
                     }
                     break;
                 case Factions.PIRATES:
                     if(new HS_Randomizer().randFixed() <= 0.17) {
                         market.addIndustry(Industries.ORBITALSTATION, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.17 
-                            && new HS_Randomizer().randFixed() <= 0.33) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.17 && new HS_Randomizer().randFixed() <= 0.33) {
                         market.addIndustry(Industries.BATTLESTATION, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.33  
-                            && new HS_Randomizer().randFixed() <= 0.5) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.33  && new HS_Randomizer().randFixed() <= 0.5) {
                         market.addIndustry(Industries.STARFORTRESS, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
                     }
                     break;
                 case "HS_Corporation_Separatist":
                     if(new HS_Randomizer().randFixed() <= 0.25) {
                         market.addIndustry(Industries.ORBITALSTATION_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.25 
-                            && new HS_Randomizer().randFixed() <= 0.5) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.25 && new HS_Randomizer().randFixed() <= 0.5) {
                         market.addIndustry(Industries.BATTLESTATION_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    } else if(new HS_Randomizer().randFixed() > 0.5 
-                            && new HS_Randomizer().randFixed() <= 0.75) {
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
+                    } else if(new HS_Randomizer().randFixed() > 0.5 && new HS_Randomizer().randFixed() <= 0.75) {
                         market.addIndustry(Industries.STARFORTRESS_HIGH, 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
+                                new ArrayList<>(Arrays.asList(                            
+                                        new BASE_ITEMS().randAICores(faction.getId()))));
                     }
                     break;
                 default:
-                    if(randStation() != null) {
-                        market.addIndustry(randStation(), 
-                        new ArrayList<>(Arrays.asList(                            
-                                new BASE_ITEMS().randAICores(faction.getId()))));
-                    }
+                    break; 
             }
         }
     }
@@ -693,28 +666,23 @@ public class baseGameInd {
         if(new HS_Randomizer().randFixed() <= 0.25) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 return Industries.ORBITALSTATION;
-            } else if(new HS_Randomizer().randFixed() > 0.33 
-                    && new HS_Randomizer().randFixed() <= 0.66) {
+            } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 return Industries.BATTLESTATION;
             } else {
                 return Industries.STARFORTRESS;
             }
-        } else if(new HS_Randomizer().randFixed() > 0.25 
-                && new HS_Randomizer().randFixed() <= 0.5) {
+        } else if(new HS_Randomizer().randFixed() > 0.25 && new HS_Randomizer().randFixed() <= 0.5) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 return Industries.ORBITALSTATION_MID;
-            } else if(new HS_Randomizer().randFixed() > 0.33 
-                    && new HS_Randomizer().randFixed() <= 0.66) {
+            } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 return Industries.BATTLESTATION_MID;
             } else {
                 return Industries.STARFORTRESS_MID;
             }
-        } else if(new HS_Randomizer().randFixed() > 0.5 
-                && new HS_Randomizer().randFixed() <= 0.75) {
+        } else if(new HS_Randomizer().randFixed() > 0.5 && new HS_Randomizer().randFixed() <= 0.75) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 return Industries.ORBITALSTATION_HIGH;
-            } else if(new HS_Randomizer().randFixed() > 0.33 
-                    && new HS_Randomizer().randFixed() <= 0.66) {
+            } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 return Industries.BATTLESTATION_HIGH;
             } else {
                 return Industries.STARFORTRESS_HIGH;

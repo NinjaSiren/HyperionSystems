@@ -282,6 +282,17 @@ public class BASE_ITEMS {
                         return Commodities.BETA_CORE;
                     } 
                     break;
+                case Factions.TRITACHYON:
+                    if(new HS_Randomizer().randFixed() <= 0.9) {
+                        return Commodities.ALPHA_CORE;
+                    } else if(new HS_Randomizer().randFixed() > 0.9 
+                            || new HS_Randomizer().randFixed() <= 0.925) {
+                        return Commodities.GAMMA_CORE;
+                    } else if(new HS_Randomizer().randFixed() > 0.925 
+                            || new HS_Randomizer().randFixed() <= 0.95) {
+                        return Commodities.BETA_CORE;
+                    } 
+                    break;
                 case Factions.PIRATES:
                     if(new HS_Randomizer().randFixed() <= 0.17) {
                         return Commodities.ALPHA_CORE;
@@ -292,6 +303,12 @@ public class BASE_ITEMS {
                             || new HS_Randomizer().randFixed() <= 0.5) {
                         return Commodities.BETA_CORE;
                     }
+                    break;
+                case Factions.LUDDIC_CHURCH:
+                    break;
+                case Factions.LUDDIC_PATH:
+                    break;
+                case Factions.HEGEMONY:
                     break;
                 default:
                     if(new HS_Randomizer().randFixed() <= 0.25) {
