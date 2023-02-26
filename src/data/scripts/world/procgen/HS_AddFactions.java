@@ -9,6 +9,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import data.scripts.world.procgen.industries.baseGameInd;
+import data.scripts.world.procgen.variables.BASE_ITEMS;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,6 +73,11 @@ public class HS_AddFactions {
                                     Submarkets.SUBMARKET_OPEN,
                                     Submarkets.SUBMARKET_STORAGE)),
                     new HS_MarketTariff().tariff()); // tariff amount
+        
+        // Add AI Cores
+        if(markets.getIndustry(Industries.POPULATION).getAICoreId() == null) {
+            markets.getIndustry(Industries.POPULATION).setAICoreId(new BASE_ITEMS().randAICores(faction));
+        }
         
         // Adds Spaceport, Planetary Defences, and Military Bases
         new baseGameInd().initBaseInd(markets, markets.getFaction(), planet);

@@ -80,11 +80,10 @@ public class HyperionGen implements SectorGeneratorPlugin {
                 }
             }
             
-            /* Disabled until fixed
+            
             if(Global.getSettings().getBoolean("enableSectorIndustryRevamp")) {
                new checkAllSystems(); 
             }
-            */
             
             // All planets of ths mod's star systems are known
             Misc.setAllPlanetsKnown("Phia");
