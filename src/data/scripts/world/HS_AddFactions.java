@@ -8,6 +8,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
+import data.scripts.world.procgen.HS_AddIndustry;
+import data.scripts.world.procgen.HS_ReAddConditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -211,7 +213,7 @@ public class HS_AddFactions {
         new HS_ReAddConditions(condition_list, markets); 
 
         // Adds industries depending on conditions
-        new HS_AddIndustry(planet, markets);
+        new HS_AddIndustry(planet, markets, markets.getFaction(), planet.getStarSystem());
                     
     }
 }

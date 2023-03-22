@@ -11,6 +11,7 @@ import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
+import java.util.Random;
 
 /**
  *
@@ -18,18 +19,33 @@ import com.fs.starfarer.api.impl.campaign.ids.Skills;
  */
 public class HS_AddRandomAdmins {
     
+    // Roll the dice
+    private int rand(int min, int max) {
+        Random rand = new Random();
+        return min + rand.nextInt(max - min + 1);
+    } 
+    
     public PersonAPI generateAdmins(MarketAPI market) {
-        PersonAPI person = Global.getFactory().createPerson();
-        person.setGender(FullName.Gender.ANY);
-        person.setRankId(Ranks.CITIZEN);
-        person.setPostId(Ranks.POST_ADMINISTRATOR);
-        person.setId(market.getId() + "_admin");
-        person.setPortraitSprite("graphics/portraits/random/portrait" + 
-                new HS_Randomizer().intRand(1, 99) + ".png");
-        person.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 
-                new HS_Randomizer().intRand(0, 3));
-        person.getStats().setSkillLevel(Skills.HYPERCOGNITION, 
-                new HS_Randomizer().intRand(0, 3));
-        return person;
+        if (market != null && !market.getAdmin().getPost().equals(Ranks.POST_ADMINISTRATOR)) {
+            PersonAPI person = Global.getFactory().createPerson();
+            
+            if(market.getFactionId() != null) {
+                person.setFaction(market.getFactionId());
+            } else {
+                person.setFaction(market.getFaction().getId());
+            }
+            
+            person.setGender(FullName.Gender.ANY);
+            person.setRankId(Ranks.CITIZEN);
+            person.setPostId(Ranks.POST_ADMINISTRATOR);
+            person.setId(market.getId() + "_admin");
+            person.setPortraitSprite("graphics/portraits/random/portrait" + rand(1, 99) + ".png");
+            person.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, rand(0, 3));
+            person.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, rand(0, 3));
+            person.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, rand(0, 3));
+            person.setMarket(market);
+            return person;
+        }
+        return null;
     }
 }

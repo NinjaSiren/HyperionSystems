@@ -18,7 +18,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.HyperionRandomizer;
+import data.scripts.world.procgen.HyperionRandomizer;
 import java.util.Random;
 
 /**

@@ -3,18 +3,10 @@
 	"colonyOverMaxPenalty":0,
 	"maxColonySize":10,
 
-	"enableSectorIndustryRevamp":TRUE,
-	"enableHyperionPenelope":TRUE,
-	"enableHyperionOuterWorlds":TRUE,
-	"enableHyperionFaction":TRUE,
-	"enableHiddenCheats":TRUE,
-
-
 	"graphics":{
 		"blueprint_packages":{
-           		"HCO_package":"graphics/icons/cargo/HCO_package.png",
+           			"HCO_package":"graphics/icons/cargo/HCO_package.png",
 				"HSS_package":"graphics/icons/cargo/HSS_package.png"
 		},
-		
 	},
 }

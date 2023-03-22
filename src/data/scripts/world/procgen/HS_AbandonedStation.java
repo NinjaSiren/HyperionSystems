@@ -18,48 +18,36 @@ import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.HyperionModDependencies;
+import data.scripts.HyperionModPlugin;
+import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HS_AbandonedStation {
-
+    
+    // Roll the dice
+    private int rand(int min, int max) {
+        Random rand = new Random();
+        return min + rand.nextInt(max - min + 1);
+    }    
+    
     public HS_AbandonedStation(StarSystemAPI system, PlanetAPI star, PlanetAPI planet) {
-        
-        // Orbit calculations
-        int loc_orbit = new HS_Randomizer().intRand(1, 3);
-        int orbit_angle_add;
-        switch(loc_orbit) {
-            case 1:
-                orbit_angle_add = 90;
-                break;
-            case 2:
-                orbit_angle_add = 180;
-                break;
-            case 3:
-                orbit_angle_add = 270;
-                break;
-            default:
-                orbit_angle_add = 90;
-                break;
-        }
-        
         //Other stations
         SectorEntityToken old_station = system.addCustomEntity(
-                "hs_old_station",
+                "hs_old_station_01",
                 "Hyperion Systems Persean Sector Research Station",
                 "station_research",
                 null);
         old_station.setCircularOrbitPointingDown(star, 
-                planet.getCircularOrbitAngle() + orbit_angle_add,
-                planet.getCircularOrbitRadius() + new HS_Randomizer().intRand(-15, 15), 
-                planet.getCircularOrbitPeriod() + new HS_Randomizer().intRand(-5, 5));
+                204, 
+                (planet.getCircularOrbitRadius() * rand(2, 4)), 
+                89);
         old_station.setDiscoverable(true);
         old_station.setDiscoveryXP(5000f);
         old_station.setSensorProfile(0.25f);
-        old_station.setCustomDescriptionId("hs_old_station");
+        old_station.setCustomDescriptionId("hs_old_station_01");
         old_station.setInteractionImage("illustrations", "abandoned_station2");
         
         //Adds market to old station
@@ -82,18 +70,18 @@ public class HS_AbandonedStation {
 
         //Items and Hull Randomizer
         int rand = new HyperionRandomizer(3).value;
-        boolean hasSCY = new HyperionModDependencies().hasSCYNation();
-        boolean hasDME = new HyperionModDependencies().hasDassaultMikoyan();
+        boolean hasSCY = new HyperionModPlugin().isSCYNation();
+        boolean hasDME = new HyperionModPlugin().isDassaultMikoyan();
 
         switch (rand) {
             case 1:
                 // Specials
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                 
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.PRISTINE_NANOFORGE, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                 
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.SYNCHROTRON, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                 
                                 new SpecialItemData(Items.HIGH_TECH_PACKAGE, null), 1);
@@ -170,10 +158,10 @@ public class HS_AbandonedStation {
                 // Specials
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                 
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.PRISTINE_NANOFORGE, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()                                   
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                                                             
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.SYNCHROTRON, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL, 
                                 new SpecialItemData(Items.HIGH_TECH_PACKAGE, null), 1);
@@ -244,10 +232,10 @@ public class HS_AbandonedStation {
                 // Specials
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                 
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.PRISTINE_NANOFORGE, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()                                    
                         .addItems(CargoAPI.CargoItemType.SPECIAL,                                                                                             
-                                new SpecialItemData(IIR_id(), null), 2);
+                                new SpecialItemData(Items.SYNCHROTRON, null), 2);
                 old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                         .addItems(CargoAPI.CargoItemType.SPECIAL, 
                                 new SpecialItemData(Items.HIGH_TECH_PACKAGE, null), 1);
@@ -312,10 +300,10 @@ public class HS_AbandonedStation {
                     // Specials
                     old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                             .addItems(CargoAPI.CargoItemType.SPECIAL, 
-                                    new SpecialItemData(IIR_id(), null), 2);
+                                    new SpecialItemData(Items.PRISTINE_NANOFORGE, null), 2);
                     old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()                                    
                             .addItems(CargoAPI.CargoItemType.SPECIAL,                                                                                             
-                                    new SpecialItemData(IIR_id(), null), 2);
+                                    new SpecialItemData(Items.SYNCHROTRON, null), 2);
 
                     // Weapons
                     old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
@@ -354,67 +342,26 @@ public class HS_AbandonedStation {
         }
     }
     
-    // Industry Item Randomizers
-    private String IIR_id() {
-        int number = new HyperionRandomizer(14).value;
-
-        switch (number) {
-            case 0:
-                return Items.BIOFACTORY_EMBRYO;
-            case 1:
-                return Items.CATALYTIC_CORE;
-            case 2:
-                return Items.CORONAL_PORTAL;
-            case 3:
-                return Items.CORRUPTED_NANOFORGE;
-            case 4:
-                return Items.CRYOARITHMETIC_ENGINE;
-            case 5:
-                return Items.DEALMAKER_HOLOSUITE;
-            case 6:
-                return Items.DRONE_REPLICATOR;
-            case 7:
-                return Items.FULLERENE_SPOOL;
-            case 8:
-                return Items.JANUS;
-            case 9:
-                return Items.MANTLE_BORE;
-            case 10:
-                return Items.ORBITAL_FUSION_LAMP;
-            case 11:
-                return Items.PLASMA_DYNAMO;
-            case 12: return 
-                    Items.PRISTINE_NANOFORGE;
-            case 13: return 
-                    Items.SOIL_NANITES;
-            case 14: return 
-                    Items.SYNCHROTRON;
-            default:
-                break;
-        }      
-        return null;
-    }
-    
-    // Ship Hull Randomizers
+        // Ship Hull Randomizers
     private String HSSship_id() {
         int number = new HyperionRandomizer(11).value;
 
         //Ship Randomizers
         switch (number) {
             case 0:
-               return "HS_Orionis";
+                return "HS_Orionis";
             case 1:
                 return "HS_Naos";
             case 2:
-                return "HS_Scuti";
+                return "HS_Betelgeuse";
             case 3:
                 return "HS_Arcturus";
             case 4:
-                return "HS_Izar";
+                return "HS_Icarus";
             case 5:
                 return "HS_Alycone";
             case 6:
-                return "HS_Becrux";
+                return "HS_Bellatrix";
             case 7:
                 return "HS_Carinae";
             case 8:
@@ -449,7 +396,7 @@ public class HS_AbandonedStation {
             case 5:
                 return "HS_Alycone_Confederacy";
             case 6:
-                return "HS_Becrux_Confederacy";
+                return "HS_Bellatrix_Confederacy";
             case 7:
                 return "HS_Carinae_Confederacy";
             case 8:

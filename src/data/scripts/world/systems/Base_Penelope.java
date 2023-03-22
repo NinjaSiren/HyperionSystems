@@ -18,7 +18,6 @@ import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import data.scripts.world.procgen.HS_AddIndustry;
 import data.scripts.world.procgen.HS_AddMarketplace;
 import data.scripts.world.procgen.HS_AddRandomAdmins;
-import data.scripts.world.procgen.HS_MarketTariff;
 import data.scripts.world.procgen.HS_ReAddConditions;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +29,14 @@ import java.util.Random;
  * @author NinjaSiren
  */
 public class Base_Penelope {
+    
+    // Roll the dice for planet tariff
+    private float tariff() {
+        Random rand = new Random();
+        final float max = 0.12f;
+        final float min = 0.0f;
+        return min + rand.nextFloat() * (max - min);
+    }
     
     public void generate(SectorAPI sector) {
         StarSystemAPI system = sector.getStarSystem("Penelope's Star");
@@ -68,7 +75,7 @@ public class Base_Penelope {
                                 Submarkets.SUBMARKET_BLACK,
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.SUBMARKET_STORAGE)),
-                new HS_MarketTariff().tariff()); // tariff amount                        
+                tariff()); // tariff amount                        
                 
                 // Adds current conditions
                 new HS_ReAddConditions(ithacaBaseConditions, ithacaMarket);
@@ -113,7 +120,7 @@ public class Base_Penelope {
                                 Submarkets.SUBMARKET_BLACK,
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.SUBMARKET_STORAGE)),
-                new HS_MarketTariff().tariff()); // tariff amount   
+                tariff()); // tariff amount   
                 
                 // Adds current conditions
                 new HS_ReAddConditions(xuthusBaseConditions, xuthusMarket);
@@ -155,7 +162,7 @@ public class Base_Penelope {
                                 Submarkets.SUBMARKET_BLACK,
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.SUBMARKET_STORAGE)),
-                new HS_MarketTariff().tariff()); // tariff amount   
+                tariff()); // tariff amount   
                 
                 // Adds current conditions
                 new HS_ReAddConditions(ismaraBaseConditions, ismaraMarket);
@@ -191,7 +198,7 @@ public class Base_Penelope {
                                 Submarkets.SUBMARKET_BLACK,
                                 Submarkets.SUBMARKET_OPEN,
                                 Submarkets.SUBMARKET_STORAGE)),
-                new HS_MarketTariff().tariff()); // tariff amount
+                tariff()); // tariff amount
                 telepylusMarket.addIndustry(Industries.ORBITALWORKS, 
                         new ArrayList<>(Arrays.asList(randNanoforge())));    
                 telepylusMarket.addIndustry(Industries.FUELPROD, 

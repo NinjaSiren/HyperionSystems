@@ -23,3 +23,10 @@ Valkyrie (Confederacy),HS_Valkyrie_Confederacy,Combat Troopcarrier,Hyperion Conf
 Sirius (P),HS_Sirius_Pirate,Phased Destroyer,Pirates,burndrive,5,1600,400,4375,,375,140,,158,12,6,5,7,2250,PHASE,phasecloak,,,,0.075,0.075,100,500,150,200,5,35,5,15750,6,10,270,0.25,30,30,,,,,,,PHASE,"rare_bp, hightech_bp, pirates",0.65,0.5,4,12,,12020
 Eridani (P),HS_Eridani_Pirate,Frigate,Pirates,burndrive,1,1000,350,3250,,150,100,,180,9,5,4,5,1500,FRONT,,75,1.1,1.1,,,75,475,100,100,2,45,3,3844,2,6,165,0.25,7,7,,,,,,,,"rare_bp, hightech_bp, pirates",0.65,0.5,4,12,,12021
 Cassiopeia (P),HS_Cassiopeia_Pirate,Phased Frigate,Pirates,burndrive,3,900,325,3475,,175,90,,188,13,7,6,8,1250,PHASE,phasecloak,,,,0.05,0.05,50,450,75,100,4,20,3,3938,4,8,135,0.25,10,10,,,,,,,PHASE,"rare_bp, hightech_bp, pirates",0.65,0.5,4,12,,12022
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#ADDED FOR THE PEOPLE STATING ISSUES ON THE PATCHES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Scuti,HS_Betelgeuse,Combat Superfreighter,Hyperion Systems,maneuveringjets,12,7500,850,9500,10000,625,280,2,55,10,5,3,7,4500,PHASE,phasecloak,,,,0.05,0.05,35,85,4000,400,5,80,10,168750,4,20,625,0.2,40,40,,,,,,,"PHASE, COMBAT, FREIGHTER",,0.7,0.5,4,12,,12022
+Izar,HS_Icarus,Combat Troopcarrier,Hyperion Systems,maneuveringjets,5,6250,750,8500,9000,400,240,1,70,22,11,6,8,2250,PHASE,phasecloak,,,,0.05,0.05,40,4000,200,300,5,60,10,126000,8,15,612,0.2,50,50,,,,,,,"PHASE, COMBAT, TRANSPORT",,0.7,0.5,4,12,,12023
+Becrux,HS_Bellatrix,Phased Cruiser,Hyperion Systems,maneuveringjets,5,4250,800,8500,9000,425,190,1,85,22,11,6,8,3250,PHASE,phasecloak,,,,0.1,0.1,200,600,250,300,10,30,8,63000,8,12,540,0.25,50,50,,,,,,,PHASE,,0.75,0.5,4,12,,12024
+Mintaka,HS_Lynx_Wing,Phased Interceptor,Hyperion Systems,maneuveringjets,2,250,60,225,,50,0,,245,400,350,120,250,30,PHASE,phasecloak,,,,0.02,0.02,1,1,,,,,,,,,,,,,,,,,,,,,,0,,,,12025
+Krakatoa,HS_Summit,Supership,Hyperion Systems,maneuveringjets,30,13250,1600,17000,17500,1250,350,4,60,13,14,4,10,9500,PHASE,phasecloak,,,,0.2,0.2,600,1400,600,800,20,35,10,562500,14,28,800,0.4,140,110,,,,,,,"PHASE, CARRIER, COMBAT, NO_AUTO_ESCORT",,0.65,0.5,8,24,,12026

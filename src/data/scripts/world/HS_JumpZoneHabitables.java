@@ -5,6 +5,7 @@ import com.fs.starfarer.api.campaign.JumpPointAPI;
 import com.fs.starfarer.api.campaign.OrbitAPI;
 import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
+import data.scripts.world.procgen.variables.PLANET_TYPES;
 import java.util.Random;
 
 /**
@@ -32,33 +33,33 @@ public class HS_JumpZoneHabitables {
             if(jp_counter < 0 || jp_counter >= planetAmount) break;
             
             // If planet is habitable
-            else if(planets[jp_counter].getTypeId().equals(new Planet().ARID) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().DESERT_A) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().DESERT_B) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().JUNGLE) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().OCEAN) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().TERRAN) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().TERRAN_ECCENTRIC) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().TUNDRA) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_ALKALI) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_ARID) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_ARID_LIFELESS) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_AURIC) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_AURIC_CLOUDY) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_CRIMSON) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_DESERT_A) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_DESERT_B) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_DESERT_C) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_JUNGLE) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_LIFELESS) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_MAGNETIC) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_METHANE) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_OCEAN_A) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_OCEAN_B) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_RED) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_RED_WIND) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_STORM) ||
-                                planets[jp_counter].getTypeId().equals(new Planet().US_TERRAN)) {
+            else if(planets[jp_counter].getTypeId().equals(new PLANET_TYPES().ARID) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().DESERT_A) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().DESERT_B) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().JUNGLE) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().OCEAN) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().TERRAN) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().TERRAN_ECCENTRIC) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().TUNDRA) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_ALKALI) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_ARID) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_ARID_LIFELESS) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_AURIC) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_AURIC_CLOUDY) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_CRIMSON) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_DESERT_A) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_DESERT_B) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_DESERT_C) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_JUNGLE) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_LIFELESS) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_MAGNETIC) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_METHANE) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_OCEAN_A) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_OCEAN_B) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_RED) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_RED_WIND) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_STORM) ||
+                                planets[jp_counter].getTypeId().equals(new PLANET_TYPES().US_TERRAN)) {
                 
                 // Creates the planet jump point
                 jp[jp_counter] = Global.getFactory().createJumpPoint(
