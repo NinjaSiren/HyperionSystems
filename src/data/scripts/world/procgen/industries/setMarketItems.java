@@ -25,7 +25,7 @@ public class setMarketItems {
     public setMarketItems(List<Industry> iList, List<MarketConditionAPI> cList, FactionAPI faction, MarketAPI market, 
             PlanetAPI planet) {
         
-        boolean isIE = new HyperionModDependencies().hasIndEvolution();
+        boolean isIE = new HyperionModDependencies().isIndEvolution();
         String factionID = faction.getId();
         
         for(Industry industry : iList) {

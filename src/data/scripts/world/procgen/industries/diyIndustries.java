@@ -29,8 +29,7 @@ public class diyIndustries {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().RAD_REMOVER, 
                         new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS().randRadRemover(
-                                        faction.getId()))));
+                                new DIY_ITEMS().RADIATION_REMOVER)));
             }
         }
 
@@ -63,9 +62,7 @@ public class diyIndustries {
         }
 
         // Water Capture Infrastructure & Cometary Capture Infrastructure
-        int counter = sector.getPlanets().size();
-        if(new DIY_INDUSTRIES().hasWaterPlanetType(sector, counter) && 
-                !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_A) ||
+        if(!planet.getTypeId().equals(new PLANET_TYPES().FROZEN_A) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_B) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_C) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_D) ||
@@ -90,8 +87,7 @@ public class diyIndustries {
                         market.addIndustry(new DIY_INDUSTRIES().WATER_RECIEVER);
                 }
             }
-        } else if(!new DIY_INDUSTRIES().hasWaterPlanetType(sector, counter) && 
-                !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_A) ||
+        } else if(!planet.getTypeId().equals(new PLANET_TYPES().FROZEN_A) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_B) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_C) ||
                 !planet.getTypeId().equals(new PLANET_TYPES().FROZEN_D) ||
@@ -166,10 +162,7 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.TOXIC_ATMOSPHERE)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_FILTER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randAtmoMineralizer(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().ATMOSPHERE_MINERALIZER)));
             }
         }
 
@@ -177,15 +170,10 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.NO_ATMOSPHERE)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_PUMP, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randAtmoSublimator(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().ATMOSPHERE_SUBLIMATOR)));
             } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 market.addIndustry(new DIY_INDUSTRIES().ATMOSPHERE_PUMP_EXPENSIVE, 
-                        new ArrayList<>(Arrays.asList(new DIY_ITEMS()
-                                .randAtmoSublimator(
-                                        faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().ATMOSPHERE_SUBLIMATOR)));
             }
         }
 
@@ -193,16 +181,10 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.VERY_COLD) || market.hasCondition(Conditions.COLD)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().COLD_REMOVER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randHeatRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().HEAT_REMOVER_CORE)));
             } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 market.addIndustry(new DIY_INDUSTRIES().STELLAR_MIRROR_EXPENSIVE, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randHeatRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().HEAT_REMOVER_CORE)));
             }
         }
 
@@ -210,16 +192,10 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.VERY_HOT) || market.hasCondition(Conditions.HOT)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().HEAT_REMOVER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randHeatRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().HEAT_REMOVER_CORE)));
             } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 market.addIndustry(new DIY_INDUSTRIES().STELLAR_MIRROR_EXPENSIVE, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randHeatRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().HEAT_REMOVER_CORE)));
             }
         }
 
@@ -227,10 +203,7 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.POOR_LIGHT)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().POOR_LIGHT_REMOVER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randHeatRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().HEAT_REMOVER_CORE)));
             }
         }
 
@@ -238,16 +211,10 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.TECTONIC_ACTIVITY) || market.hasCondition(Conditions.EXTREME_TECTONIC_ACTIVITY)) {
             if(new HS_Randomizer().randFixed() <= 0.33) {
                 market.addIndustry(new DIY_INDUSTRIES().TECTONIC_REMOVER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randTectonicRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().TECTONIC_REMOVER)));
             } else if(new HS_Randomizer().randFixed() > 0.33 && new HS_Randomizer().randFixed() <= 0.66) {
                 market.addIndustry(new DIY_INDUSTRIES().TECTONIC_REMOVER_EXPENSIVE, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randTectonicRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().TECTONIC_REMOVER)));
             }
         }
 
@@ -255,10 +222,7 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.EXTREME_WEATHER)) {
             if(new HS_Randomizer().randFixed() <= 0.5) {
                 market.addIndustry(new DIY_INDUSTRIES().EXTREME_WEATHER_REMOVER, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randWeatherRemover(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().WEATHER_REMOVER_CORE)));
             }
         }
 
@@ -282,10 +246,7 @@ public class diyIndustries {
         if(market.hasCondition(Conditions.LOW_GRAVITY) || market.hasCondition(Conditions.HIGH_GRAVITY)) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().GRAV_OSCILLATOR, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randGravOscillator(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().GRAV_OSCILLATOR)));
             }
         }
 
@@ -293,10 +254,7 @@ public class diyIndustries {
         if(planet.getTypeId().contains("TERRAN") || planet.getTypeId().contains("WATER")) {
             if(new HS_Randomizer().randFixed() <= 0.75) {
                 market.addIndustry(new DIY_INDUSTRIES().PERFECT_CLIMATE_TERRAN_WATER_ONLY, 
-                        new ArrayList<>(Arrays.asList(
-                                new DIY_ITEMS()
-                                        .randClimateTerraform(
-                                                faction.getId()))));
+                        new ArrayList<>(Arrays.asList(new DIY_ITEMS().CLIMATE_TERRAFORMER)));
             }
         }
 

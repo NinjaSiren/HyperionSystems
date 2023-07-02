@@ -70,7 +70,7 @@ public class BASE_ITEMS {
                         if(new HS_Randomizer().randFixed() <= 0.5) return Items.CRYOARITHMETIC_ENGINE;
                 }
             } else {
-                if(new HyperionModDependencies().hasIndEvolution()) {
+                if(new HyperionModDependencies().isIndEvolution()) {
                     return new INDEVO_ITEMS().randMilTransmit(faction);
                 }
             }
