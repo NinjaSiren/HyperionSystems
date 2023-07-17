@@ -1,7 +1,7 @@
 {
   "hullName": "Valkyrie-class Combat Troopcarrier",
   "hullId": "HS_Valkyrie_Confederacy",
-  "hullSize": "CRUISER",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/confederacy/Valkyrie_confederacy.png",
   "style": "MIDLINE",
   "height": 260,

@@ -1,7 +1,7 @@
 {
   "hullName": "Buffalo-class Combat Freighter",
   "hullId": "HS_Buffalo_Confederacy",
-  "hullSize": "FRIGATE",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/confederacy/Buffalo_confederacy.png",
   "style": "MIDLINE",
   "height": 150,
