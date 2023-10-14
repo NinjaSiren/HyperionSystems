@@ -22,7 +22,6 @@ public class HyperionModDependencies {
     private static boolean isExerelin = false;
     private static boolean isDIYPlanets = false;
     private static boolean isBetterColonies = false;
-    private static boolean isConsoleCommands = false;
     private static boolean isSCYNation = false;
     private static boolean isUnknownSkies = false;
     private static boolean isDassaultMikoyan = false;
@@ -37,9 +36,8 @@ public class HyperionModDependencies {
         isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
         isBetterColonies = Global.getSettings().getModManager().isModEnabled("timid_admins");
-        isConsoleCommands = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isSCYNation = Global.getSettings().getModManager().isModEnabled("lw_console");
-        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("lw_console");
+        isSCYNation = Global.getSettings().getModManager().isModEnabled("SCY");
+        isUnknownSkies = Global.getSettings().getModManager().isModEnabled("US");
         isDassaultMikoyan = Global.getSettings().getModManager().isModEnabled("istl_dam");
         isIndustrialEvolution = Global.getSettings().getModManager().isModEnabled("IndEvo");
     }
@@ -67,10 +65,6 @@ public class HyperionModDependencies {
     
     public boolean isBetterColonies() {
         return isBetterColonies;
-    }
-    
-    public boolean isConsoleCommands() {
-        return isConsoleCommands;
     }
     
     public boolean isSCYNation() {
