@@ -59,7 +59,7 @@ public class HyperionModPlugin extends BaseModPlugin {
     @Override
     public void onApplicationLoad() {
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
-        boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        //boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
         boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
@@ -74,10 +74,12 @@ public class HyperionModPlugin extends BaseModPlugin {
             "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
         }
         
+        /*
         if(!hasGraphicsLib) {
-            throw new RuntimeException("Hyperion Systems requires GraphicsLib!" +
-            "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=10982");
+           throw new RuntimeException("Hyperion Systems requires GraphicsLib!" +
+           "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=10982");
         }
+        */
         
         if(!hasMagicLib) {
             throw new RuntimeException("Hyperion Systems requires MagicLib! Where is the magic?" +

@@ -14,46 +14,27 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.world.procgen.HS_AddStuffs;
 import data.scripts.world.procgen.HS_AutoGenerateFactions;
+import data.scripts.world.procgen.HS_Randomizer;
 import java.awt.Color;
-import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HS_Phia {
-    
-    // Roll the dice, system background
-    private int rand_bg() {
-        Random rand = new Random();
-        final int max = 6;
-        final int min = 1;
-        return min + rand.nextInt(max - min + 1);
-    }
-        
-    // Roll the dice
-    private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
-    }
-    
-    // Roll the dice
-    private float randFloat(float min, float max) {
-        Random rand = new Random();
-        return min + rand.nextFloat() * (max - min);
-    }
-    
+
     public void generate(SectorAPI sector) {
         
         // Add star system
         StarSystemAPI system = sector.createStarSystem("Phia");
         system.getLocation().set(-25600, -20500);
         system.setAge(StarAge.YOUNG);
-        system.setBackgroundTextureFilename("graphics/backgrounds/background" + rand_bg() + ".jpg");
+        system.setBackgroundTextureFilename("graphics/backgrounds/background" + 
+                new HS_Randomizer().rand_bg() + ".jpg");
         ProcgenUsedNames.notifyUsed("Phia");  
         
         // Initialize star variables
-        int starSize = rand(1500, 1800);
+        int starSize = new HS_Randomizer().intRand(1500, 1800);
         
         // Add stars, Phia
         PlanetAPI phia = system.initStar(
@@ -84,8 +65,8 @@ public class HS_Phia {
                 system, // System
                 phia, // Star
                 system.getAge(), // Sets the potential entities added depending on system age
-                10, rand(10, 20), // Min-Max entities to add
-                starSize * randFloat(1.75f, 2f), // Radius to start at
+                10, new HS_Randomizer().intRand(10, 20), // Min-Max entities to add
+                starSize * new HS_Randomizer().floatRand(1.75f, 2f), // Radius to start at
                 1, // Naming offset
                 false, // Custom or system based names
                 true); // Should habitables appear   

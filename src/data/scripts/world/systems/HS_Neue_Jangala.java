@@ -29,6 +29,7 @@ import com.fs.starfarer.api.util.Misc;
 import data.scripts.HyperionModPlugin;
 import data.scripts.world.procgen.HS_AddIndustry;
 import data.scripts.world.procgen.HS_AddMarketplace;
+import data.scripts.world.procgen.HS_Randomizer;
 import data.scripts.world.procgen.variables.PLANET_TYPES;
 import java.awt.Color;
 import java.util.ArrayList;

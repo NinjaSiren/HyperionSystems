@@ -1,12 +1,12 @@
-{
-    "masterVersionFile":"https://raw.githubusercontent.com/NinjaSiren/HyperionSystems/master/hyperionsystems.version",
+{         
+ "masterVersionFile":"https://raw.githubusercontent.com/NinjaSiren/HyperionSystems/master/hyperionsystems.version",
     "modName":"Hyperion Systems",
     "modThreadId":18126,
-	"modNexusId":41,
+    "modNexusId":41,
     "modVersion":
-    {
-        "major":0,
-        "minor":9,
-        "patch":3,
-	},
+  {
+    "major":0,
+    "minor":9,
+    "patch":3-HF5.2,
+  },
 }

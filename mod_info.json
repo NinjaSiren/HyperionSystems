@@ -1,10 +1,20 @@
 {
-	"id":"hyperionsystems",
-	"name":"Hyperion Systems",
-	"author":"NinjaSiren",
-	"version":"0.9.3",
-	"description":"Adds Hyperion Systems ships, a non-faction corporation contracted by the Hegemony to produce special, state-of-the-art but historical ships.",
-	"gameVersion":"0.96a-RC10",
-	"jars":["jars/HyperionSystems.jar"],
-	"modPlugin":"data.scripts.HyperionModPlugin"
+  "id":"hyperionsystems",
+  "name":"Hyperion Systems",
+  "author":"NinjaSiren",
+  "version":"0.9.3-HF5.2",
+  "description":"New ships, factions, and lore",
+  "gameVersion":"0.97a-RC6",
+  "jars":["jars/HyperionSystems.jar"],
+  "modPlugin":"data.scripts.HyperionModPlugin",
+  "dependencies": [
+    {
+      "id": "lw_lazylib",
+      "name": "LazyLib"
+    },
+    {
+      "id": "MagicLib",
+      "name": "MagicLib"
+    },
+  ]
 }

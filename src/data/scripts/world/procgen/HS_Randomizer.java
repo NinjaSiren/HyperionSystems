@@ -34,5 +34,11 @@ public class HS_Randomizer {
         return min + rand.nextDouble() * (max - min);
     }
     
-    
+    // Roll the dice, system background
+    public int rand_bg() {
+        Random rand = new Random();
+        final int max = 6;
+        final int min = 1;
+        return min + rand.nextInt(max - min + 1);
+    }
 }

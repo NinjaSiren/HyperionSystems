@@ -15,7 +15,7 @@ public class HyperionModDependencies {
     
     // Important Mods
     private static boolean hasLazyLib = false;
-    private static boolean hasGraphicsLib = false;
+    //private static boolean hasGraphicsLib = false;
     private static boolean hasMagicLib = false;
     
     // Optional Mods
@@ -31,7 +31,7 @@ public class HyperionModDependencies {
     // Set all mod dependencies
     public HyperionModDependencies() {      
         hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
-        hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        //hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib"); 
         hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         isExerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         isDIYPlanets = Global.getSettings().getModManager().isModEnabled("diyplanets");
@@ -47,9 +47,11 @@ public class HyperionModDependencies {
         return hasLazyLib;
     }
     
+    /*
     public boolean hasGraphicsLib() {
         return hasGraphicsLib;
     }
+    */
     
     public boolean hasMagicLib() {
         return hasMagicLib;
