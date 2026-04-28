@@ -13,19 +13,12 @@ import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
-import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
 public class HS_AddStuffs {
-    
-    // Roll the dice
-    private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
-    }
     
     public void generateJumpPoints(StarSystemAPI system, PlanetAPI star) {
         for(int counter = system.getPlanets().size() - 1; counter >= 0; counter--) {
@@ -35,9 +28,9 @@ public class HS_AddStuffs {
             String planet_name = planet.getName();
             
             float planet_or = planet.getCircularOrbitRadius()
-                    + rand(30, 45);
+                    + new HS_Randomizer().intRand(30, 45);
             float planet_oa = planet.getCircularOrbitAngle()
-                    + rand(-250, 250);
+                    + new HS_Randomizer().intRand(-250, 250);
             float planet_op = planet.getCircularOrbitPeriod();
             
             if(planet_market != null && !planet.isMoon() && planet_market.hasSpaceport()) {
@@ -79,7 +72,7 @@ public class HS_AddStuffs {
         int max = system.getPlanets().size() - 1;
         
         //Nav Buoy
-        int random = rand(0, max);
+        int random = new HS_Randomizer().intRand(0, max);
         SectorEntityToken nav_buoy = system.addCustomEntity(
                 star_name + "_navbuoy",
                 system_name + " Nav Buoy",
@@ -92,7 +85,7 @@ public class HS_AddStuffs {
                 orbit_p[random]);
 
         //Comm Relay
-        random = rand(0, max);
+        random = new HS_Randomizer().intRand(0, max);
         SectorEntityToken comm_relay = system.addCustomEntity(
                 star_name + "_commrelay",
                 system_name + " Relay",
@@ -105,7 +98,7 @@ public class HS_AddStuffs {
                 orbit_p[random]);
         
         //Sensor Array
-        random = rand(0, max);
+        random = new HS_Randomizer().intRand(0, max);
         SectorEntityToken sensor_array = system.addCustomEntity(
                 star_name + "_sensorarray",
                 system_name + " Sensor Array",

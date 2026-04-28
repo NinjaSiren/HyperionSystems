@@ -11,7 +11,6 @@ import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
-import java.util.Random;
 
 /**
  *
@@ -21,8 +20,7 @@ public class HS_AddRandomAdmins {
     
     // Roll the dice
     private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
+        return new HS_Randomizer().intRand(min, max);
     } 
     
     public PersonAPI generateAdmins(MarketAPI market) {
@@ -40,9 +38,8 @@ public class HS_AddRandomAdmins {
             person.setPostId(Ranks.POST_ADMINISTRATOR);
             person.setId(market.getId() + "_admin");
             person.setPortraitSprite("graphics/portraits/random/portrait" + rand(1, 99) + ".png");
-            person.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, rand(0, 3));
-            person.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, rand(0, 3));
-            person.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, rand(0, 3));
+            person.getStats().setSkillLevel(Skills.APT_INDUSTRY, rand(0, 3));
+            person.getStats().setSkillLevel(Skills.APT_LEADERSHIP, rand(0, 3));
             person.setMarket(market);
             return person;
         }

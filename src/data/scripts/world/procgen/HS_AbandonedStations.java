@@ -19,21 +19,19 @@ import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.HyperionModPlugin;
-import java.util.Random;
 
 /**
  *
  * @author NinjaSiren
  */
-public class HS_AbandonedStation {
+public class HS_AbandonedStations {
     
     // Roll the dice
     private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
+        return new HS_Randomizer().intRand(min, max);
     }    
     
-    public HS_AbandonedStation(StarSystemAPI system, PlanetAPI star, PlanetAPI planet) {
+    public HS_AbandonedStations(StarSystemAPI system, PlanetAPI star, PlanetAPI planet) {
         //Other stations
         SectorEntityToken old_station = system.addCustomEntity(
                 "hs_old_station_01",
@@ -69,7 +67,7 @@ public class HS_AbandonedStation {
         old_station.setCustomDescriptionId("hs_old_research_station");
 
         //Items and Hull Randomizer
-        int rand = new HyperionRandomizer(3).value;
+        int rand = rand(0, 3);
         boolean hasSCY = new HyperionModPlugin().isSCYNation();
         boolean hasDME = new HyperionModPlugin().isDassaultMikoyan();
 
@@ -145,13 +143,8 @@ public class HS_AbandonedStation {
                         .addCommodity("hand_weapons", new HyperionRandomizer(15).value);
 
                 //Hulls
-                if(hasDME) {
-                    old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
-                        .addMothballedShip(FleetMemberType.SHIP, DMEship_id(), null);
-                } else {
-                    old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
-                            .addMothballedShip(FleetMemberType.SHIP, HSSship_id(), null);
-                }
+                old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
+                        .addMothballedShip(FleetMemberType.SHIP, HSSship_id(), null);
                 break;
 
             case 2:
@@ -219,13 +212,8 @@ public class HS_AbandonedStation {
                         .addCommodity("hand_weapons", new HyperionRandomizer(15).value);
 
                 //Hulls
-                if(hasSCY) {
-                    old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
-                            .addMothballedShip(FleetMemberType.SHIP, SCYship_id(), null);
-                } else {
-                    old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
+                old_station_market.getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo()
                             .addMothballedShip(FleetMemberType.SHIP, HSSship_id(), null);
-                }
                 break;
 
             case 3:
@@ -342,205 +330,103 @@ public class HS_AbandonedStation {
         }
     }
     
-        // Ship Hull Randomizers
+    // Ship Hull Randomizers
     private String HSSship_id() {
-        int number = new HyperionRandomizer(11).value;
+        int number = rand(0, 12);
 
         //Ship Randomizers
         switch (number) {
-            case 0:
-                return "HS_Orionis";
-            case 1:
-                return "HS_Naos";
-            case 2:
-                return "HS_Betelgeuse";
-            case 3:
-                return "HS_Arcturus";
-            case 4:
-                return "HS_Icarus";
-            case 5:
-                return "HS_Alycone";
-            case 6:
-                return "HS_Bellatrix";
-            case 7:
-                return "HS_Carinae";
-            case 8:
-                return "HS_Sirius";
-            case 9:
-                return "HS_Eridani";
-            case 10:
-                return "HS_Cassiopeia";
-            case 11:
+            case 0: {
+                return "HS_Krakatoa";
+            }
+            case 1: {
                 return "HS_Perseus";
-            default:
-                break;
+            }
+            case 2: {
+                return "HS_Orionis";
+            }
+            case 3: {
+                return "HS_Naos";
+            }
+            case 4: {
+                return "HS_Arcturus";
+            }
+            case 5: {
+                return "HS_Scuti";
+            }
+            case 6: {
+                return "HS_Izar";
+            }
+            case 7: {
+                return "HS_Becrux";
+            }
+            case 8: {
+                return "HS_Alycone";
+            }
+            case 9: {
+                return "HS_Sirius";
+            }
+            case 10: {
+                return "HS_Carinae";
+            }
+            case 11: {
+                return "HS_Cassiopeia";
+            }
+            case 12: {
+                return "HS_Eridani";
+            }
+            default: {
+            }
         }
         return null;
     }
     
     private String HCOship_id() {
-        int number = new HyperionRandomizer(12).value;
+        int number = rand(0, 12);
 
         //Ship Randomizers
         switch (number) {
-            case 0:
-                return "HS_Orionis_Confederacy";
-            case 1:
-                return "HS_Naos_Confederacy";
-            case 2:
-                return "HS_Atlas_Confederacy";
-            case 3:
-                return "HS_Buffalo_Confederacy";
-            case 4:
-                return "HS_Gemini_Confederacy";
-            case 5:
-                return "HS_Alycone_Confederacy";
-            case 6:
-                return "HS_Bellatrix_Confederacy";
-            case 7:
-                return "HS_Carinae_Confederacy";
-            case 8:
-                return "HS_Sirius_Confederacy";
-            case 9:
-                return "HS_Eridani_Confederacy";
-            case 10:
-                return "HS_Cassiopeia_Confederacy";
-            case 11:
+            case 0: {
+                return "HS_Krakatoa_Confederacy";
+            }
+            case 1: {
                 return "HS_Perseus_Confederacy";
-            case 12:
-                return "HS_Valkyrie_Confederacy";
-            default:
-                break;
-        }
-        return null;
-    }
-
-    private String DMEship_id() {
-        int number = new HyperionRandomizer(28).value;
-
-        //Ship Randomizers
-        switch (number) {
-            case 0:
-                return "istl_flatmouse";
-            case 1:
-                return "istl_puddlejumper";
-            case 2:
-                return "istl_bouclier";
-            case 3:
-                return "istl_carabao";
-            case 4:
-                return "istl_sevastopol";
-            case 5:
-                return "istl_chamois";
-            case 6:
-                return "istl_lodestar";
-            case 7:
-                return "istl_mouflon";
-            case 8:
-                return "istl_centaur";
-            case 9:
-                return "istl_samoyed";
-            case 10:
-                return "istl_stoat";
-            case 11:
-                return "istl_burya";
-            case 12:
-                return "istl_naja";
-            case 13:
-                return "istl_borzoi";
-            case 14:
-                return "istl_vesper";
-            case 15:
-                return "istl_starsylph";
-            case 16:
-                return "istl_leyte";
-            case 17:
-                return "istl_tunguska";
-            case 18:
-                return "istl_wanderer";
-            case 19:
-                return "istl_tereshkova";
-            case 20:
-                return "istl_maskirovka";
-            case 21:
-                return "istl_snowgoose";
-            case 22:
-                return "istl_mindanao";
-            case 23:
-                return "istl_baikal";
-            case 24:
-                return "istl_baikal_brone";
-            case 25:
-                return "istl_kormoran";
-            case 26:
-                return "istl_tonnerre";
-            case 27:
-                return "istl_zelenograd";
-            case 28:
-                return "istl_jeannedarc";
-            default:
-                break;
-        }
-        return null;
-    }
-    
-    private String SCYship_id() {
-        int number = new HyperionRandomizer(24).value;
-
-        //Ship Randomizers
-        switch (number) {
-            case 0:
-                return "SCY_alecto";
-            case 1:
-                return "SCY_tisiphone";
-            case 2:
-                return "SCY_centaur";
-            case 3:
-                return "SCY_lealaps";
-            case 4:
-                return "SCY_talos";
-            case 5:
-                return "SCY_megaera";
-            case 6:
-                return "SCY_stymphalianbird";
-            case 7:
-                return "SCY_argus";
-            case 8:
-                return "SCY_baliusF";
-            case 9:
-                return "SCY_baliusT";
-            case 10:
-                return "SCY_geryon";
-            case 11:
-                return "SCY_lamia";
-            case 12:
-                return "SCY_lamiaA";
-            case 13:
-                return "SCY_hydra";
-            case 14:
-                return "SCY_pyraemon";
-            case 15:
-                return "SCY_corocotta";
-            case 16:
-                return "SCY_corocottaA";
-            case 17:
-                return "SCY_dracanae";
-            case 18:
-                return "SCY_manticore";
-            case 19:
-                return "SCY_erymanthianboar";
-            case 20:
-                return "SCY_siren";
-            case 21:
-                return "SCY_khalkotauroi";
-            case 22:
-                return "SCY_keto";
-            case 23:
-                return "SCY_nemeanlion";
-            case 24:
-                return "SCY_xanthus";
-            default:
-                break;
+            }
+            case 2: {
+                return "HS_Orionis_Confederacy";
+            }
+            case 3: {
+                return "HS_Naos_Confederacy";
+            }
+            case 4: {
+                return "HS_Arcturus_Confederacy";
+            }
+            case 5: {
+                return "HS_Scuti_Confederacy";
+            }
+            case 6: {
+                return "HS_Izar_Confederacy";
+            }
+            case 7: {
+                return "HS_Becrux_Confederacy";
+            }
+            case 8: {
+                return "HS_Alycone_Confederacy";
+            }
+            case 9: {
+                return "HS_Sirius_Confederacy";
+            }
+            case 10: {
+                return "HS_Carinae_Confederacy";
+            }
+            case 11: {
+                return "HS_Cassiopeia_Confederacy";
+            }
+            case 12: {
+                return "HS_Eridani_Confederacy";
+            }
+            default: {
+            }
         }
         return null;
     }

@@ -9,7 +9,6 @@ import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
-import java.util.Random;
 
 /**
  *
@@ -19,8 +18,7 @@ public class HS_AddStation {
     
     // Roll the dice
     private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
+        return new HS_Randomizer().intRand(min, max);
     }
     
     // Station types
@@ -30,12 +28,9 @@ public class HS_AddStation {
     
     private String stationRandomizer(int randomNumber) {
         switch (randomNumber) {
-            case 1:
-                return LOWTECH;
-            case 2:
-                return MIDLINE;
-            default:
-                return HIGHTECH;
+            case 1: { return LOWTECH; }
+            case 2: { return MIDLINE; }
+            default: { return HIGHTECH; }
         }
     }
     

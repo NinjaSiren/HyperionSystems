@@ -41,4 +41,27 @@ public class HS_Randomizer {
         final int min = 1;
         return min + rand.nextInt(max - min + 1);
     }
+    
+    // Randomizer for tarrifs
+    public float randTariff() {
+        Random rand = new Random();
+        final float max = 0.01f;
+        final float min = 0.12f;
+        return min + rand.nextFloat() * (max - min);
+    }
+    
+    // Setting final random tariff value for HCO faction
+    public float randTariffFinalHCO() {
+        return randTariff();
+    }
+    
+    // Setting final random tariff value for Remnant faction
+    public float randTariffFinalRMT() {
+        return randTariff();
+    }
+    
+    // Setting final random tariff value for Pirate faction
+    public float randTariffFinalPRT() {
+        return randTariff();
+    }
 }

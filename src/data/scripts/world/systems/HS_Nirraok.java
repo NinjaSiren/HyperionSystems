@@ -64,7 +64,7 @@ public class HS_Nirraok {
         nirraok.getSpec().setGlowColor(new Color(255, 200, 70, 128));
         nirraok.getSpec().setAtmosphereThickness(0.5f);
         nirraok.applySpecChanges(); 
-
+        
         // Randomly generates planets
         StarSystemGenerator.addOrbitingEntities(
                 system, // System
@@ -89,7 +89,7 @@ public class HS_Nirraok {
         
         // Adds nav buoy, comm relay, and sensor array
         new HS_AddStuffs().generateStuffs(system, nirraok, "HS_Corporation_Separatist");
-            
+             
         // Add jump points on habitable or working colonies
         new HS_AddStuffs().generateJumpPoints(system, nirraok);
             

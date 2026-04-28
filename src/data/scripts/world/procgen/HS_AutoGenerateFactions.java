@@ -11,7 +11,6 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
 import data.scripts.world.procgen.variables.PLANET_TYPES;
 import java.util.List;
-import java.util.Random;
 
 /**
  *
@@ -19,26 +18,14 @@ import java.util.Random;
  */
 public class HS_AutoGenerateFactions {
     
-    // Roll the dice
-    private int rand(int min, int max) {
-        Random rand = new Random();
-        return min + rand.nextInt(max - min + 1);
-    }   
-
-    // Roll the dice
-    private double randPercent() {
-        Random rand = new Random();
-        final double max = 1.0;
-        final double min = 0.0;
-        return min + rand.nextDouble() * (max - min);
-    }
-    
     // Autogenerate planets with/without factions and stations
     public void generateFactions(StarSystemAPI system, PlanetAPI star, String factionA, 
             String factionB, double factions, boolean enableFactions, boolean enableStations, 
             boolean enableAbandonedStation) {
-        
+         
         int systemSize;
+        double randPercent = new HS_Randomizer().randFixed();
+        
         if(!system.getPlanets().isEmpty()) {
             systemSize = system.getPlanets().size();
             
@@ -105,7 +92,7 @@ public class HS_AutoGenerateFactions {
                                                     factions, // The percentage of factionA appearing vs factionB on the system
                                                     system);
                                             
-                                        } else if (planetHazardValue <= 150 && randPercent() <= 0.05) {
+                                        } else if (planetHazardValue <= 150 && randPercent <= 0.05) {
                                             new HS_AddFactions().generateNow(
                                                     planet, // PlanetAPI array
                                                     factionA, // Faction A, to be generated
@@ -116,8 +103,8 @@ public class HS_AutoGenerateFactions {
                                                     factions, // The percentage of factionA appearing vs factionB on the system
                                                     system);
                                             
-                                        } else if (planetHazardValue > 150 && planetHazardValue <= 175 && 
-                                                randPercent() <= 0.005) {
+                                        } else if (planetHazardValue > 150 && randPercent <= 175 && 
+                                                randPercent <= 0.005) {
                                             new HS_AddFactions().generateNow(
                                                     planet, // PlanetAPI array
                                                     factionA, // Faction A, to be generated
@@ -134,7 +121,10 @@ public class HS_AutoGenerateFactions {
 
                             // Adds stations
                             if(enableStations) {
-                                new HS_AddStation(system, star, planet); 
+                                new HS_AddStation(
+                                        system, 
+                                        star, 
+                                        planet); 
                             }
                         } 
                     }
@@ -144,9 +134,10 @@ public class HS_AutoGenerateFactions {
             
             // Adds an abandoned station
             if(enableAbandonedStation) {
-                new HS_AbandonedStation(system, 
+                new HS_AbandonedStations(
+                        system, 
                         star, 
-                        system.getPlanets().get(rand(0, systemSize - 1)));
+                        system.getPlanets().get(new HS_Randomizer().intRand(0, systemSize - 1)));
             }
         }
     }
